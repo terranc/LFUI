@@ -1,0 +1,67 @@
+{
+  "name": "lfui",
+  "version": "0.0.1",
+  "description": "a dashboard ui kit based bootstrap",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server",
+    "build": "webpack --progress --colors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/terranc/LFUI.git"
+  },
+  "keywords": [
+    "vue",
+    "bootstrap",
+    "components"
+  ],
+  "author": "tomoyuen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/terranc/LFUI/issues"
+  },
+  "homepage": "https://github.com/terranc/LFUI#readme",
+  "dependencies": {
+    "bootstrap-theme-slim": "^0.0.3",
+    "material-design-icons": "^2.2.3",
+    "vue": "^1.0.26",
+    "vue-resource": "^0.9.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.7",
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.0.0",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-2": "^6.0.0",
+    "babel-runtime": "^6.0.0",
+    "css-loader": "^0.23.0",
+    "cssnano": "^3.7.1",
+    "eslint": "^2.5.1",
+    "eslint-config-standard": "^5.1.0",
+    "eslint-friendly-formatter": "^1.2.2",
+    "eslint-loader": "^1.2.0",
+    "eslint-plugin-html": "^1.4.0",
+    "eslint-plugin-promise": "^1.1.0",
+    "eslint-plugin-standard": "^1.3.2",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.4",
+    "html-webpack-plugin": "^2.22.0",
+    "postcss": "^5.0.21",
+    "postcss-import": "^8.1.2",
+    "postcss-loader": "^0.9.1",
+    "postcss-salad": "^1.0.5",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "vue-hot-reload-api": "^1.2.0",
+    "vue-html-loader": "^1.2.0",
+    "vue-loader": "^8.5.3",
+    "vue-style-loader": "^1.0.0",
+    "webpack": "^1.12.2",
+    "webpack-dev-middleware": "^1.4.0",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-hot-middleware": "^2.6.0"
+  }
+}

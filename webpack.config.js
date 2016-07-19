@@ -1,11 +1,11 @@
 var path = require('path'),
-Webpack = require('webpack'),
+  Webpack = require('webpack'),
   HtmlwebpackPlugin = require('html-webpack-plugin'),
   projectRoot = path.resolve(__dirname, './');
 
 module.exports = {
   entry: {
-    app: './src/main.js'
+    app: path.resolve(projectRoot, 'src/main.js'),
   },
   output: {
     path: path.resolve(__dirname, './build'),
@@ -30,44 +30,43 @@ module.exports = {
   },
   module: {
     preLoaders: [
-    {
-      test: /\.js$/,
-      loader: "eslint-loader",
-      exclude: /node_modules/
-    }
+      {
+        test: /\.js$/,
+        loader: "eslint-loader",
+        exclude: /node_modules/
+      }
     ],
     loaders: [
-    {
-      test: /\.vue$/,
-      loader: 'vue'
-    },
-    {
-      test: /\.js$/,
-      loader: 'babel',
-      include: projectRoot,
-      exclude: /node_modules/
-    },
-    {
-      test: /\.json$/,
-      loader: 'json'
-    },
-    {
-      test: /\.html$/,
-      loader: 'vue-html'
-    },
-    {
-      test: /\.(png|jpg|gif|svg|woff2?|eot|ttf)(\?.*)?$/,
-      loader: 'url',
-      query: {
-        limit: 10000,
-        name: '[name].[ext]?[hash:7]'
+      {
+        test: /\.vue$/,
+        loader: 'vue'
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel',
+        include: projectRoot,
+      },
+      {
+        test: /\.json$/,
+        loader: 'json'
+      },
+      {
+        test: /\.html$/,
+        loader: 'vue-html'
+      },
+      {
+        test: /\.(png|jpg|gif|svg|woff2?|eot|ttf)(\?.*)?$/,
+        loader: 'url',
+        query: {
+          limit: 10000,
+          name: '[name].[ext]?[hash:7]'
+        }
+      },
+      {
+        test: /\.css$/,
+        loader: 'style!css?importLoaders=1&localIdentName=[local]!postcss',
+        exclude: /node_modules/
       }
-    },
-    {
-      test: /\.css$/,
-      loader: 'style!css?importLoaders=1&localIdentName=[local]!postcss',
-      exclude: /node_modules/
-    }
     ]
   },
   vue: {

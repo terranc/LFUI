@@ -31,7 +31,7 @@ export default {
      * 是否为plain按钮，plain按钮无填充色，只有边框
      * 目前只有primary和default类型支持plain按钮
      */
-    plain: {
+    outline: {
       type: Boolean,
       default: false,
       required: false,
@@ -39,7 +39,7 @@ export default {
   },
   computed: {
     typeClass() {
-      return `btn${this.plain ? '_plain' : ''}_${this.type}`;
+      return `btn-${this.type}${this.outline ? '-outline' : ''}`;
     },
   },
 };

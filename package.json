@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/terranc/LFUI#readme",
   "dependencies": {
+    "bootstrap": "^4.0.0-alpha.2",
     "bootstrap-theme-slim": "^0.0.3",
     "material-design-icons": "^2.2.3",
     "vue": "^1.0.26",

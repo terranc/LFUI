@@ -10,10 +10,64 @@
 </head>
 <body>
   <div class="container">
-    <h1 class="page-header">{{title}}</h1>
-    <p>{{msg}}</p>
-    <h1 class="page-header">Button</h1>
-    <btn>1233</btn>
+    <section>
+      <h1 class="page-header">文本 texts</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae nisi obcaecati libero, voluptatibus eaque, eos sed distinctio ut quis reiciendis. Fugit eos repellat numquam quae rerum molestiae, laboriosam aperiam, minima.</p>
+    </section>
+    <section>
+      <h1 class="page-title">图标 Icons</h1>
+      <div class="icons-block">
+        <span class="icon-box" v-for="item in icons"><i class="material-icons">{{ item }}</i><br/>{{ item }}</span>
+      </div>
+      <p>更多图标请查看 <a href="https://design.google.com/icons/">Material icons</a></p>
+    </section>
+    <section>
+      <h1 class="page-header">标题 Header</h1>
+      <h1>ABCDEFGHIJKLMNOPQRSTUVWXYZabc</h1>
+      <h2>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmn</h2>
+      <h3>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz</h3>
+      <h4>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz</h4>
+      <h5>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz</h5>
+      <h6>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz</h6>
+    </section>
+    <section>
+      <h1 class="page-header">按钮 Buttons</h1>
+      <h3>中文</h3>
+      <btn v-for="item in btns" :type="item.type">{{ item.title }}</btn>
+      <h3>English</h3>
+      <btn v-for="item in btns" :type="item.type">{{ item.type }}</btn>
+      <h3>禁用</h3>
+      <btn v-for="item in btns" :type="item.type" disabled>{{ item.type }}</btn>
+    </section>
+    <section>
+      <h1 class="page-header">按钮组 Buttons Group</h1>
+      <h3>Basic</h3>
+      <btn-group type="group">
+        <btn type="secondary">left</btn>
+        <btn type="secondary">middle</btn>
+        <btn type="secondary">right</btn>
+      </btn-group>
+      <h3>Button Toolbar</h3>
+      <btn-group type="toolbar">
+        <btn-group type="group">
+          <btn type="secondary">1</btn>
+          <btn type="secondary">2</btn>
+          <btn type="secondary">3</btn>
+          <btn type="secondary">4</btn>
+        </btn-group>
+        <btn-group type="group">
+          <btn type="secondary">4</btn>
+          <btn type="secondary">5</btn>
+        </btn-group>
+      </btn-group>
+      <h3>Group vertical</h3>
+      <btn-group type="group-vertical">
+        <btn type="secondary">button</btn>
+        <btn type="secondary">button</btn>
+        <btn type="secondary">button</btn>
+        <btn type="secondary">button</btn>
+      </btn-group>
+    </section>
   </div>
 </body>
 </html>

@@ -41,32 +41,40 @@
     </section>
     <section>
       <h1 class="page-header">按钮组 Buttons Group</h1>
-      <h3>Basic</h3>
-      <btn-group type="group">
-        <btn type="secondary">left</btn>
-        <btn type="secondary">middle</btn>
-        <btn type="secondary">right</btn>
-      </btn-group>
-      <h3>Button Toolbar</h3>
-      <btn-group type="toolbar">
-        <btn-group type="group">
-          <btn type="secondary">1</btn>
-          <btn type="secondary">2</btn>
-          <btn type="secondary">3</btn>
-          <btn type="secondary">4</btn>
-        </btn-group>
-        <btn-group type="group">
-          <btn type="secondary">4</btn>
-          <btn type="secondary">5</btn>
-        </btn-group>
-      </btn-group>
-      <h3>Group vertical</h3>
-      <btn-group type="group-vertical">
-        <btn type="secondary">button</btn>
-        <btn type="secondary">button</btn>
-        <btn type="secondary">button</btn>
-        <btn type="secondary">button</btn>
-      </btn-group>
+      <div class="row">
+        <div class="col-md-7">
+          <h3>Basic</h3>
+          <btn-group type="group">
+            <btn type="secondary">left</btn>
+            <btn type="secondary">middle</btn>
+            <btn type="secondary">right</btn>
+          </btn-group>
+          <h3>Button Toolbar</h3>
+          <btn-group type="toolbar">
+            <btn-group type="group">
+              <btn type="secondary">1</btn>
+              <btn type="secondary">2</btn>
+              <btn type="secondary">3</btn>
+              <btn type="secondary">4</btn>
+            </btn-group>
+            <btn-group type="group">
+              <btn type="secondary">4</btn>
+              <btn type="secondary">5</btn>
+            </btn-group>
+          </btn-group>
+          <h3>Group vertical</h3>
+          <btn-group type="group-vertical">
+            <btn type="secondary">button</btn>
+            <btn type="secondary">button</btn>
+            <btn type="secondary">button</btn>
+            <btn type="secondary">button</btn>
+          </btn-group>
+        </div>
+        <div class="col-md-5">
+          <h3>Dropdown</h3>
+          <dropdown :title="title" :lists="links"></dropdown>
+        </div>
+      </div>
     </section>
   </div>
 </body>

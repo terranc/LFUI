@@ -4,6 +4,7 @@ import Vue from 'vue';
 /* import components */
 import Button from './components/button.vue';
 import BtnGroup from './components/button-group';
+import Dropdown from './components/dropdown';
 
 /* eslint no-new: off */
 new Vue({
@@ -48,10 +49,19 @@ new Vue({
       },
     ],
     icons: ['account_circle', 'alarm', 'android', 'announcement', 'assessment', 'assignment', 'autorenew', 'bookmark', 'build', 'credit_card', 'date_range', 'done', 'explore', 'favorite', 'face', 'grade', 'group_work', 'home', 'info', 'invert_colors', 'label', 'language', 'lock', 'opacity', 'payment', 'schedule', 'search'],
-
+    links: [
+      {
+        title: 'Baidu',
+        link: 'https://baidu.com',
+      }, {
+        title: 'Google',
+        link: 'https://google.com',
+      },
+    ],
   },
   components: {
     Btn: Button,
     BtnGroup,
+    Dropdown,
   },
 });

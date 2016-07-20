@@ -7,6 +7,7 @@ import 'bootstrap';
 import Button from './components/button.vue';
 import BtnGroup from './components/button-group';
 import Dropdown from './components/dropdown';
+import Alert from './components/alert';
 
 /* eslint no-new: off */
 new Vue({
@@ -65,6 +66,7 @@ new Vue({
     Btn: Button,
     BtnGroup,
     Dropdown,
+    Alert,
   },
 });
 

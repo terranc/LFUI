@@ -13,7 +13,7 @@
 
 - [x] [Button](https://github.com/terranc/LFUI/wiki/Button-&&-ButtonGroup)
 - [x] [Breadcrumb](https://github.com/terranc/LFUI/wiki/Breadcrumb)
-- [ ] Alert
+- [x] [Alert](https://github.com/terranc/LFUI/wiki/Alert)
 - [ ] Confirm
 - [ ] Notice
 - [x] [Flexbox](https://github.com/terranc/LFUI/wiki/Flexbox)

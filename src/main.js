@@ -8,6 +8,7 @@ import Button from './components/button.vue';
 import BtnGroup from './components/button-group';
 import Dropdown from './components/dropdown';
 import Alert from './components/alert';
+import Breadcrumb from './components/breadcrumb';
 
 /* eslint no-new: off */
 new Vue({
@@ -61,12 +62,24 @@ new Vue({
         link: 'https://google.com',
       },
     ],
+    breadcrumb: [
+      {
+        title: 'Home',
+        link: '#',
+      }, {
+        title: 'Library',
+        link: '#',
+      }, {
+        title: 'Data',
+      },
+    ],
   },
   components: {
     Btn: Button,
     BtnGroup,
     Dropdown,
     Alert,
+    Breadcrumb,
   },
 });
 

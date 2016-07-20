@@ -9,13 +9,20 @@ body {
 .btn + .btn {
   margin-left: 10px;
 }
-.icon-box {
-  display: inline-block;
-  width: 100px;
-  text-align: center;
-  margin-left: 20px;
-  margin-bottom: 20px;
-  &:nth-child(9n+1) {
-    margin-left: 0;
+.icons-block {
+  display: flex;
+  flex-wrap: wrap;
+  & .icon-box {
+    flex: 0 0 100px;
+    text-align: center;
+    margin-right: 20px;
+    margin-bottom: 20px;
   }
+}
+.row div {
+  margin-top: 10px;
+}
+.box-row {
+  height: 1rem;
+  background: $base-color;
 }

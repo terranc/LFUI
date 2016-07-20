@@ -1,6 +1,8 @@
 import './css/index.css';
 import Vue from 'vue';
 
+import 'bootstrap';
+
 /* import components */
 import Button from './components/button.vue';
 import BtnGroup from './components/button-group';
@@ -64,4 +66,8 @@ new Vue({
     BtnGroup,
     Dropdown,
   },
+});
+
+$(() => {
+  $('[data-toggle="tooltip"]').tooltip();
 });

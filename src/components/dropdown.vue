@@ -1,6 +1,6 @@
 <template>
   <div class="dropdown">
-    <btn type="secondary" @click="toggle">{{ title }} <i class="material-icons">keyboard_arrow_down</i></btn>
+    <btn :type="type" @click="toggle">{{ title }} <i class="material-icons">keyboard_arrow_down</i></btn>
     <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
       <a v-for="item in lists" class="dropdown-item" :href="item.link">{{ item.title }}</a>
     </div>
@@ -12,6 +12,11 @@
   import Button from './button';
   export default {
     props: {
+      type: {
+        type: String,
+        default: 'secondary',
+        required: false,
+      },
       title: {
         type: String,
         default: 'Dropdown',

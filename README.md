@@ -12,20 +12,20 @@
 ### components
 
 - [x] [Button](https://github.com/terranc/LFUI/wiki/Button-&&-ButtonGroup)
-- [ ] 面包屑
+- [x] [Breadcrumb](https://github.com/terranc/LFUI/wiki/Breadcrumb)
 - [ ] Alert
 - [ ] Confirm
 - [ ] Notice
-- [ ] Fexbox
-- [x] [Icons](https://design.google.com/icons/)
-- [ ] Dropdown
+- [x] [Flexbox](https://github.com/terranc/LFUI/wiki/Flexbox)
+- [x] [Icons](https://github.com/terranc/LFUI/wiki/Icons)
+- [x] [Dropdown](https://github.com/terranc/LFUI/wiki/Button-&-ButtonGroup-&-Dropdown)
 - [ ] Bubble
 - [ ] Tabs
 - [ ] Loading
 - [ ] List
 - [ ] Dialog
 - [ ] Table
-- [ ] Tips
+- [x] [Tooltips](https://github.com/terranc/LFUI/wiki/Tooltips)
 - [ ] Menu
 - [ ] Datetime Picker
 - [ ] Selector

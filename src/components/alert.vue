@@ -2,7 +2,7 @@
   <div class="alert alert-dismissable" :class="'alert-' + type">
     <button type="button" class="close" data-dismiss="alert">×</button>
     <h4 v-if="title">{{ title }}</h4>
-    <p v-html="desc"></p>
+    <slot></slot>
   </div>
 </template>
 
@@ -17,10 +17,6 @@
       title: {
         type: String,
         required: false,
-      },
-      desc: {
-        type: String,
-        required: true,
       },
     },
   };

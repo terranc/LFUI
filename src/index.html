@@ -189,14 +189,19 @@
           <alert :type="'warning'" :title="'警告'" :desc="'警告是一种警戒性的纪律制裁方式，也是最轻微的一种制裁方式，是指公务员的行为已经构成了违纪，应当予以及时纠正和警示。'"></alert>
         </div>
         <div class="col-xs-4">
-          <alert :type="'danger'" :desc="'<strong>出错了!</strong><a href=# class=alert-link>请修改</a>并重试。'"></alert>
+          <alert :type="'danger'">
+            <strong>出错了!</strong><a href="#" class="alert-link">请修改</a>并重试。
+          </alert>
         </div>
         <div class="col-xs-4">
-          <alert :type="'success'" :desc="'<strong>恭喜!</strong> 你已经阅读了 <a href=# class=alert-link>本条重要的消息。</a>'"></alert>
+          <alert :type="'success'">
+            <strong>恭喜!</strong> 你已经阅读了 <a href="#" class="alert-link">本条重要的消息。</a>
+          </alert>
         </div>
         <div class="col-xs-4">
-          <alert :type="'info'" :desc="'<strong>注意!</strong> 此消息 <a href=# class=alert-link>需要您留意</a>, 但不是那么重要。
-              '"></alert>
+          <alert :type="'info'">
+            <strong>注意!</strong> 此消息 <a href="#" class="alert-link">需要您留意</a>, 但不是那么重要。
+          </alert>
         </div>
       </div>
     </section>

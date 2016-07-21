@@ -1,7 +1,7 @@
 import './css/index.css';
 import Vue from 'vue';
 
-import 'bootstrap';
+// import 'bootstrap';
 
 /* import components */
 import Button from './components/button.vue';
@@ -9,6 +9,7 @@ import BtnGroup from './components/button-group';
 import Dropdown from './components/dropdown';
 import Alert from './components/alert';
 import Breadcrumb from './components/breadcrumb';
+import Tabbar from './components/tabbar';
 
 /* eslint no-new: off */
 new Vue({
@@ -73,6 +74,33 @@ new Vue({
         title: 'Data',
       },
     ],
+    nav: [
+      {
+        title: 'Home',
+        links: ['#home'],
+        active: false,
+      }, {
+        title: 'Library',
+        links: ['#home'],
+        active: false,
+      }, {
+        title: 'Data',
+        links: ['#data'],
+        active: true,
+      }, {
+        title: '下拉菜单',
+        links: [
+          {
+            title: 'Action',
+            link: '#action',
+          }, {
+            title: 'Another-Action',
+            link: '#another-action',
+          },
+        ],
+        active: false,
+      },
+    ],
   },
   components: {
     Btn: Button,
@@ -80,9 +108,10 @@ new Vue({
     Dropdown,
     Alert,
     Breadcrumb,
+    Tabbar,
   },
 });
 
-$(() => {
-  $('[data-toggle="tooltip"]').tooltip();
-});
+// $(() => {
+//   $('[data-toggle="tooltip"]').tooltip();
+// });

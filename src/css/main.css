@@ -26,3 +26,47 @@ body {
   height: 1rem;
   background: $base-color;
 }
+
+#container {
+  min-height: 100vh;
+  height: auto;
+  position: relative;
+  min-width: 290px;
+  overflow: hidden;
+}
+#navbar {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  left: 0;
+  top: 0;
+}
+#content-container {
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: #ecf0f5;
+
+  @media (width >= 992px) {
+    & {
+      padding-left: 220px;
+    }
+  }
+}
+#sidebar-container {
+  position: absolute;
+  left: 220px;
+  top: 0;
+  z-index: 4;
+  bottom: 0;
+  width: 220px;
+  padding-top: 40px;
+  min-height: 100%;
+  background-color: $base-color;
+
+  @media (width >= 992px) {
+    & {
+      left: 0;
+    }
+  }
+}

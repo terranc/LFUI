@@ -1,39 +1,34 @@
 <template>
-  <div class="dropdown">
-    <btn :type="type" @click="toggle">{{ title }} <i class="material-icons">keyboard_arrow_down</i></btn>
-    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-      <a v-for="item in lists" class="dropdown-item" :href="item.link">{{ item.title }}</a>
+  <div class="dropdown" data-toggle="dropdown">
+    <a :class="{'dropdown-toggle nav-link': true, 'active': active}" href="javascript:;" @click="$el.classList.toggle('open')">{{ title }}</a>
+    <div class="dropdown-menu">
+      <dropdown-item v-for="item in lists" :link="item.link" :title="item.title"></dropdown-item>
     </div>
   </div>
 </template>
 
 <script>
   /* eslint eol-last: off */
-  import Button from './button';
+  import DropdownItem from './dropdown-item';
+
   export default {
     props: {
-      type: {
-        type: String,
-        default: 'secondary',
-        required: false,
-      },
       title: {
         type: String,
-        default: 'Dropdown',
-        required: false,
+        required: true,
       },
       lists: {
         type: Array,
         required: true,
       },
+      active: {
+        type: Boolean,
+        default: false,
+        required: false,
+      },
     },
     components: {
-      Btn: Button,
-    },
-    methods: {
-      toggle() {
-        this.$el.classList.toggle('open');
-      },
+      DropdownItem,
     },
   };
 </script>

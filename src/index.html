@@ -344,7 +344,10 @@
           </div>
         </div>
         <div class="col-xs-12">
-          <tabbar :lists="nav"></tabbar>
+          <div class="tabbar">
+            <tabs :lists="tabs"></tabs>
+            <tabs-content :lists="tabsContent"></tabs-content>
+          </div>
         </div>
       </div>
     </section>

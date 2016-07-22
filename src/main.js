@@ -9,7 +9,8 @@ import BtnGroup from './components/button-group';
 import Dropdown from './components/dropdown';
 import Alert from './components/alert';
 import Breadcrumb from './components/breadcrumb';
-import Tabbar from './components/tabbar';
+import Tabs from './components/tabs';
+import TabsContent from './components/tabs-content';
 
 /* eslint no-new: off */
 new Vue({
@@ -74,14 +75,14 @@ new Vue({
         title: 'Data',
       },
     ],
-    nav: [
+    tabs: [
       {
         title: 'Home',
         links: ['#home'],
         active: false,
       }, {
-        title: 'Library',
-        links: ['#home'],
+        title: 'profile',
+        links: ['#profile'],
         active: false,
       }, {
         title: 'Data',
@@ -92,12 +93,31 @@ new Vue({
         links: [
           {
             title: 'Action',
-            link: '#action',
+            link: '#dropdown1',
           }, {
             title: 'Another-Action',
-            link: '#another-action',
+            link: '#dropdown2',
           },
         ],
+        active: false,
+      },
+    ],
+    tabsContent: [
+      {
+        id: 'home',
+        content: '土地是以它的肥沃和收获而被估价的；才能也是土地，不过它生产的不是粮食',
+        active: false,
+      }, {
+        id: 'profile',
+        content: '我需要三件东西：爱情友谊和图书。然而这三者之间何其相通！炽热的爱情可以充实图书的内容，图书又是人们最忠实的朋友。 —— 蒙田',
+        active: true,
+      }, {
+        id: 'dropdown1',
+        content: '时间是一切财富中最宝贵的财富。 —— 德奥弗拉斯多',
+        active: false,
+      }, {
+        id: 'dropdown2',
+        content: '世界上一成不变的东西，只有“任何事物都是在不断变化的”这条真理。 —— 斯里兰卡',
         active: false,
       },
     ],
@@ -108,7 +128,8 @@ new Vue({
     Dropdown,
     Alert,
     Breadcrumb,
-    Tabbar,
+    Tabs,
+    TabsContent,
   },
 });
 

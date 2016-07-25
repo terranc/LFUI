@@ -9,6 +9,7 @@ import BtnGroup from './components/button-group';
 import Dropdown from './components/dropdown';
 import Tips from './components/tips';
 import Breadcrumb from './components/breadcrumb';
+import Dialog from './components/dialog';
 
 /* eslint no-new: off */
 new Vue({
@@ -80,6 +81,7 @@ new Vue({
     Dropdown,
     Tips,
     Breadcrumb,
+    Dialog,
   },
 });
 

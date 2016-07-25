@@ -193,6 +193,21 @@
         </div>
       </div>
     </section>
+    <section>
+      <h1 class="page-header">对话框 Dialog</h1>
+      <div class="example-modal">
+        <dialog :title="'弹窗'">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta amet, libero laboriosam explicabo provident ex illum quasi ratione sint maiores ab, illo eligendi cumque repudiandae vero. Minus explicabo, numquam facilis!</p>
+        </dialog>
+        <dialog :title="'弹窗'" :no-foot="true">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta amet, libero laboriosam explicabo provident ex illum quasi ratione sint maiores ab, illo eligendi cumque repudiandae vero. Minus explicabo, numquam facilis!</p>
+        </dialog>
+        <dialog :title="'弹窗'">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta amet, libero laboriosam explicabo provident ex illum quasi ratione sint maiores ab, illo eligendi cumque repudiandae vero. Minus explicabo, numquam facilis!</p>
+          <button type="button" class="btn btn-primary" slot="foot">确认</button>
+        </dialog>
+      </div>
+    </section>
   </div>
 </body>
 </html>

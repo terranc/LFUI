@@ -35,6 +35,15 @@ body {
     }
   }
 }
+.example-modal .modal {
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  z-index: 1;
+  display: block;
+}
 
 #container {
   min-height: 100vh;

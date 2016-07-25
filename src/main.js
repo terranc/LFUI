@@ -1,13 +1,13 @@
 import './css/index.css';
 import Vue from 'vue';
 
-// import 'bootstrap';
+import 'bootstrap';
 
 /* import components */
 import Button from './components/button.vue';
 import BtnGroup from './components/button-group';
 import Dropdown from './components/dropdown';
-import Alert from './components/alert';
+import Tips from './components/tips';
 import Breadcrumb from './components/breadcrumb';
 import Tabs from './components/tabs';
 import TabsContent from './components/tabs-content';
@@ -78,47 +78,38 @@ new Vue({
     tabs: [
       {
         title: 'Home',
-        links: ['#home'],
-        active: false,
-      }, {
-        title: 'profile',
-        links: ['#profile'],
-        active: false,
-      }, {
-        title: 'Data',
-        links: ['#data'],
-        active: true,
-      }, {
-        title: '下拉菜单',
-        links: [
-          {
-            title: 'Action',
-            link: '#dropdown1',
-          }, {
-            title: 'Another-Action',
-            link: '#dropdown2',
-          },
-        ],
-        active: false,
-      },
-    ],
-    tabsContent: [
-      {
         id: 'home',
+        links: ['#home'],
         content: '土地是以它的肥沃和收获而被估价的；才能也是土地，不过它生产的不是粮食',
         active: false,
       }, {
+        title: 'profile',
         id: 'profile',
+        links: ['#profile'],
         content: '我需要三件东西：爱情友谊和图书。然而这三者之间何其相通！炽热的爱情可以充实图书的内容，图书又是人们最忠实的朋友。 —— 蒙田',
+        active: false,
+      }, {
+        title: 'Data',
+        id: 'data',
+        links: ['#data'],
+        content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. ',
         active: true,
       }, {
-        id: 'dropdown1',
-        content: '时间是一切财富中最宝贵的财富。 —— 德奥弗拉斯多',
-        active: false,
-      }, {
-        id: 'dropdown2',
-        content: '世界上一成不变的东西，只有“任何事物都是在不断变化的”这条真理。 —— 斯里兰卡',
-        active: false,
+        title: '下拉菜单',
+        id: 'dropdown',
+        links: [
+          {
+            title: 'action',
+            id: 'dropdown1',
+            link: '#dropdown1',
+            content: '时间是一切财富中最宝贵的财富。 —— 德奥弗拉斯多',
+          }, {
+            title: 'another action',
+            id: 'dropdown2',
+            link: '#dropdown2',
+            content: '世界上一成不变的东西，只有“任何事物都是在不断变化的”这条真理。 —— 斯里兰卡',
+          },
+        ],
       },
     ],
   },
@@ -126,13 +117,19 @@ new Vue({
     Btn: Button,
     BtnGroup,
     Dropdown,
-    Alert,
+    Tips,
     Breadcrumb,
     Tabs,
     TabsContent,
   },
 });
 
-// $(() => {
-//   $('[data-toggle="tooltip"]').tooltip();
-// });
+$(() => {
+  $('body').tooltip({
+    selector: '[data-toggle="tooltip"]',
+    container: 'body',
+  }).popover({
+    selector: '[data-toggle="popover"]',
+    container: 'body',
+  });
+});

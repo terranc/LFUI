@@ -80,7 +80,7 @@
         </div>
         <div class="col-md-5">
           <h3>Dropdown</h3>
-          <dropdown :lists="links" :title="title"></dropdown>
+          <dropdown :lists="links" :title="title" :id="'dropdownMenu1'"></dropdown>
         </div>
       </div>
     </section>
@@ -190,22 +190,25 @@
       <h3>Alert</h3>
       <div class="row">
         <div class="col-xs-12">
-          <alert :type="'warning'" :title="'警告'" :desc="'警告是一种警戒性的纪律制裁方式，也是最轻微的一种制裁方式，是指公务员的行为已经构成了违纪，应当予以及时纠正和警示。'"></alert>
+          <tips :type="'warning'" :title="'警告'">
+            <i class="material-icons md-48" slot="icon">face</i>
+            <p>警告是一种警戒性的纪律制裁方式，也是最轻微的一种制裁方式，是指公务员的行为已经构成了违纪，应当予以及时纠正和警示。</p>
+          </tips>
         </div>
         <div class="col-xs-4">
-          <alert :type="'danger'">
+          <tips :type="'danger'">
             <strong>出错了!</strong><a href="#" class="alert-link">请修改</a>并重试。
-          </alert>
+          </tips>
         </div>
         <div class="col-xs-4">
-          <alert :type="'success'">
+          <tips :type="'success'">
             <strong>恭喜!</strong> 你已经阅读了 <a href="#" class="alert-link">本条重要的消息。</a>
-          </alert>
+          </tips>
         </div>
         <div class="col-xs-4">
-          <alert :type="'info'">
+          <tips :type="'info'">
             <strong>注意!</strong> 此消息 <a href="#" class="alert-link">需要您留意</a>, 但不是那么重要。
-          </alert>
+          </tips>
         </div>
       </div>
       <h3>Labels</h3>
@@ -216,11 +219,6 @@
         <span class="label label-warning">警告</span>
         <span class="label label-danger">危险</span>
         <span class="label label-info">信息</span>
-      </div>
-      <h3>Badges</h3>
-      <div class="row">
-        <a href="#">Inbox <span class="badge">42</span></a>
-        <btn type="button">Messages <span class="badge">4</span></btn>
       </div>
     </section>
     <section>
@@ -321,7 +319,8 @@
             <div class="nav-item"> <a class="nav-link" data-toggle="tab" href="#" aria-expanded="false">Active</a> </div>
             <div class="nav-item"> <a class="nav-link" data-toggle="tab" href="#home" aria-expanded="false">首页</a> </div>
             <div class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#profile" aria-expanded="true">账户</a> </div>
-            <div class="nav-item dropdown"> <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">下拉菜单</a>
+            <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">下拉菜单</a>
               <div class="dropdown-menu">
                 <a class="dropdown-item" data-toggle="tab" href="#dropdown1">Action</a>
                 <a class="dropdown-item" data-toggle="tab" href="#dropdown2">Another action</a>
@@ -346,7 +345,6 @@
         <div class="col-xs-12">
           <div class="tabbar">
             <tabs :lists="tabs"></tabs>
-            <tabs-content :lists="tabsContent"></tabs-content>
           </div>
         </div>
       </div>

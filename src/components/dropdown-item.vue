@@ -31,10 +31,12 @@
           item.$set('active', false);
         });
         this.$set('active', true);
-        this.$parent.$parent.$parent.$children.forEach((item) => {
-          item.$set('active', false);
-        });
-        this.$parent.$parent.$set('active', true);
+        if (this.$parent.$parent.multiple) {
+          this.$parent.$parent.$parent.$children.forEach((item) => {
+            item.$set('active', false);
+          });
+          this.$parent.$parent.$set('active', true);
+        }
         this.$parent.$el.classList.remove('open');
       },
     },

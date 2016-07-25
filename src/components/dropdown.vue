@@ -1,15 +1,25 @@
 <template>
   <div class="dropdown" data-toggle="dropdown">
-    <a :class="{'dropdown-toggle nav-link': true, 'active': active}" href="javascript:;" @click="$el.classList.toggle('open')">{{ title }}</a>
+    <a :class="{'dropdown-toggle': true, 'nav-link': $parent.multiple, 'active': active}"
+      :id = "id"
+      @click="$el.classList.toggle('open')"
+      href="javascript:;"
+      aria-haspopup="true"
+      aria-expanded="false">
+      {{ title }}
+    </a>
     <div class="dropdown-menu">
-      <dropdown-item v-for="item in lists" :link="item.link" :title="item.title"></dropdown-item>
+      <a v-for="item in lists"
+        :class="{'dropdown-item': true, 'active': active}"
+        :href="item.link">
+        {{ item.title }}
+      </a>
     </div>
   </div>
 </template>
 
 <script>
   /* eslint eol-last: off */
-  import DropdownItem from './dropdown-item';
 
   export default {
     props: {
@@ -21,14 +31,8 @@
         type: Array,
         required: true,
       },
-      active: {
-        type: Boolean,
-        default: false,
-        required: false,
-      },
-    },
-    components: {
-      DropdownItem,
+      selected: String,
+      id: String,
     },
   };
 </script>

@@ -3,14 +3,15 @@
     <a data-toggle="tab" :href="links[0]"
       :class="{ 'nav-link': true, 'active': active}"
       :aria-expanded="active"
-      @click="changeState">
+      @click="$parent.selected = id">
       {{ title }}
     </a>
   </div>
   <dropdown class="nav-item"
     :title="title"
     :lists="links"
-    :active="active"
+    :active="active",
+    :aria-expanded="active",
     v-else>
   </dropdown>
 </template>
@@ -25,6 +26,7 @@
         type: String,
         required: true,
       },
+      id: String,
       links: {
         type: Array,
         required: false,
@@ -43,13 +45,12 @@
           return false;
         }
       },
-    },
-    methods: {
-      changeState() {
-        this.$parent.$children.forEach((item) => {
-          item.$set('active', false);
-        });
-        this.$set('active', true);
+      active() {
+        if (this.id === this.$parent.selected) {
+          return true;
+        } else {
+          return false;
+        }
       },
     },
     components: {

@@ -13,25 +13,6 @@
 <body>
   <div class="container" style="margin-bottom: 40px;">
     <section>
-      <h1 class="page-header">文本 texts</h1>
-      <div class="row">
-        <div class="col-xs-12">
-          <h1>ABCDEFGHIJKLMNOPQRSTUVWXYZabc</h1>
-          <h2>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmn</h2>
-          <h3>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz</h3>
-          <h4>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz</h4>
-          <h5>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz</h5>
-          <h6>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz</h6>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae nisi obcaecati libero, voluptatibus eaque, eos sed distinctio ut quis reiciendis. Fugit eos repellat numquam quae rerum molestiae, laboriosam aperiam, minima.</p>
-          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius illum soluta excepturi qui molestiae molestias praesentium cupiditate rerum expedita impedit, <mark>numquam dignissimos</mark> sunt placeat quia sint voluptas voluptatum natus necessitatibus.</p>
-          <del>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum iusto quibusdam modi, quas dolorem, commodi corporis consectetur similique qui dolorum praesentium voluptate corrupti at? Est quas, doloribus. Reiciendis, dolores, quibusdam.</del>
-          <ins>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi doloribus similique hic dolorum eius est nobis porro aspernatur quae facere, aliquam tempore natus debitis, labore inventore ipsum facilis. Sequi, sed.</ins>
-          <u>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo rerum ratione expedita delectus cum ut, earum culpa repudiandae molestias cupiditate harum eligendi corrupti ipsam doloremque, dignissimos praesentium voluptate sed asperiores!</u>
-          <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit earum mollitia itaque quaerat. Labore in atque, odio iure, dolorem amet quidem reprehenderit quo qui error facere vel velit soluta tenetur!</small>
-        </div>
-      </div>
-    </section>
-    <section>
       <h1 class="page-header">图标 Icons</h1>
       <div class="icons-block">
         <span class="icon-box" v-for="item in icons"><i class="material-icons">{{ item }}</i><br/>{{ item }}</span>
@@ -80,7 +61,7 @@
         </div>
         <div class="col-md-5">
           <h3>Dropdown</h3>
-          <dropdown :lists="links" :title="title" :id="'dropdownMenu1'"></dropdown>
+          <dropdown :lists="links" :type="'secondary'">Hello World</dropdown>
         </div>
       </div>
     </section>
@@ -187,7 +168,7 @@
     </section>
     <section>
       <h1 class="page-header">提示与警告 Indicators</h1>
-      <h3>Alert</h3>
+      <h3>Tips</h3>
       <div class="row">
         <div class="col-xs-12">
           <tips :type="'warning'" :title="'警告'">
@@ -209,143 +190,6 @@
           <tips :type="'info'">
             <strong>注意!</strong> 此消息 <a href="#" class="alert-link">需要您留意</a>, 但不是那么重要。
           </tips>
-        </div>
-      </div>
-      <h3>Labels</h3>
-      <div class="row">
-        <span class="label label-default">默认</span>
-        <span class="label label-primary">主要的</span>
-        <span class="label label-success">成功</span>
-        <span class="label label-warning">警告</span>
-        <span class="label label-danger">危险</span>
-        <span class="label label-info">信息</span>
-      </div>
-    </section>
-    <section>
-      <h1 class="page-header">表格 Tables</h1>
-      <div class="row">
-        <div class="col-xs-12">
-          <table class="table table-striped table-hover">
-            <tr>
-              <th>#</th>
-              <th>列头</th>
-              <th>列头</th>
-              <th>列头</th>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>内容</td>
-              <td>内容</td>
-              <td>内容</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>内容</td>
-              <td>内容</td>
-              <td>内容</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>内容</td>
-              <td>内容</td>
-              <td>内容</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>内容</td>
-              <td>内容</td>
-              <td>内容</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>内容</td>
-              <td>内容</td>
-              <td>内容</td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>内容</td>
-              <td>内容</td>
-              <td>内容</td>
-            </tr>
-            <tr>
-              <td>7</td>
-              <td>内容</td>
-              <td>内容</td>
-              <td>内容</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-    </section>
-    <section>
-      <h1 class="page-header">列表 Lists</h1>
-      <div class="row">
-        <div class="col-xs-6">
-          <ul>
-            <li>Lorem ipsum dolor sit amet</li>
-            <li>consectetur adipisicing elit</li>
-            <li>Quos sunt aut accusantium blanditiis</li>
-            <li>necessitatibus quod incidunt alias
-              <ul>
-                <li>laborum officia</li>
-                <li>Totam quasi commodi ratione recusandae reiciendis harum quae</li>
-                <li>explicabo, minus perspiciatis</li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <div class="col-xs-6">
-          <ol>
-            <li><a href="#">Lorem ipsum dolor sit amet</a></li>
-            <li>consectetur adipisicing elit</li>
-            <li>Quos sunt aut accusantium blanditiis</li>
-            <li>necessitatibus quod incidunt alias
-              <ul>
-                <li>laborum officia</li>
-                <li>Totam quasi commodi ratione recusandae reiciendis harum quae</li>
-                <li>explicabo, minus perspiciatis</li>
-              </ul>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </section>
-    <section>
-      <h1 class="page-header">标签页 tabs</h1>
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="nav nav-tabs">
-            <div class="nav-item"> <a class="nav-link" data-toggle="tab" href="#" aria-expanded="false">Active</a> </div>
-            <div class="nav-item"> <a class="nav-link" data-toggle="tab" href="#home" aria-expanded="false">首页</a> </div>
-            <div class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#profile" aria-expanded="true">账户</a> </div>
-            <div class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">下拉菜单</a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" data-toggle="tab" href="#dropdown1">Action</a>
-                <a class="dropdown-item" data-toggle="tab" href="#dropdown2">Another action</a>
-              </div>
-            </div>
-          </div>
-          <div class="tab-content">
-            <div class="tab-pane fade" id="home" aria-expanded="false">
-              <p>土地是以它的肥沃和收获而被估价的；才能也是土地，不过它生产的不是粮食，而是真理。如果只能滋生瞑想和幻想的话，即使再大的才能也只是砂地或盐池，那上面连小草也长不出来的。 —— 别林斯基</p>
-            </div>
-            <div class="tab-pane fade active in" id="profile" aria-expanded="true">
-              <p>我需要三件东西：爱情友谊和图书。然而这三者之间何其相通！炽热的爱情可以充实图书的内容，图书又是人们最忠实的朋友。 —— 蒙田</p>
-            </div>
-            <div class="tab-pane fade" id="dropdown1">
-              <p>时间是一切财富中最宝贵的财富。 —— 德奥弗拉斯多</p>
-            </div>
-            <div class="tab-pane fade" id="dropdown2">
-              <p>世界上一成不变的东西，只有“任何事物都是在不断变化的”这条真理。 —— 斯里兰卡</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12">
-          <div class="tabbar">
-            <tabs :lists="tabs"></tabs>
-          </div>
         </div>
       </div>
     </section>

@@ -1,16 +1,11 @@
 <template>
-  <div class="dropdown" data-toggle="dropdown">
-    <a :class="{'dropdown-toggle': true, 'nav-link': $parent.multiple, 'active': active}"
-      :id = "id"
-      @click="$el.classList.toggle('open')"
-      href="javascript:;"
-      aria-haspopup="true"
-      aria-expanded="false">
-      {{ title }}
-    </a>
+  <div class="dropdown">
+    <btn :type="type" class="dropdown-toggle" data-toggle="dropdown">
+      <slot></slot>
+    </btn>
     <div class="dropdown-menu">
       <a v-for="item in lists"
-        :class="{'dropdown-item': true, 'active': active}"
+        class="dropdown-item"
         :href="item.link">
         {{ item.title }}
       </a>
@@ -20,19 +15,18 @@
 
 <script>
   /* eslint eol-last: off */
+  import Button from './button';
 
   export default {
     props: {
-      title: {
-        type: String,
-        required: true,
-      },
       lists: {
         type: Array,
         required: true,
       },
-      selected: String,
-      id: String,
+      type: String,
+    },
+    components: {
+      Btn: Button,
     },
   };
 </script>

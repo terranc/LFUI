@@ -24,7 +24,7 @@
 - [ ] Tabs
 - [ ] Loading
 - [ ] List
-- [ ] Dialog
+- [x] [Dialog](https://github.com/terranc/LFUI/wiki/Dialog)
 - [ ] Table
 - [ ] Menu
 - [ ] Datetime Picker

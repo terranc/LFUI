@@ -5,12 +5,29 @@ import swal from 'sweetalert';
 import 'bootstrap';
 
 /* import components */
-import Button from './components/button.vue';
+import Button from './components/button';
 import BtnGroup from './components/button-group';
 import Dropdown from './components/dropdown';
 import Tips from './components/tips';
 import Breadcrumb from './components/breadcrumb';
 import Dialog from './components/dialog';
+import {
+  PulseLoader,
+  GridLoader,
+  ClipLoader,
+  RiseLoader,
+  BeatLoader,
+  SyncLoader,
+  RotateLoader,
+  FadeLoader,
+  PacmanLoader,
+  SquareLoader,
+  ScaleLoader,
+  SkewLoader,
+  MoonLoader,
+  RingLoader,
+  BounceLoader,
+  DotLoader } from 'vue-spinner/dist/vue-spinner';
 
 /* eslint no-new: off */
 new Vue({
@@ -83,6 +100,22 @@ new Vue({
     Tips,
     Breadcrumb,
     Dialog,
+    PulseLoader,
+    GridLoader,
+    ClipLoader,
+    RiseLoader,
+    BeatLoader,
+    SyncLoader,
+    RotateLoader,
+    FadeLoader,
+    PacmanLoader,
+    SquareLoader,
+    ScaleLoader,
+    SkewLoader,
+    MoonLoader,
+    RingLoader,
+    BounceLoader,
+    DotLoader,
   },
   methods: {
     alert(title, desc, type) {

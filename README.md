@@ -12,7 +12,7 @@
 
 - [x] [Button](https://github.com/terranc/LFUI/wiki/Button-&&-ButtonGroup)
 - [x] [Breadcrumb](https://github.com/terranc/LFUI/wiki/Breadcrumb)
-- [ ] [Alert\Confirm\Prompt](https://github.com/terranc/LFUI/wiki/Alert-&-Confirm-&-Prompt)
+- [ ] [Alert、Confirm、Prompt](https://github.com/terranc/LFUI/wiki/Alert-&-Confirm-&-Prompt)
 - [x] [Flexbox](https://github.com/terranc/LFUI/wiki/Flexbox)
 - [x] [Icons](https://github.com/terranc/LFUI/wiki/Icons)
 - [x] [Dropdown](https://github.com/terranc/LFUI/wiki/Button-&-ButtonGroup-&-Dropdown)
@@ -20,7 +20,7 @@
 - [ ] Notice
 - [ ] Bubble
 - [ ] Tabs
-- [ ] Loading
+- [x] [Loading](https://github.com/terranc/LFUI/wiki/Loading)
 - [ ] List
 - [x] [Dialog](https://github.com/terranc/LFUI/wiki/Dialog)
 - [ ] Table

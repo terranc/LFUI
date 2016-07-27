@@ -8,17 +8,15 @@
 - postcss
 
 
-
 ### components
 
 - [x] [Button](https://github.com/terranc/LFUI/wiki/Button-&&-ButtonGroup)
 - [x] [Breadcrumb](https://github.com/terranc/LFUI/wiki/Breadcrumb)
-- [ ] Alert
+- [ ] [Alert\Confirm\Prompt](https://github.com/terranc/LFUI/wiki/Alert-&-Confirm-&-Prompt)
 - [x] [Flexbox](https://github.com/terranc/LFUI/wiki/Flexbox)
 - [x] [Icons](https://github.com/terranc/LFUI/wiki/Icons)
 - [x] [Dropdown](https://github.com/terranc/LFUI/wiki/Button-&-ButtonGroup-&-Dropdown)
 - [x] [Tips](https://github.com/terranc/LFUI/wiki/Tips)
-- [ ] Confirm
 - [ ] Notice
 - [ ] Bubble
 - [ ] Tabs

@@ -1,5 +1,6 @@
 import './css/index.css';
 import Vue from 'vue';
+import swal from 'sweetalert';
 
 import 'bootstrap';
 
@@ -82,6 +83,44 @@ new Vue({
     Tips,
     Breadcrumb,
     Dialog,
+  },
+  methods: {
+    alert(title, desc, type) {
+      swal(title, desc, type);
+    },
+    confirm() {
+      swal({
+        title: 'Are you sure?',
+        text: 'You will not be able to recover this imaginary file!',
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#DD6B55',
+        confirmButtonText: 'Yes, delete it!',
+        closeOnConfirm: false,
+      },
+      function() {
+        swal('Deleted!', 'Your imaginary file has been deleted.', 'success');
+      });
+    },
+    prompt() {
+      swal({
+        title: 'An input!',
+        text: 'Write something interesting:',
+        type: 'input',
+        showCancelButton: true,
+        closeOnConfirm: false,
+        animation: 'slide-from-top',
+        inputPlaceholder: 'Write something',
+      },
+      function(inputValue) {
+        if (inputValue === false) return false;
+        if (inputValue === '') {
+          swal.showInputError('You need to write something!');
+          return false;
+        }
+        swal('Nice!', `You wrote: ${inputValue} success`);
+      });
+    },
   },
 });
 

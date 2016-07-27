@@ -208,6 +208,35 @@
         </dialog>
       </div>
     </section>
+    <section>
+      <h1 class="page-header">弹窗 Alerts</h1>
+      <div class="row">
+        <div class="col-xs-3">
+          <h3>Alert</h3>
+          <btn @click="alert('Good job!', 'you clicked the button!', 'success')">alert</btn>
+        </div>
+        <div class="col-xs-3">
+          <h3>Alert</h3>
+          <btn @click="alert('Good job!', 'you clicked the button!')">alert</btn>
+        </div>
+        <div class="col-xs-3">
+          <h3>Alert</h3>
+          <btn @click="alert('Good job!')">alert</btn>
+        </div>
+        <div class="col-xs-3">
+          <h3>Alert</h3>
+          <btn @click="alert('Oops!', 'sorry!', 'error')">alert</btn>
+        </div>
+        <div class="col-xs-12">
+          <h3>Confirm</h3>
+          <btn @click="confirm">Confirm</btn>
+        </div>
+        <div class="col-xs-12">
+          <h3>Prompt</h3>
+          <btn @click="prompt">Prompt</btn>
+        </div>
+      </div>
+    </section>
   </div>
 </body>
 </html>

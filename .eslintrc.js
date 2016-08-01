@@ -1,20 +1,15 @@
 module.exports = {
   root: true,
   parserOptions: {
-    sourceType: 'module'
+    sourceType: 'module',
   },
-  // extends: 'airbnb-base',
   extends: 'standard',
-  // required to lint *.vue files
-  plugins: [
-    'html'
-  ],
   "env": {
     'browser': true,
     'jquery': true,
     'amd': true,
     'node': true,
-    'es6': true
+    'es6': true,
   },
   // add your custom rules here
   'rules': {
@@ -29,5 +24,5 @@ module.exports = {
     'no-trailing-spaces': 0,  //可以在行末出现空格和tab
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
-  }
-}
+  },
+};

@@ -25,6 +25,7 @@
   "homepage": "https://github.com/terranc/LFUI#readme",
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "bootstrap-datepicker": "eternicode/bootstrap-datepicker",
     "bootstrap-theme-slim": "^0.0.3",
     "jquery": "^2.2.4",
     "material-design-icons": "^2.2.3",

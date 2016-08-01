@@ -26,9 +26,9 @@
 - [ ] Table
 - [ ] Menu
 - [ ] Datetime Picker
-- [ ] Selector
+- [x] [Selector](https://github.com/terranc/LFUI/wiki/Selector)
 - [ ] Filter
 
 ### todo
-- [ ] vue-select组件与bootstrap样式冲突
+- [x] vue-select组件与bootstrap样式冲突
 - [ ] confirm&prompt方法封装

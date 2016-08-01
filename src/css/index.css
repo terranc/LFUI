@@ -1,5 +1,6 @@
 @import 'bootstrap-theme-slim/dist/css/slim-min.css';
 @import 'sweetalert/dist/sweetalert.css';
+@import 'bootstrap-datepicker/dist/css/bootstrap-datepicker.css';
 @import 'icons.css';
 @import 'colors.css';
 @import 'main.css';

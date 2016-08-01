@@ -19,7 +19,7 @@ body {
     margin-bottom: 20px;
   }
 }
-.row div {
+#flexbox .row div {
   margin-top: 10px;
 }
 .box-row {
@@ -91,4 +91,7 @@ body {
 
 .v-select .dropdown-toggle:after {
   border: none;
+}
+.input-group-addon {
+  width: auto;
 }

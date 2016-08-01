@@ -3,6 +3,8 @@ import Vue from 'vue';
 
 import swal from 'sweetalert';
 import 'bootstrap-theme-slim/dist/js/bootstrap.min';
+import 'bootstrap-datepicker';
+import 'bootstrap-datepicker/dist/locales/bootstrap-datepicker.zh-CN.min';
 
 /* import components */
 import vSelect from 'vue-select';
@@ -12,6 +14,7 @@ import Dropdown from './components/dropdown';
 import Tips from './components/tips';
 import Breadcrumb from './components/breadcrumb';
 import Dialog from './components/dialog';
+import Datepicker from './components/datepicker';
 import {
   PulseLoader,
   GridLoader,
@@ -122,6 +125,7 @@ new Vue({
     RingLoader,
     BounceLoader,
     DotLoader,
+    Datepicker,
   },
   methods: {
     alert(title, desc, type) {
@@ -170,5 +174,9 @@ $(() => {
   }).popover({
     selector: '[data-toggle="popover"]',
     container: 'body',
+  });
+  $('div[data-provide=datepicker]').datepicker({
+    language: 'zh-CN',
+    format: 'yyyy/mm/dd',
   });
 });

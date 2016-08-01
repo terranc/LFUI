@@ -1,10 +1,11 @@
 import './css/index.css';
 import Vue from 'vue';
-import swal from 'sweetalert';
 
-import 'bootstrap';
+import swal from 'sweetalert';
+import 'bootstrap-theme-slim/dist/js/bootstrap.min';
 
 /* import components */
+import vSelect from 'vue-select';
 import Button from './components/button';
 import BtnGroup from './components/button-group';
 import Dropdown from './components/dropdown';
@@ -92,8 +93,13 @@ new Vue({
         title: 'Data',
       },
     ],
+    interests: {
+      selected: null,
+      options: ['foo', 'bar', 'baz'],
+    },
   },
   components: {
+    vSelect,
     Btn: Button,
     BtnGroup,
     Dropdown,

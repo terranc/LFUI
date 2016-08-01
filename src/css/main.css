@@ -88,3 +88,7 @@ body {
     }
   }
 }
+
+.v-select .dropdown-toggle:after {
+  border: none;
+}

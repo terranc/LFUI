@@ -28,3 +28,7 @@
 - [ ] Datetime Picker
 - [ ] Selector
 - [ ] Filter
+
+### todo
+- [ ] vue-select组件与bootstrap样式冲突
+- [ ] confirm&prompt方法封装

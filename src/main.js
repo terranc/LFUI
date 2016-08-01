@@ -14,6 +14,7 @@ import Dropdown from './components/dropdown';
 import Tips from './components/tips';
 import Breadcrumb from './components/breadcrumb';
 import Dialog from './components/dialog';
+import Filter from './components/filter';
 import Datepicker from './components/datepicker';
 import {
   PulseLoader,
@@ -126,6 +127,7 @@ new Vue({
     BounceLoader,
     DotLoader,
     Datepicker,
+    Filter,
   },
   methods: {
     alert(title, desc, type) {

@@ -95,3 +95,8 @@ body {
 .input-group-addon {
   width: auto;
 }
+.filter-inner {
+  .label {
+    margin-right: 4px;
+  }
+}

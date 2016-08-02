@@ -100,3 +100,7 @@ body {
     margin-right: 4px;
   }
 }
+
+.filter-box + .filter-box {
+  margin-top: 10px;
+}

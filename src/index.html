@@ -283,7 +283,17 @@
       <h1 class="page-header">筛选器 filter</h1>
       <div class="row">
         <div class="col-xs-12">
-          <filter title="种类" :options="icons"></filter>
+          <filter title="种类">
+            <span v-for="item in icons" class="label label-primary">{{ item }}</span>
+          </filter>
+          <filter title="种类">
+            <select class="form-control">
+              <option v-for="item in icons">{{ item }}</option>
+            </select>
+          </filter>
+          <filter title="操作员">
+             <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+          </filter>
         </div>
       </div>
     </section>

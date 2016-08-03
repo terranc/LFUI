@@ -1,10 +1,11 @@
-import './css/index.css';
 import Vue from 'vue';
 
 import swal from 'sweetalert';
 import 'bootstrap-theme-slim/dist/js/bootstrap.min';
 import 'bootstrap-datepicker';
 import 'bootstrap-datepicker/dist/locales/bootstrap-datepicker.zh-CN.min';
+
+import nations from './filterOptions.json';
 
 /* import components */
 import vSelect from 'vue-select';
@@ -16,6 +17,7 @@ import Breadcrumb from './components/breadcrumb';
 import Dialog from './components/dialog';
 import Filter from './components/filter';
 import Datepicker from './components/datepicker';
+import Table from './components/table';
 import {
   PulseLoader,
   GridLoader,
@@ -34,12 +36,11 @@ import {
   BounceLoader,
   DotLoader } from 'vue-spinner/dist/vue-spinner';
 
+import './css/index.css';
 /* eslint no-new: off */
 new Vue({
   el: 'body',
   data: {
-    title: 'Hello world',
-    msg: 'this is humen a bid step',
     btns: [
       {
         type: 'primary',
@@ -99,12 +100,47 @@ new Vue({
     ],
     interests: {
       selected: null,
-      options: ['foo', 'bar', 'baz'],
+      options: nations,
     },
+    users: [
+      {
+        id: 1,
+        username: 'tomo',
+        nickname: '@tomoyuen',
+        register_date: '2016-06-06',
+        like: 1949,
+        collect: 4560,
+      },
+      {
+        id: 2,
+        username: 'tomo',
+        nickname: '@tomoyuen',
+        register_date: '2016-06-06',
+        like: 1949,
+        collect: 4560,
+      },
+      {
+        id: 3,
+        username: 'tomo',
+        nickname: '@tomoyuen',
+        register_date: '2016-06-06',
+        like: 1949,
+        collect: 4560,
+      },
+      {
+        id: 4,
+        username: 'tomo',
+        nickname: '@tomoyuen',
+        register_date: '2016-06-06',
+        like: 1949,
+        collect: 4560,
+      },
+    ],
   },
   components: {
     vSelect,
     Btn: Button,
+    LfTable: Table,
     BtnGroup,
     Dropdown,
     Tips,

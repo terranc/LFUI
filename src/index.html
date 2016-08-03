@@ -7,7 +7,6 @@
   <title>Examples</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
-  <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
   <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.js"></script>
   <script src="//cdn.bootcss.com/tether/1.3.3/js/tether.js"></script>
 </head>
@@ -242,19 +241,13 @@
       <h1 class="page-header">加载动画 loading</h1>
       <div class="row">
         <div class="col-xs-3" style="height: 200px;"><pulse-loader></pulse-loader></div>
-        <div class="col-xs-3" style="height: 200px;"><grid-loader></grid-loader></div>
         <div class="col-xs-3" style="height: 200px;"><clip-loader></clip-loader></div>
-        <div class="col-xs-3" style="height: 200px;"><rise-loader></rise-loader></div>
         <div class="col-xs-3" style="height: 200px;"><beat-loader></beat-loader></div>
         <div class="col-xs-3" style="height: 200px;"><sync-loader></sync-loader></div>
         <div class="col-xs-3" style="height: 200px;"><rotate-loader></rotate-loader></div>
-        <!-- <div class="col-xs-3" style="height: 200px;"><fade-loader height="15px" width="5px" radius="20px"></fade-loader></div> -->
-        <div class="col-xs-3" style="height: 200px;"><pacman-loader></pacman-loader></div>
         <div class="col-xs-3" style="height: 200px;"><square-loader></square-loader></div>
         <div class="col-xs-3" style="height: 200px;"><scale-loader></scale-loader></div>
-        <div class="col-xs-3" style="height: 200px;"><skew-loader></skew-loader></div>
         <div class="col-xs-3" style="height: 200px;"><moon-loader></moon-loader></div>
-        <div class="col-xs-3" style="height: 200px;"><ring-loader></ring-loader></div>
         <div class="col-xs-3" style="height: 200px;"><bounce-loader></bounce-loader></div>
         <div class="col-xs-3" style="height: 200px;"><dot-loader></dot-loader></div>
       </div>
@@ -280,7 +273,7 @@
       </div>
     </section>
     <section>
-      <h1 class="page-header">筛选器 filter</h1>
+      <h1 class="page-header">筛选器 Filter</h1>
       <div class="row">
         <div class="col-xs-12">
           <filter title="种类">
@@ -294,6 +287,15 @@
           <filter title="操作员">
              <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
           </filter>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h1 class="page-header">表格 Table</h1>
+      <h3>普通表格</h3>
+      <div class="row">
+        <div class="col-xs-12">
+          <lf-table :data="users"></lf-table>
         </div>
       </div>
     </section>

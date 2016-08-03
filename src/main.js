@@ -9,12 +9,6 @@ import nations from './filterOptions.json';
 
 /* import components */
 import vSelect from 'vue-select';
-import Button from './components/button';
-import BtnGroup from './components/button-group';
-import Dropdown from './components/dropdown';
-import Tips from './components/tips';
-import Breadcrumb from './components/breadcrumb';
-import Dialog from './components/dialog';
 import Filter from './components/filter';
 import Datepicker from './components/datepicker';
 import Table from './components/table';
@@ -37,6 +31,13 @@ import {
   DotLoader } from 'vue-spinner/dist/vue-spinner';
 
 import './css/index.css';
+import Button from './components/button';
+import BtnGroup from './components/button-group';
+import Dropdown from './components/dropdown';
+import Tips from './components/tips';
+import Breadcrumb from './components/breadcrumb';
+import Dialog from './components/dialog';
+
 /* eslint no-new: off */
 new Vue({
   el: 'body',

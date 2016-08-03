@@ -1,11 +1,11 @@
 <template>
   <div class="alert alert-dismissable" :class="'alert-' + type">
     <button type="button" class="close" data-dismiss="alert">×</button>
-    <div class="row">
-      <div v-if="hasIcon" class="col-xs-2">
+    <div class="tips-inner">
+      <div v-if="hasIcon" class="flex-item-auto tips-icon">
         <slot name="icon"></slot>
       </div>
-      <div :class="{ 'col-xs-10': hasIcon, 'col-xs-12': !hasIcon }">
+      <div class="flex-item-auto">
         <h4 v-if="title">{{ title }}</h4>
         <slot></slot>
       </div>
@@ -33,3 +33,16 @@
     },
   };
 </script>
+
+<style>
+  .row .flex-item-auto {
+    flex: 0 1 auto;
+    flex-wrap: wrap;
+  }
+  .tips-inner {
+    display: flex;
+  }
+  .tips-inner .tips-icon {
+    margin-right: 12px;
+  }
+</style>

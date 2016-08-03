@@ -90,11 +90,20 @@ body {
 }
 
 .v-select {
+  &.open .open-indicator {
+    bottom: 9px;
+  }
+
   .dropdown-toggle {
     border-radius: .15rem;
 
     &:after {
       border: none;
+    }
+
+    .open-indicator {
+      line-height: 1;
+      bottom: 11px;
     }
   }
   .form-control {

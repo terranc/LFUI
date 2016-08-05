@@ -1,13 +1,16 @@
+// 框架
 import Vue from 'vue';
 
+// 第三方插件
 import swal from 'sweetalert';
 import 'bootstrap-theme-slim/dist/js/bootstrap.min';
-import 'bootstrap-datepicker';
-import 'bootstrap-datepicker/dist/locales/bootstrap-datepicker.zh-CN.min';
+import 'bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min';
+import 'bootstrap-datetimepicker/src/js/locales/bootstrap-datetimepicker.zh-CN';
 
+// 测试数据
 import nations from './filterOptions.json';
 
-/* import components */
+// 第三方组件
 import vSelect from 'vue-select';
 import Filter from './components/filter';
 import Datepicker from './components/datepicker';
@@ -30,7 +33,10 @@ import {
   BounceLoader,
   DotLoader } from 'vue-spinner/dist/vue-spinner';
 
+// 样式文件
 import './css/index.css';
+
+// 自定义组件
 import Button from './components/button';
 import BtnGroup from './components/button-group';
 import Dropdown from './components/dropdown';
@@ -214,8 +220,9 @@ $(() => {
     selector: '[data-toggle="popover"]',
     container: 'body',
   });
-  $('div[data-provide=datepicker]').datepicker({
+  $('div[data-provide=datetimepicker]').datetimepicker({
     language: 'zh-CN',
     format: 'yyyy/mm/dd',
+    autoclose: true,
   });
 });

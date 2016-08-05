@@ -80,6 +80,7 @@ module.exports = {
     loaders: {
       js: 'babel!eslint',
     },
+    postcss: [require('postcss-salad')],
   },
   postcss: function (bundler) {
     return [

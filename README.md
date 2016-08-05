@@ -25,6 +25,6 @@
 - [x] [Dialog](https://github.com/terranc/LFUI/wiki/Dialog)
 - [ ] Table
 - [ ] Menu
-- [x] [Datetime Picker](https://github.com/terranc/LFUI/wiki/Datepicker)
+- [x] [Datetime Picker](https://github.com/terranc/LFUI/wiki/Datetimepicker)
 - [x] [Selector](https://github.com/terranc/LFUI/wiki/Selector)
 - [x] [Filter](https://github.com/terranc/LFUI/wiki/Filter)

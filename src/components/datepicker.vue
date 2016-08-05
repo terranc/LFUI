@@ -1,9 +1,8 @@
 <template>
-  <div class="input-group date" data-provide="datepicker">
-  <input type="text" :name="name" class="form-control">
-    <div v-if="hasIcon" class="input-group-addon">
-      <slot name="icon"></slot>
-    </div>
+  <div class="input-group date form_date col-md-5" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+    <input class="form-control" size="16" type="text" value="" readonly>
+    <span class="input-group-addon"><i class="material-icons">clear</i></span>
+    <span class="input-group-addon"><i class="material-icons">date_range</i></span>
   </div>
 </template>
 

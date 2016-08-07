@@ -1,11 +1,13 @@
+/* global $ */
+
 // 框架
 import Vue from 'vue';
 
 // 第三方插件
 import swal from 'sweetalert';
 import 'bootstrap-theme-slim/dist/js/bootstrap.min';
-import 'bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min';
-import 'bootstrap-datetimepicker/src/js/locales/bootstrap-datetimepicker.zh-CN';
+// import 'bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min';
+// import 'bootstrap-datetimepicker/src/js/locales/bootstrap-datetimepicker.zh-CN';
 
 // 测试数据
 import nations from './filterOptions.json';
@@ -220,9 +222,9 @@ $(() => {
     selector: '[data-toggle="popover"]',
     container: 'body',
   });
-  $('div[data-provide=datetimepicker]').datetimepicker({
+  /* $('div[data-provide=datetimepicker]').datetimepicker({
     language: 'zh-CN',
     format: 'yyyy/mm/dd',
     autoclose: true,
-  });
+  }); */
 });

@@ -1,8 +1,10 @@
 <template>
-  <div class="input-group">
+  <div class="input-group date" data-picker="datetimepicker" :data-format="format">
     <input type="text" :name="name" class="form-control">
-    <span class="add-on input-group-addon">
-      <i slot="icon" class="material-icons">date_range</i>
+    <span class="input-group-addon">
+      <slot name="icon">
+        <i slot="icon" class="material-icons">{{ icon }}</i>
+      </slot>
     </span>
   </div>
 </template>
@@ -11,24 +13,20 @@
   export default {
     props: {
       name: String,
-    },
-    computed: {
-      hasIcon() {
-        return !!this._slotContents.icon;
+      format: {
+        type: String,
+        required: false,
+        default: 'YYYY-MM-DD HH:mm:ss',
       },
     },
-    ready() {
-      $(this.$el).datetimepicker({
-        language: 'zh-CN',
-        format: 'yyyy-MM-dd hh:mm:ss',
-        autoclose: true,
-      });
+    computed: {
+      icon() {
+        if (this.format.indexOf('mm') && !this.format.indexOf('MM')) {
+          return 'schedule';
+        } else {
+          return 'date_range';
+        }
+      },
     },
   };
 </script>
-
-<style>
-  .bootstrap-datetimepicker-widget ul {
-    padding: 0;
-  }
-</style>

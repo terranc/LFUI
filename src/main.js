@@ -43,8 +43,6 @@ import Breadcrumb from './components/breadcrumb';
 import Dialog from './components/dialog';
 import Table from './components/table';
 import Filter from './components/filter';
-import Datepicker from './components/datepicker';
-import Timepicker from './components/timepicker';
 import Datetimepicker from './components/datetimepicker';
 
 /* eslint no-new: off */
@@ -173,8 +171,6 @@ new Vue({
     BounceLoader,
     DotLoader,
     Filter,
-    Datepicker,
-    Timepicker,
     Datetimepicker,
   },
   methods: {
@@ -221,8 +217,13 @@ $(() => {
   $('body').tooltip({
     selector: '[data-toggle="tooltip"]',
     container: 'body',
-  }).popover({
-    selector: '[data-toggle="popover"]',
-    container: 'body',
   });
+
+  for (let item of $('[data-picker=datetimepicker]')) {
+    let format = $(item).data('format');
+    $(item).datetimepicker({
+      locale: 'zh-cn',
+      format: format,
+    });
+  }
 });

@@ -129,3 +129,16 @@ body {
 .filter-box + .filter-box {
   margin-top: 10px;
 }
+.input-daterange .input-group-addon {
+  width: auto;
+  min-width: 16px;
+  padding: 4px 5px;
+  line-height: 1.42857143;
+  text-shadow: 0 1px 0 #fff;
+  border-width: 1px 0;
+}
+.bootstrap-datetimepicker-widget table td.day {
+  height: 30px;
+  line-height: 30px;
+  width: 30px;
+}

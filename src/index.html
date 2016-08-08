@@ -230,11 +230,11 @@
         </div>
         <div class="col-xs-12">
           <h3>Confirm</h3>
-          <btn @click="confirm">Confirm</btn>
+          <btn @click="confirm('Are you sure?', 'You will not be able to recover this imaginary file!', 'warning', 'Deleted', 'Your imaginary file has been deleted.')">Confirm</btn>
         </div>
         <div class="col-xs-12">
           <h3>Prompt</h3>
-          <btn @click="prompt">Prompt</btn>
+          <btn @click="prompt('An input!', 'Write something interesting:', 'input', 'Write something', 'You need to write something!', 'Wow!')">Prompt</btn>
         </div>
       </div>
     </section>
@@ -304,6 +304,14 @@
               <input type='text' name="start-date" class="form-control" data-format="YYYY-MM-DD" data-picker="datetimepicker" />
               <div class="input-group-addon">至</div>
               <input type='text' name="end-date" class="form-control" data-format="YYYY-MM-DD"  data-picker="datetimepicker" />
+            </div>
+          </filter>
+          <filter title="检索">
+            <div class="input-group">
+              <input type='text' class="form-control" />
+              <span class="input-group-btn">
+                <btn type="secondary" type="button"><i class="material-icons">search</i></btn>
+              </span>
             </div>
           </filter>
         </div>

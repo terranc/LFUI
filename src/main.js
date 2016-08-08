@@ -175,39 +175,40 @@ new Vue({
   },
   methods: {
     alert(title, desc, type) {
-      swal(title, desc, type);
-    },
-    confirm() {
       swal({
-        title: 'Are you sure?',
-        text: 'You will not be able to recover this imaginary file!',
-        type: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#DD6B55',
-        confirmButtonText: 'Yes, delete it!',
-        closeOnConfirm: false,
-      },
-      function() {
-        swal('Deleted!', 'Your imaginary file has been deleted.', 'success');
+        title,
+        text: desc,
+        type,
       });
     },
-    prompt() {
+    confirm(title, desc, type, nextTitle, nextDesc) {
       swal({
-        title: 'An input!',
-        text: 'Write something interesting:',
-        type: 'input',
+        title,
+        text: desc,
+        type,
+        showCancelButton: true,
+        closeOnConfirm: false,
+      }, () => {
+        this.alert(nextTitle, nextDesc, 'success');
+      });
+    },
+    prompt(title, desc, type, placeholder, errorText, nextTitle) {
+      swal({
+        title,
+        text: desc,
+        type,
         showCancelButton: true,
         closeOnConfirm: false,
         animation: 'slide-from-top',
-        inputPlaceholder: 'Write something',
+        inputPlaceholder: placeholder,
       },
-      function(inputValue) {
+      (inputValue) => {
         if (inputValue === false) return false;
         if (inputValue === '') {
-          swal.showInputError('You need to write something!');
+          swal.showInputError(errorText);
           return false;
         }
-        swal('Nice!', `You wrote: ${inputValue} success`);
+        this.alert(nextTitle, `You wrote: ${inputValue} success`);
       });
     },
   },

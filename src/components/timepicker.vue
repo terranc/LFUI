@@ -20,8 +20,8 @@
     ready() {
       $(this.$el).datetimepicker({
         language: 'zh-CN',
-        format: 'yyyy-MM-dd',
-        pickTime: false,
+        format: 'hh:mm:ss',
+        pickDate: false,
         autoclose: true,
       });
     },

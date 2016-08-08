@@ -6,17 +6,13 @@ import Vue from 'vue';
 // 第三方插件
 import swal from 'sweetalert';
 import 'bootstrap-theme-slim/dist/js/bootstrap.min';
-// import 'bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min';
-// import 'bootstrap-datetimepicker/src/js/locales/bootstrap-datetimepicker.zh-CN';
+import './js/bootstrap-datetimepicker';
 
 // 测试数据
 import nations from './filterOptions.json';
 
 // 第三方组件
 import vSelect from 'vue-select';
-import Filter from './components/filter';
-import Datepicker from './components/datepicker';
-import Table from './components/table';
 import {
   PulseLoader,
   GridLoader,
@@ -45,6 +41,11 @@ import Dropdown from './components/dropdown';
 import Tips from './components/tips';
 import Breadcrumb from './components/breadcrumb';
 import Dialog from './components/dialog';
+import Table from './components/table';
+import Filter from './components/filter';
+import Datepicker from './components/datepicker';
+import Timepicker from './components/timepicker';
+import Datetimepicker from './components/datetimepicker';
 
 /* eslint no-new: off */
 new Vue({
@@ -171,8 +172,10 @@ new Vue({
     RingLoader,
     BounceLoader,
     DotLoader,
-    Datepicker,
     Filter,
+    Datepicker,
+    Timepicker,
+    Datetimepicker,
   },
   methods: {
     alert(title, desc, type) {
@@ -222,9 +225,4 @@ $(() => {
     selector: '[data-toggle="popover"]',
     container: 'body',
   });
-  /* $('div[data-provide=datetimepicker]').datetimepicker({
-    language: 'zh-CN',
-    format: 'yyyy/mm/dd',
-    autoclose: true,
-  }); */
 });

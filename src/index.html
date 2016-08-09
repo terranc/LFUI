@@ -12,6 +12,7 @@
   <script src="//cdn.bootcss.com/moment.js/2.14.1/moment-with-locales.min.js"></script>
 </head>
 <body>
+  <loading v-show="loading"></loading>
   <div class="container" style="margin-bottom: 40px;">
     <section>
       <h1 class="page-header">图标 Icons</h1>
@@ -195,62 +196,28 @@
       </div>
     </section>
     <section>
-      <h1 class="page-header">对话框 Dialog</h1>
-      <div class="example-modal">
-        <dialog :title="'弹窗'">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta amet, libero laboriosam explicabo provident ex illum quasi ratione sint maiores ab, illo eligendi cumque repudiandae vero. Minus explicabo, numquam facilis!</p>
-        </dialog>
-        <dialog :title="'弹窗'" :no-foot="true">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta amet, libero laboriosam explicabo provident ex illum quasi ratione sint maiores ab, illo eligendi cumque repudiandae vero. Minus explicabo, numquam facilis!</p>
-        </dialog>
-        <dialog :title="'弹窗'">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta amet, libero laboriosam explicabo provident ex illum quasi ratione sint maiores ab, illo eligendi cumque repudiandae vero. Minus explicabo, numquam facilis!</p>
-          <button type="button" class="btn btn-primary" slot="foot">确认</button>
-        </dialog>
-      </div>
-    </section>
-    <section>
       <h1 class="page-header">弹窗 Alerts</h1>
       <div class="row">
         <div class="col-xs-3">
           <h3>Alert</h3>
-          <btn @click="alert('Good job!', 'you clicked the button!', 'success')">alert</btn>
+          <btn @click="alert('myModal1', 'Good job!', 'you clicked the button!')" data-toggle="modal" data-target="#myModal1">alert</btn>
         </div>
         <div class="col-xs-3">
           <h3>Alert</h3>
-          <btn @click="alert('Good job!', 'you clicked the button!')">alert</btn>
+          <btn @click="alert('myModal2', 'Good job!', 'you clicked the button!')" data-toggle="modal" data-target="#myModal2">alert</btn>
         </div>
         <div class="col-xs-3">
           <h3>Alert</h3>
-          <btn @click="alert('Good job!')">alert</btn>
+          <btn @click="alert('myModal3', 'Good job!')" data-toggle="modal" data-target="#myModal3">alert</btn>
         </div>
         <div class="col-xs-3">
           <h3>Alert</h3>
-          <btn @click="alert('Oops!', 'sorry!', 'error')">alert</btn>
+          <btn @click="alert('myModal4', 'Oops!', 'sorry!', false)" data-toggle="modal" data-target="#myModal4">alert</btn>
         </div>
         <div class="col-xs-12">
           <h3>Confirm</h3>
           <btn @click="confirm('Are you sure?', 'You will not be able to recover this imaginary file!', 'warning', 'Deleted', 'Your imaginary file has been deleted.')">Confirm</btn>
         </div>
-        <div class="col-xs-12">
-          <h3>Prompt</h3>
-          <btn @click="prompt('An input!', 'Write something interesting:', 'input', 'Write something', 'You need to write something!', 'Wow!')">Prompt</btn>
-        </div>
-      </div>
-    </section>
-    <section>
-      <h1 class="page-header">加载动画 loading</h1>
-      <div class="row">
-        <div class="col-xs-3" style="height: 200px;"><pulse-loader></pulse-loader></div>
-        <div class="col-xs-3" style="height: 200px;"><clip-loader></clip-loader></div>
-        <div class="col-xs-3" style="height: 200px;"><beat-loader></beat-loader></div>
-        <div class="col-xs-3" style="height: 200px;"><sync-loader></sync-loader></div>
-        <div class="col-xs-3" style="height: 200px;"><rotate-loader></rotate-loader></div>
-        <div class="col-xs-3" style="height: 200px;"><square-loader></square-loader></div>
-        <div class="col-xs-3" style="height: 200px;"><scale-loader></scale-loader></div>
-        <div class="col-xs-3" style="height: 200px;"><moon-loader></moon-loader></div>
-        <div class="col-xs-3" style="height: 200px;"><bounce-loader></bounce-loader></div>
-        <div class="col-xs-3" style="height: 200px;"><dot-loader></dot-loader></div>
       </div>
     </section>
     <section>
@@ -327,5 +294,6 @@
       </div>
     </section>
   </div>
+  <dialog :title="dialog.title" :desc="dialog.desc" :id="dialog.id" :foot="dialog.foot"></dialog>
 </body>
 </html>

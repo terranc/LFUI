@@ -4,7 +4,6 @@
 import Vue from 'vue';
 
 // 第三方插件
-import swal from 'sweetalert';
 import 'bootstrap-theme-slim/dist/js/bootstrap.min';
 import './js/bootstrap-datetimepicker';
 
@@ -13,23 +12,6 @@ import nations from './filterOptions.json';
 
 // 第三方组件
 import vSelect from 'vue-select';
-import {
-  PulseLoader,
-  GridLoader,
-  ClipLoader,
-  RiseLoader,
-  BeatLoader,
-  SyncLoader,
-  RotateLoader,
-  FadeLoader,
-  PacmanLoader,
-  SquareLoader,
-  ScaleLoader,
-  SkewLoader,
-  MoonLoader,
-  RingLoader,
-  BounceLoader,
-  DotLoader } from 'vue-spinner/dist/vue-spinner';
 
 // 样式文件
 import './css/index.css';
@@ -44,11 +26,19 @@ import Dialog from './components/dialog';
 import Table from './components/table';
 import Filter from './components/filter';
 import Datetimepicker from './components/datetimepicker';
+import Loading from './components/loading';
 
 /* eslint no-new: off */
 new Vue({
   el: 'body',
   data: {
+    loading: true,
+    dialog: {
+      id: '',
+      title: '',
+      desc: '',
+      foot: true,
+    },
     btns: [
       {
         type: 'primary',
@@ -154,63 +144,41 @@ new Vue({
     Tips,
     Breadcrumb,
     Dialog,
-    PulseLoader,
-    GridLoader,
-    ClipLoader,
-    RiseLoader,
-    BeatLoader,
-    SyncLoader,
-    RotateLoader,
-    FadeLoader,
-    PacmanLoader,
-    SquareLoader,
-    ScaleLoader,
-    SkewLoader,
-    MoonLoader,
-    RingLoader,
-    BounceLoader,
-    DotLoader,
     Filter,
     Datetimepicker,
+    Loading,
   },
   methods: {
-    alert(title, desc, type) {
-      swal({
+    alert(id, title, desc, foot) {
+      this.dialog.id = id;
+      if (typeof desc === 'undefined') {
+        desc = title;
+        this.dialog.desc = desc;
+        return;
+      } else if (typeof foot === 'undefined') {
+        this.dialog.title = title;
+        this.dialog.desc = desc;
+        this.dialog.foot = true;
+        return;
+      }
+      this.dialog = {
+        id,
         title,
-        text: desc,
-        type,
-      });
+        desc,
+        foot,
+      };
     },
     confirm(title, desc, type, nextTitle, nextDesc) {
-      swal({
-        title,
-        text: desc,
-        type,
-        showCancelButton: true,
-        closeOnConfirm: false,
-      }, () => {
-        this.alert(nextTitle, nextDesc, 'success');
-      });
+
     },
-    prompt(title, desc, type, placeholder, errorText, nextTitle) {
-      swal({
-        title,
-        text: desc,
-        type,
-        showCancelButton: true,
-        closeOnConfirm: false,
-        animation: 'slide-from-top',
-        inputPlaceholder: placeholder,
-      },
-      (inputValue) => {
-        if (inputValue === false) return false;
-        if (inputValue === '') {
-          swal.showInputError(errorText);
-          return false;
-        }
-        this.alert(nextTitle, `You wrote: ${inputValue} success`);
-      });
-    },
+  },
+  ready() {
+    let self = this;
+    console.log(1);
+    setTimeout(3000, () => {
+      console.log(2);
+      self.loading = false;
+    });
   },
 });
 

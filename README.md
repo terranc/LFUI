@@ -6,25 +6,47 @@
 - vue components
 - es6 (coding style: standard)
 - postcss
+- bootstrap v4
 
 
 ### components
 
 - [x] [Button](https://github.com/terranc/LFUI/wiki/Button-&&-ButtonGroup)
+
 - [x] [Breadcrumb](https://github.com/terranc/LFUI/wiki/Breadcrumb)
+
 - [ ] [Alert、Confirm、Prompt](https://github.com/terranc/LFUI/wiki/Alert-&-Confirm-&-Prompt)
+
 - [x] [Flexbox](https://github.com/terranc/LFUI/wiki/Flexbox)
+
 - [x] [Icons](https://github.com/terranc/LFUI/wiki/Icons)
+
 - [x] [Dropdown](https://github.com/terranc/LFUI/wiki/Button-&-ButtonGroup-&-Dropdown)
+
 - [x] [Tips](https://github.com/terranc/LFUI/wiki/Tips)
+
 - [ ] Notice
+
 - [ ] Bubble
+
 - [ ] Tabs
+
 - [x] [Loading](https://github.com/terranc/LFUI/wiki/Loading)
+
 - [ ] List
+
 - [x] [Dialog](https://github.com/terranc/LFUI/wiki/Dialog)
+
 - [ ] Table
+
 - [ ] Menu
+
 - [x] [Datetimepicker](https://github.com/terranc/LFUI/wiki/Datetimepicker)
+
 - [x] [Selector](https://github.com/terranc/LFUI/wiki/Selector)
+
 - [x] [Filter](https://github.com/terranc/LFUI/wiki/Filter)
+
+      ​
+
+_* this project is based by bootstrap v4, you can visit [this link](http://v4-alpha.getbootstrap.com/getting-started/introduction/) to see more senior using._

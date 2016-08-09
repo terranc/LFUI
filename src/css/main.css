@@ -142,3 +142,10 @@ body {
   line-height: 30px;
   width: 30px;
 }
+
+.fade-transition {
+  transition: opacity .3s ease;
+}
+.fade-enter, .fade-leave {
+  opacity: 0;
+}

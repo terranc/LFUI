@@ -1,6 +1,6 @@
 {
   "name": "lfui",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "a dashboard ui kit based bootstrap",
   "main": "main.js",
   "scripts": {

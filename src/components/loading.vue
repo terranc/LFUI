@@ -29,7 +29,7 @@
   DotLoader } from 'vue-spinner/dist/vue-spinner';
 
   export default {
-    data: {
+    props: {
       type: String,
     },
     components: {

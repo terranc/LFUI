@@ -8,7 +8,6 @@
 </template>
 
 <script>
-  /* eslint eol-last: off */
   export default {
     props: {
       lists: {

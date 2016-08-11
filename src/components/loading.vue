@@ -2,7 +2,7 @@
   <div class="modal modal-loading">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
-        <pulse-loader></pulse-loader>
+        <component :is="currentActive"></component>
         <slot>正在加载中···</slot>
       </div>
     </div>
@@ -50,6 +50,16 @@
       BounceLoader,
       DotLoader,
     },
+    computed: {
+      currentActive() {
+        if (this.type) {
+          return this.type.replace(/^\S/, function(s) {
+            return s.toUpperCase();
+          }) + 'Loader';
+        }
+        return 'PulseLoader';
+      },
+    },
   };
 </script>
 
@@ -68,6 +78,10 @@
 
     .modal-content {
       padding: 20px 0;
+
+      .v-spinner {
+        margin: 0 auto 10px;
+      }
     }
   }
 </style>

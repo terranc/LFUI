@@ -7,7 +7,7 @@
           <span class="sr-only">Previous</span>
         </a>
       </li>
-      <li class="page-item" v-for="index in totalPage" :class="{'active': index + 1 == currentPage}"><a class="page-link" href="#" v-text="index + 1" @click="changeCurrent(index+1)"></a></li>
+      <li class="page-item" v-for="index in totalPage" :class="{'active': index + 1 == currentPage}"><a class="page-link" href="#" v-text="index + 1" @click.prevent="changeCurrent(index+1)"></a></li>
       <li class="page-item" :class="{'disabled': !nextClickable}">
         <a class="page-link" href="#" aria-label="Next">
           <span aria-hidden="true">&raquo;</span>

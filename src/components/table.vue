@@ -1,40 +1,67 @@
 <template>
-  <div class="table-responsive">
+  <div :class="{'table-responsive': responsive}" class="table-container">
     <table class="table table-striped table-bordered table-hover">
       <thead class="thead-default">
         <tr>
           <th>
-            <input type="checkbox" :checked="checkAll" @change="check">
+            <input type="checkbox" v-model="checkAll">
           </th>
           <th v-for="i in items[0]">
-            <div class="th-inner sortable both desc">{{ $key }}</div>
+            <div>{{ $key }} <i class="material-icons md-18">arrow_drop_down</i></div>
           </th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in items">
-          <td><input type="checkbox" :checked="checkAll"></td>
+        <tr v-for="item in items" :class="{'table-active': checkAll}">
+          <td><input type="checkbox" :checked="checkAll" @click="onCheck"></td>
           <td v-for="i in item">{{ i }}</td>
         </tr>
       </tbody>
     </table>
+    <pagination :current-page="page" :total-page="totalPage" @current-change="setActive"></pagination>
   </div>
 </template>
 
 <script>
+  import Pagination from './pagination';
+
   export default {
     props: {
+      responsive: Boolean,
       items: Array,
       checkAll: {
-        type: Boolean,
+        type: null,
         default: false,
+        twoWay: true,
       },
+      page: Number,
+      totalPage: Number,
+    },
+    components: {
+      Pagination,
     },
     methods: {
-      check(event) {
-        event.preventDefault();
-        this.checkAll = event.target.checked;
+      onCheck(event) {
+        event.target.parentNode.parentNode.classList.toggle('table-active');
       },
+      setActive(index) {
+        this.page = index;
+      },
+    },
+    ready() {
+      this.page = 1;
+      this.totalPage = 5;
     },
   };
 </script>
+
+<style>
+  .table-container {
+    overflow-y: hidden;
+  }
+  th {
+    .material-icons {
+      cursor: pointer;
+    }
+  }
+</style>

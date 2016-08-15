@@ -18,7 +18,7 @@
       </li>
       <li
         class="page-item"
-        v-if="currentPage <= visiblePage && totalPage"
+        v-if="currentPage <= (visiblePage + 1) /2 && totalPage"
         v-for="index in visiblePage"
         :class="{'active': index + 1 == currentPage}">
         <a class="page-link" href="#" v-text="index + 1"
@@ -27,7 +27,7 @@
       </li>
       <li
         class="page-item"
-        v-if="currentPage > visiblePage && currentPage + parseInt(visiblePage / 2) < totalPage && totalPage"
+        v-if="currentPage > (visiblePage + 1) /2 && currentPage + parseInt(visiblePage / 2) < totalPage && totalPage"
         v-for="index in visiblePage"
         :class="{'active': currentPage - parseInt(visiblePage / 2) + index == currentPage}">
         <a class="page-link" href="#" v-text="currentPage - parseInt(visiblePage / 2) + index"
@@ -65,7 +65,7 @@
       visiblePage: {
         type: Number,
         required: false,
-        default: 5,
+        default: 7,
       },
     },
     computed: {

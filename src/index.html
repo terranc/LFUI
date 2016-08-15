@@ -287,9 +287,9 @@
     <section>
       <h1 class="page-header">表格 Table</h1>
       <h3>普通表格</h3>
-      <lf-table :items="users"></lf-table>
+      <lf-table :page="1" :items="users"></lf-table>
       <h3>响应式表格</h3>
-      <lf-table :items="users" responsive></lf-table>
+      <lf-table :page="1" :total-page="5" :items="users" responsive></lf-table>
     </section>
   </div>
   <dialog :title="dialog.title" :desc="dialog.desc" :id="dialog.id" :foot="dialog.foot"></dialog>

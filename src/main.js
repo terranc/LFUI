@@ -174,9 +174,7 @@ new Vue({
   },
   ready() {
     let self = this;
-    console.log(1);
     setTimeout(() => {
-      console.log(2);
       self.loading = false;
     }, 1000);
   },

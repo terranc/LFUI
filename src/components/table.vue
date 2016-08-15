@@ -18,7 +18,7 @@
         </tr>
       </tbody>
     </table>
-    <pagination :current-page="page" :total-page="totalPage" @current-change="setActive"></pagination>
+    <pagination :current-page="page" :total-page="totalPage" @current-change="getData"></pagination>
   </div>
 </template>
 
@@ -34,7 +34,10 @@
         default: false,
         twoWay: true,
       },
-      page: Number,
+      page: {
+        type: Number,
+        required: true,
+      },
       totalPage: Number,
     },
     components: {
@@ -44,13 +47,9 @@
       onCheck(event) {
         event.target.parentNode.parentNode.classList.toggle('table-active');
       },
-      setActive(index) {
-        this.page = index;
+      getData(index) {
+        console.log(index);
       },
-    },
-    ready() {
-      this.page = 1;
-      this.totalPage = 5;
     },
   };
 </script>

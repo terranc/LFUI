@@ -27,6 +27,7 @@ import Table from './components/table';
 import Filter from './components/filter';
 import Datetimepicker from './components/datetimepicker';
 import Loading from './components/loading';
+import Ueditor from './components/ueditor';
 
 /* eslint no-new: off */
 new Vue({
@@ -147,6 +148,7 @@ new Vue({
     Filter,
     Datetimepicker,
     Loading,
+    Ueditor,
   },
   methods: {
     alert(id, title, desc, foot) {

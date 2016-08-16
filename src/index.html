@@ -292,10 +292,48 @@
       <lf-table :page="7" :total-page="15" :items="users" responsive></lf-table>
     </section>
     <section>
-      <h1 class="page-header">rich content editor</h1>
-      <div class="row">
-        <ueditor id="ueditor1"></ueditor>
-      </div>
+      <h1 class="page-header">表单 Form</h1>
+      <form action=".">
+        <div class="form-group">
+          <label>账号<input type="text" class="form-control"></label>
+        </div>
+        <div class="form-group">
+          <label>
+            权限组
+            <select name="" id="" class="form-control">
+              <option selected>Open this select menu</option>
+              <option v-for="item in 5" value="$index">item{{$index}}</option>
+            </select>
+          </label>
+        </div>
+        <div class="form-group">
+          <label>
+            封面
+            <input type="file" id="file" class="form-control">
+          </label>
+        </div>
+        <div class="form-group">
+          <label>联系电话<input type="tel" class="form-control"></label>
+        </div>
+        <div class="form-group">
+          <span>性别</span>
+          <div class="form-check-inline">
+            <label><input class="form-check-input" type="radio" name="gender" value="male"> 男</label>
+            <label><input class="form-check-input" type="radio" name="gender" value="female"> 女</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>置顶<input class="form-control" type="checkbox" value=""></label>
+        </div>
+        <div class="form-group">
+          <label>简介<textarea class="form-control" name="content" id="" cols="30"></textarea></label>
+        </div>
+        <div class="form-group">
+          <label>内容</label>
+          <ueditor id="ueditor1"></ueditor>
+        </div>
+        <btn type="submit">提交</btn>
+      </form>
     </section>
   </div>
   <dialog :title="dialog.title" :desc="dialog.desc" :id="dialog.id" :foot="dialog.foot"></dialog>

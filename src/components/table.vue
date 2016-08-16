@@ -18,7 +18,7 @@
         </tr>
       </tbody>
     </table>
-    <pagination :current-page="page" :total-page="totalPage" @current-change="getData"></pagination>
+    <pagination :current-page="page" :total-page="totalPage" @current-change="getData" show-go></pagination>
   </div>
 </template>
 

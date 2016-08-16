@@ -43,6 +43,7 @@
           @click.prevent="currentPage = totalPage - visiblePage + 1 + index">
         </a>
       </li>
+      <li class="page-item disabled" v-if="totalPage && showGo"><input class="page-control" min="1" :max="totalPage" type="number" @keyup.enter="pageGo" :value="currentPage">/{{totalPage}}页</li>
       <li class="page-item" :class="{'disabled': !nextClickable}" @click.prevent="nextClick">
         <a class="page-link" href="#" aria-label="Next">
           <span aria-hidden="true" :class="{'sr-only': !totalPage}">&raquo;</span>
@@ -66,6 +67,10 @@
         type: Number,
         required: false,
         default: 7,
+      },
+      showGo: {
+        type: Boolean,
+        default: false,
       },
     },
     computed: {
@@ -95,6 +100,9 @@
           this.currentPage++;
         }
       },
+      pageGo(event) {
+        this.currentPage = event.target.value;
+      },
     },
   };
 </script>
@@ -108,5 +116,29 @@
     cursor: not-allowed;
     background-color: #fff;
     border-color: #ddd;
+  }
+  .page-control {
+    width: 2em;
+    border-radius: 3px;
+    border: 1px solid #c1c1c1;
+    appearance: none;
+    transition: width .3s ease-in-out;
+    text-align: center;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button{
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &:focus {
+      width: 4em;
+      &::-webkit-outer-spin-button {
+        -webkit-appearance: outer-spin-button;
+      }
+      &::-webkit-inner-spin-button{
+        -webkit-appearance: inner-spin-button;
+      }
+    }
   }
 </style>

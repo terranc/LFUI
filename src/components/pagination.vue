@@ -43,13 +43,13 @@
           @click.prevent="currentPage = totalPage - visiblePage + 1 + index">
         </a>
       </li>
-      <li class="page-item disabled" v-if="totalPage && showGo"><input class="page-control" min="1" :max="totalPage" type="number" @keyup.enter="pageGo" :value="currentPage">/{{totalPage}}页</li>
       <li class="page-item" :class="{'disabled': !nextClickable}" @click.prevent="nextClick">
         <a class="page-link" href="#" aria-label="Next">
           <span aria-hidden="true" :class="{'sr-only': !totalPage}">&raquo;</span>
           <span :class="{'sr-only': totalPage}">下一页</span>
         </a>
       </li>
+      <li class="page-item disabled" v-if="totalPage && showGo"><input class="page-control" min="1" :max="totalPage" type="number" @keyup.enter="pageGo" :value="currentPage"> / {{totalPage}} 页</li>
     </ul>
   </nav>
 </template>

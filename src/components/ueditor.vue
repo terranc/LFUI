@@ -3,9 +3,6 @@
 </template>
 
 <script>
-  import '../js/ueditor.config';
-  import '../js/ueditor.all';
-
   /* global UE */
   export default {
     props: {

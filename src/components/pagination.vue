@@ -101,7 +101,7 @@
         }
       },
       pageGo(event) {
-        this.currentPage = event.target.value;
+        this.currentPage = parseInt(event.target.value);
       },
     },
   };

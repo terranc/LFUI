@@ -13,7 +13,7 @@ module.exports = {
   },
   output: {
     path: BUILD_PATH,
-    filename: 'index.js',
+    filename: 'lfui.js',
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
@@ -87,7 +87,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: 'style!css!sass',
+        loader: ExtractTextPlugin.extract('style', 'css!sass'),
         exclude: /node_modules/,
       },
     ],

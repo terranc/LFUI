@@ -7,6 +7,15 @@
           <span :class="{'sr-only': totalPage}">上一页</span>
         </a>
       </li>
+      <li class="page-item"
+        v-if="currentPage - parseInt(visiblePage/2) > 1">
+        <a v-if="currentPage - parseInt(visiblePage/2) > 2" class="page-link" href="#" v-text="'1...'"
+          @click.prevent="currentPage =  1">
+        </a>
+        <a v-else class="page-link" href="#" v-text="1"
+          @click.prevent="currentPage =  1">
+        </a>
+      </li>
       <li
         class="page-item"
         v-if="totalPage <= visiblePage && totalPage"
@@ -41,6 +50,15 @@
         :class="{'active': totalPage - visiblePage + 1 + index == currentPage}">
         <a class="page-link" href="#" v-text="totalPage - visiblePage + 1 + index"
           @click.prevent="currentPage = totalPage - visiblePage + 1 + index">
+        </a>
+      </li>
+      <li class="page-item"
+        v-if="totalPage-currentPage-parseInt(visiblePage/2) > 0">
+        <a v-if="totalPage-currentPage-parseInt(visiblePage/2) > 1" class="page-link" href="#" v-text="'...'+totalPage"
+          @click.prevent="currentPage =  totalPage">
+        </a>
+        <a v-else class="page-link" href="#" v-text="totalPage"
+          @click.prevent="currentPage =  totalPage">
         </a>
       </li>
       <li class="page-item" :class="{'disabled': !nextClickable}" @click.prevent="nextClick">

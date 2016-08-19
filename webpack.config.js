@@ -73,6 +73,11 @@ module.exports = {
         loader: 'style!css?importLoaders=1!postcss',
         exclude: /node_modules/,
       },
+      {
+        test: /\.scss$/,
+        loader: 'style!css!sass',
+        exclude: /node_modules/,
+      },
     ],
   },
   externals: {

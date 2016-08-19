@@ -14,7 +14,8 @@ import nations from './filterOptions.json';
 import vSelect from 'vue-select';
 
 // 样式文件
-import './css/index.css';
+import './scss/lfui.scss';
+import './scss/_main.css';
 
 // 自定义组件
 import Button from './components/button';

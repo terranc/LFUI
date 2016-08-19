@@ -1,9 +1,11 @@
 <template>
   <div class="modal modal-loading">
-    <div class="modal-dialog modal-sm">
+    <div class="modal-dialog">
       <div class="modal-content">
-        <component :is="currentActive"></component>
-        <slot>正在加载中···</slot>
+        <div class="modal-body">
+          <component :is="currentActive"></component>
+          <slot>正在加载中···</slot>
+        </div>
       </div>
     </div>
   </div>
@@ -73,6 +75,7 @@
       position: absolute;
       top: 50%;
       left: 50%;
+      width: 300px;
       transform: translate(-50%, -50%);
     }
 

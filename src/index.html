@@ -160,10 +160,10 @@
       <h1 class="page-header">模式对话框 Dialogs</h1>
       <h3>提示 Tooltips</h3>
       <div>
-        <btn type="secondary" data-toggle="tooltip" data-placement="top" title="会在上边显示">上</btn>
-        <btn type="secondary" data-toggle="tooltip" data-placement="right" title="会在右边显示">右</btn>
-        <btn type="secondary" data-toggle="tooltip" data-placement="bottom" title="会在下边显示">下</btn>
-        <btn type="secondary" data-toggle="tooltip" data-placement="left" title="会在左边显示">左</btn>
+        <button class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="会在上边显示">上</button>
+        <button class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="会在右边显示">右</button>
+        <button class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="会在下边显示">下</button>
+        <button class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="会在左边显示">左</button>
       </div>
     </section>
     <section>
@@ -202,23 +202,23 @@
       <div class="row">
         <div class="col-xs-3">
           <h3>Alert</h3>
-          <btn @click="alert('myModal1', 'Good job!', 'you clicked the button!')" data-toggle="modal" data-target="#myModal1">alert</btn>
+          <button class="btn btn-primary" @click="alert('myModal1', 'Good job!', 'you clicked the button!')" data-toggle="modal" data-target="#myModal1">alert</button>
         </div>
         <div class="col-xs-3">
           <h3>Alert</h3>
-          <btn @click="alert('myModal2', 'Good job!', 'you clicked the button!')" data-toggle="modal" data-target="#myModal2">alert</btn>
+          <button class="btn btn-primary" @click="alert('myModal2', 'Good job!', 'you clicked the button!')" data-toggle="modal" data-target="#myModal2">alert</button>
         </div>
         <div class="col-xs-3">
           <h3>Alert</h3>
-          <btn @click="alert('myModal3', 'Good job!')" data-toggle="modal" data-target="#myModal3">alert</btn>
+          <button class="btn btn-primary" @click="alert('myModal3', 'Good job!')" data-toggle="modal" data-target="#myModal3">alert</button>
         </div>
         <div class="col-xs-3">
           <h3>Alert</h3>
-          <btn @click="alert('myModal4', 'Oops!', 'sorry!', false)" data-toggle="modal" data-target="#myModal4">alert</btn>
+          <button class="btn btn-primary" @click="alert('myModal4', 'Oops!', 'sorry!', false)" data-toggle="modal" data-target="#myModal4">alert</button>
         </div>
         <div class="col-xs-12">
           <h3>Confirm</h3>
-          <btn @click="confirm('Are you sure?', 'You will not be able to recover this imaginary file!', 'warning', 'Deleted', 'Your imaginary file has been deleted.')">Confirm</btn>
+          <button class="btn btn-primary" @click="confirm('Are you sure?', 'You will not be able to recover this imaginary file!', 'warning', 'Deleted', 'Your imaginary file has been deleted.')">Confirm</button>
         </div>
       </div>
     </section>
@@ -258,7 +258,7 @@
       <div class="row">
         <div class="col-xs-12">
           <filter title="种类">
-            <span v-for="item in icons" class="label label-primary">{{ item }}</span>
+            <btn v-for="item in icons" :href="'item' + $index" outline>{{ item }}</btn>
           </filter>
           <filter title="种类">
             <select class="form-control">

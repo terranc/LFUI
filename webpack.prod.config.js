@@ -1,6 +1,5 @@
 var Path = require('path');
 var Webpack = require('webpack');
-var HtmlwebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -10,22 +9,21 @@ var BUILD_PATH = Path.resolve(__dirname, 'dist');
 
 module.exports = {
   entry: {
-    app: Path.resolve(SRC_PATH, 'main.js'),
+    app: Path.resolve(SRC_PATH, 'entry.js'),
   },
   output: {
     path: BUILD_PATH,
-    filename: 'bundler.js',
+    filename: 'index.js',
   },
   plugins: [
-    new HtmlwebpackPlugin({
-      title: 'Hello world',
-      css: [Path.resolve(SRC_PATH, 'css/index.css')],
-      template: Path.resolve(SRC_PATH, 'index.html'),
-    }),
-    new Webpack.HotModuleReplacementPlugin(),
-    new Webpack.optimize.UglifyJsPlugin(),
-    new ExtractTextPlugin('css/style.[hash:8].css'),
     new CleanWebpackPlugin(['dist']),
+    new Webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: 'production',
+      },
+    }),
+    new Webpack.optimize.UglifyJsPlugin(),
+    new ExtractTextPlugin('lfui.css'),
     new CopyWebpackPlugin([{
       from: 'src/assets/libs',
       to: 'assets/libs',
@@ -94,6 +92,7 @@ module.exports = {
     jquery: 'jQuery',
     tether: 'Tether',
     UE: 'ueditor',
+    moment: 'moment',
   },
   vue: {
     loaders: {

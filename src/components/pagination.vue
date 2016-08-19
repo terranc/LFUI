@@ -8,7 +8,7 @@
         </a>
       </li>
       <li class="page-item"
-        v-if="currentPage - parseInt(visiblePage/2) > 1">
+        v-if="currentPage - parseInt(visiblePage/2) > 1 && totalPage">
         <a v-if="currentPage - parseInt(visiblePage/2) > 2" class="page-link" href="#" v-text="'1...'"
           @click.prevent="currentPage =  1">
         </a>
@@ -53,7 +53,7 @@
         </a>
       </li>
       <li class="page-item"
-        v-if="totalPage-currentPage-parseInt(visiblePage/2) > 0">
+        v-if="totalPage-currentPage-parseInt(visiblePage/2) > 0 && totalPage">
         <a v-if="totalPage-currentPage-parseInt(visiblePage/2) > 1" class="page-link" href="#" v-text="'...'+totalPage"
           @click.prevent="currentPage =  totalPage">
         </a>

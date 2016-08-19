@@ -3,9 +3,6 @@
 // 框架
 import Vue from 'vue';
 
-// 第三方插件
-import './js/bootstrap-datetimepicker';
-
 // 第三方组件
 import vSelect from 'vue-select';
 
@@ -26,7 +23,7 @@ import Loading from './components/loading';
 import Ueditor from './components/ueditor';
 
 /* eslint no-new: off */
-window.vm = new Vue({
+new Vue({
   el: 'body',
   data: {
     data: {},
@@ -77,17 +74,17 @@ window.vm = new Vue({
   },
 });
 
-// $(() => {
-//   $('body').tooltip({
-//     selector: '[data-toggle="tooltip"]',
-//     container: 'body',
-//   });
+$(() => {
+  $('body').tooltip({
+    selector: '[data-toggle="tooltip"]',
+    container: 'body',
+  });
 
-//   for (let item of $('[data-picker=datetimepicker]')) {
-//     let format = $(item).data('format');
-//     $(item).datetimepicker({
-//       locale: 'zh-cn',
-//       format: format,
-//     });
-//   }
-// });
+  for (let item of $('[data-picker=datetimepicker]')) {
+    let format = $(item).data('format');
+    $(item).datetimepicker({
+      locale: 'zh-cn',
+      format: format,
+    });
+  }
+});

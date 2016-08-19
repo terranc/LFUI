@@ -3,10 +3,6 @@
 // 框架
 import Vue from 'vue';
 
-// 第三方插件
-import 'bootstrap-theme-slim/dist/js/bootstrap.min';
-import './js/bootstrap-datetimepicker';
-
 // 测试数据
 import nations from './filterOptions.json';
 
@@ -15,7 +11,7 @@ import vSelect from 'vue-select';
 
 // 样式文件
 import './scss/lfui.scss';
-import './scss/_main.css';
+import './css/main.css';
 
 // 自定义组件
 import Button from './components/button';

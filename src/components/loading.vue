@@ -12,45 +12,10 @@
 </template>
 
 <script>
-  import {
-  PulseLoader,
-  GridLoader,
-  ClipLoader,
-  RiseLoader,
-  BeatLoader,
-  SyncLoader,
-  RotateLoader,
-  FadeLoader,
-  PacmanLoader,
-  SquareLoader,
-  ScaleLoader,
-  SkewLoader,
-  MoonLoader,
-  RingLoader,
-  BounceLoader,
-  DotLoader } from 'vue-spinner/dist/vue-spinner';
 
   export default {
     props: {
       type: String,
-    },
-    components: {
-      PulseLoader,
-      GridLoader,
-      ClipLoader,
-      RiseLoader,
-      BeatLoader,
-      SyncLoader,
-      RotateLoader,
-      FadeLoader,
-      PacmanLoader,
-      SquareLoader,
-      ScaleLoader,
-      SkewLoader,
-      MoonLoader,
-      RingLoader,
-      BounceLoader,
-      DotLoader,
     },
     computed: {
       currentActive() {

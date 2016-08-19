@@ -17,12 +17,11 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
-    new Webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: 'production',
+    new Webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false,
       },
     }),
-    new Webpack.optimize.UglifyJsPlugin(),
     new ExtractTextPlugin('lfui.css'),
     new CopyWebpackPlugin([{
       from: 'src/assets/libs',
@@ -84,6 +83,11 @@ module.exports = {
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract('style', 'css?importLoaders=1!postcss'),
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.scss$/,
+        loader: 'style!css!sass',
         exclude: /node_modules/,
       },
     ],

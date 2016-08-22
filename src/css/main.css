@@ -18,10 +18,11 @@ body {
 }
 #flexbox .row div {
   margin-top: 10px;
-}
-.box-row {
-  height: 1rem;
-  background: $base-color;
+
+  div {
+    height: 1rem;
+    background-color: #44b549;
+  }
 }
 .example-modal .modal {
   position: relative;
@@ -78,8 +79,14 @@ body {
 }
 
 .v-select {
-  &.open .open-indicator {
-    bottom: 9px;
+  &.open {
+    .open-indicator {
+      bottom: 9px;
+    }
+
+    .dropdown-toggle {
+      border-bottom: 1px solid #fff;
+    }
   }
 
   .dropdown-toggle {

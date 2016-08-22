@@ -133,6 +133,31 @@ new Vue({
         collect: 4560,
       },
     ],
+    titles: [
+      {
+        name: 'id',
+        key: 'id',
+        order: 1,
+      }, {
+        name: '昵称',
+        key: 'nickname',
+      }, {
+        name: '用户名',
+        key: 'username',
+      }, {
+        name: '注册日期',
+        key: 'register_date',
+        order: 1,
+      }, {
+        name: '点赞',
+        key: 'like',
+        order: -1,
+      }, {
+        name: '收藏',
+        key: 'collect',
+        order: 1,
+      },
+    ],
   },
   components: {
     vSelect,

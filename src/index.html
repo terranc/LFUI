@@ -281,7 +281,7 @@
             <div class="input-group">
               <input type='text' class="form-control" />
               <span class="input-group-btn">
-                <button class="btn btn-secondary" type="button"><i class="material-icons">search</i></button>
+                <button class="btn btn-secondary" type="button"><i class="material-icons md-18">search</i></button>
               </span>
             </div>
           </filter>
@@ -291,9 +291,9 @@
     <section>
       <h1 class="page-header">表格 Table</h1>
       <h3>普通表格</h3>
-      <lf-table :page="1" :items="users"></lf-table>
+      <lf-table :page="1" :data="users" :titles="titles"></lf-table>
       <h3>响应式表格</h3>
-      <lf-table :page="7" :total-page="15" :items="users" responsive></lf-table>
+      <lf-table :page="7" :total-page="15" :data="users" :titles="titles" responsive></lf-table>
     </section>
     <section>
       <h1 class="page-header">表单 Form</h1>

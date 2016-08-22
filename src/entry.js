@@ -8,8 +8,10 @@ import vSelect from 'vue-select';
 
 // 样式文件
 import './scss/lfui.scss';
+import './css/main.css';
 
 // 自定义组件
+import Loading from './components/loading';
 import Button from './components/button';
 import BtnGroup from './components/button-group';
 import Dropdown from './components/dropdown';
@@ -19,7 +21,6 @@ import Dialog from './components/dialog';
 import Table from './components/table';
 import Filter from './components/filter';
 import Datetimepicker from './components/datetimepicker';
-import Loading from './components/loading';
 import Ueditor from './components/ueditor';
 
 /* eslint no-new: off */
@@ -39,8 +40,8 @@ new Vue({
     Dialog,
     Filter,
     Datetimepicker,
-    Loading,
     Ueditor,
+    Loading,
   },
   methods: {
     alert(id, title, desc, foot) {
@@ -65,12 +66,6 @@ new Vue({
     confirm(title, desc, type, nextTitle, nextDesc) {
 
     },
-  },
-  ready() {
-    let self = this;
-    setTimeout(() => {
-      self.loading = false;
-    }, 1000);
   },
 });
 

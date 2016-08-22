@@ -117,5 +117,4 @@ module.exports = {
   eslint: {
     formatter: require('eslint-friendly-formatter'),
   },
-  devtool: 'eval-source-map',
 };

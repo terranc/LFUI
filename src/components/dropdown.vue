@@ -1,8 +1,8 @@
 <template>
   <div class="dropdown">
-    <btn :type="type" class="dropdown-toggle" data-toggle="dropdown">
+    <button class="btn dropdown-toggle" :class="'btn-' + type" data-toggle="dropdown">
       <slot></slot>
-    </btn>
+    </button>
     <div class="dropdown-menu">
       <a v-for="item in lists"
         class="dropdown-item"

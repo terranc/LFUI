@@ -1,5 +1,6 @@
 module.exports = {
   root: true,
+  esversion: 6,
   parserOptions: {
     sourceType: 'module',
   },

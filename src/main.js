@@ -1,45 +1,43 @@
-import './css/index.css';
+/* global $ */
+
+// 框架
 import Vue from 'vue';
 
-import swal from 'sweetalert';
-import 'bootstrap-theme-slim/dist/js/bootstrap.min';
-import 'bootstrap-datepicker';
-import 'bootstrap-datepicker/dist/locales/bootstrap-datepicker.zh-CN.min';
+// 测试数据
+import nations from './filterOptions.json';
 
-/* import components */
+// 第三方组件
 import vSelect from 'vue-select';
+
+// 样式文件
+import './scss/lfui.scss';
+import './css/main.css';
+import './css/example.css';
+
+// 自定义组件
 import Button from './components/button';
 import BtnGroup from './components/button-group';
 import Dropdown from './components/dropdown';
 import Tips from './components/tips';
 import Breadcrumb from './components/breadcrumb';
 import Dialog from './components/dialog';
+import Table from './components/table';
 import Filter from './components/filter';
-import Datepicker from './components/datepicker';
-import {
-  PulseLoader,
-  GridLoader,
-  ClipLoader,
-  RiseLoader,
-  BeatLoader,
-  SyncLoader,
-  RotateLoader,
-  FadeLoader,
-  PacmanLoader,
-  SquareLoader,
-  ScaleLoader,
-  SkewLoader,
-  MoonLoader,
-  RingLoader,
-  BounceLoader,
-  DotLoader } from 'vue-spinner/dist/vue-spinner';
+import Datetimepicker from './components/datetimepicker';
+import Loading from './components/loading';
+import Ueditor from './components/ueditor';
 
 /* eslint no-new: off */
 new Vue({
   el: 'body',
   data: {
-    title: 'Hello world',
-    msg: 'this is humen a bid step',
+    loading: true,
+    dialog: {
+      id: '',
+      title: '',
+      desc: '',
+      foot: true,
+    },
     btns: [
       {
         type: 'primary',
@@ -99,73 +97,86 @@ new Vue({
     ],
     interests: {
       selected: null,
-      options: ['foo', 'bar', 'baz'],
+      options: nations,
     },
+    users: [
+      {
+        id: 1,
+        username: 'tomo',
+        nickname: '@tomoyuen',
+        register_date: '2016-06-06',
+        like: 1949,
+        collect: 4560,
+      },
+      {
+        id: 2,
+        username: 'tomo',
+        nickname: '@tomoyuen',
+        register_date: '2016-06-06',
+        like: 1949,
+        collect: 4560,
+      },
+      {
+        id: 3,
+        username: 'tomo',
+        nickname: '@tomoyuen',
+        register_date: '2016-06-06',
+        like: 1949,
+        collect: 4560,
+      },
+      {
+        id: 4,
+        username: 'tomo',
+        nickname: '@tomoyuen',
+        register_date: '2016-06-06',
+        like: 1949,
+        collect: 4560,
+      },
+    ],
   },
   components: {
     vSelect,
     Btn: Button,
+    LfTable: Table,
     BtnGroup,
     Dropdown,
     Tips,
     Breadcrumb,
     Dialog,
-    PulseLoader,
-    GridLoader,
-    ClipLoader,
-    RiseLoader,
-    BeatLoader,
-    SyncLoader,
-    RotateLoader,
-    FadeLoader,
-    PacmanLoader,
-    SquareLoader,
-    ScaleLoader,
-    SkewLoader,
-    MoonLoader,
-    RingLoader,
-    BounceLoader,
-    DotLoader,
-    Datepicker,
     Filter,
+    Datetimepicker,
+    Loading,
+    Ueditor,
   },
   methods: {
-    alert(title, desc, type) {
-      swal(title, desc, type);
+    alert(id, title, desc, foot) {
+      this.dialog.id = id;
+      if (typeof desc === 'undefined') {
+        desc = title;
+        this.dialog.desc = desc;
+        return;
+      } else if (typeof foot === 'undefined') {
+        this.dialog.title = title;
+        this.dialog.desc = desc;
+        this.dialog.foot = true;
+        return;
+      }
+      this.dialog = {
+        id,
+        title,
+        desc,
+        foot,
+      };
     },
-    confirm() {
-      swal({
-        title: 'Are you sure?',
-        text: 'You will not be able to recover this imaginary file!',
-        type: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#DD6B55',
-        confirmButtonText: 'Yes, delete it!',
-        closeOnConfirm: false,
-      },
-      function() {
-        swal('Deleted!', 'Your imaginary file has been deleted.', 'success');
-      });
+    confirm(title, desc, type, nextTitle, nextDesc) {
+
     },
-    prompt() {
-      swal({
-        title: 'An input!',
-        text: 'Write something interesting:',
-        type: 'input',
-        showCancelButton: true,
-        closeOnConfirm: false,
-        animation: 'slide-from-top',
-        inputPlaceholder: 'Write something',
-      },
-      function(inputValue) {
-        if (inputValue === false) return false;
-        if (inputValue === '') {
-          swal.showInputError('You need to write something!');
-          return false;
-        }
-        swal('Nice!', `You wrote: ${inputValue} success`);
-      });
-    },
+  },
+  ready() {
+    let self = this;
+    setTimeout(() => {
+      self.loading = false;
+    }, 1000);
   },
 });
 
@@ -173,12 +184,13 @@ $(() => {
   $('body').tooltip({
     selector: '[data-toggle="tooltip"]',
     container: 'body',
-  }).popover({
-    selector: '[data-toggle="popover"]',
-    container: 'body',
   });
-  $('div[data-provide=datepicker]').datepicker({
-    language: 'zh-CN',
-    format: 'yyyy/mm/dd',
-  });
+
+  for (let item of $('[data-picker=datetimepicker]')) {
+    let format = $(item).data('format');
+    $(item).datetimepicker({
+      locale: 'zh-cn',
+      format: format,
+    });
+  }
 });

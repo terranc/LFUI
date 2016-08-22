@@ -1,31 +1,24 @@
-var Path = require('path'),
-    Webpack = require('webpack'),
-    HtmlwebpackPlugin = require('html-webpack-plugin'),
-    projectRoot = Path.resolve(__dirname, './');
+var Path = require('path');
+var Webpack = require('webpack');
+var HtmlwebpackPlugin = require('html-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+
+var SRC_PATH = Path.resolve(__dirname, 'src');
 
 module.exports = {
   entry: {
-    app: Path.resolve(projectRoot, 'src/main.js'),
+    app: Path.resolve(SRC_PATH, 'main.js'),
   },
   output: {
-    path: Path.resolve(__dirname, './build'),
+    path: Path.resolve(__dirname, 'build'),
     filename: '[name].js',
   },
-  plugins: [
-    new HtmlwebpackPlugin({
-      title: 'Hello world',
-      css: [Path.resolve(__dirname, 'src/css/index.css')],
-      template: Path.resolve(__dirname, 'src/index.html'),
-    }),
-    new Webpack.HotModuleReplacementPlugin(),
-    new Webpack.ProvidePlugin({
-      fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch',
-    }),
-  ],
   resolve: {
     extensions: ['', '.js', '.vue'],
     alias: {
-      'src': Path.resolve(__dirname, './src'),
+      'src': SRC_PATH,
+      'assets': Path.resolve(SRC_PATH, 'assets'),
+      'components': Path.resolve(SRC_PATH, 'components'),
     },
   },
   resolveLoader: {
@@ -35,7 +28,8 @@ module.exports = {
     preLoaders: [
       {
         test: /\.js$/,
-        loader: 'eslint-loader',
+        loader: 'eslint',
+        include: SRC_PATH,
         exclude: /node_modules/,
       },
     ],
@@ -47,8 +41,8 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel',
+        include: Path.resolve(__dirname),
         exclude: /node_modules/,
-        include: projectRoot,
       },
       {
         test: /\.json$/,
@@ -59,16 +53,29 @@ module.exports = {
         loader: 'vue-html',
       },
       {
-        test: /\.(png|jpg|gif|svg|woff2?|eot|ttf)(\?.*)?$/,
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url',
         query: {
           limit: 10000,
-          name: '[name].[ext]?[hash:7]',
+          name: 'assets/img/[name].[hash:7].[ext]',
+        },
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        loader: 'url',
+        query: {
+          limit: 10000,
+          name: 'assets/fonts/[name].[hash:7].[ext]',
         },
       },
       {
         test: /\.css$/,
         loader: 'style!css?importLoaders=1!postcss',
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.scss$/,
+        loader: 'style!css!sass',
         exclude: /node_modules/,
       },
     ],
@@ -81,6 +88,7 @@ module.exports = {
     loaders: {
       js: 'babel!eslint',
     },
+    postcss: [require('postcss-salad')],
   },
   postcss: function (bundler) {
     return [
@@ -93,6 +101,18 @@ module.exports = {
   eslint: {
     formatter: require('eslint-friendly-formatter'),
   },
+  plugins: [
+    new HtmlwebpackPlugin({
+      title: 'Hello world',
+      css: [Path.resolve(SRC_PATH, 'css/index.css')],
+      template: Path.resolve(SRC_PATH, 'index.html'),
+    }),
+    new Webpack.HotModuleReplacementPlugin(),
+    new CopyWebpackPlugin([{
+      from: 'src/assets/libs',
+      to: 'assets/libs',
+    }]),
+  ],
   devServer: {
     contentBase: './build',
     historyApiFallback: false,

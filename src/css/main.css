@@ -1,106 +1,76 @@
-body {
-  color: #333;
-}
-.page-header {
-  padding-bottom: 10px;
-  margin: 44px 0 22px;
-  border-bottom: 1px solid #eee;
-}
-.btn + .btn {
-  margin-left: 10px;
-}
-.icons-block {
-  display: flex;
-  flex-wrap: wrap;
-  & .icon-box {
-    flex: 0 0 100px;
-    text-align: center;
-    margin-right: 20px;
-    margin-bottom: 20px;
-  }
-}
-#flexbox .row div {
-  margin-top: 10px;
-}
-.box-row {
-  height: 1rem;
-  background: $base-color;
-}
+.v-select {
+  &.open {
+    .open-indicator {
+      bottom: 9px;
+    }
 
-.alert {
-  .row {
-    margin: 0;
-    * {
-      margin: 0;
+    .dropdown-toggle {
+      border-bottom: 1px solid #fff;
     }
   }
-}
-.example-modal .modal {
-  position: relative;
-  top: auto;
-  right: auto;
-  bottom: auto;
-  left: auto;
-  z-index: 1;
-  display: block;
-}
 
-#container {
-  min-height: 100vh;
-  height: auto;
-  position: relative;
-  min-width: 290px;
-  overflow: hidden;
-}
-#navbar {
-  position: absolute;
-  width: 100%;
-  z-index: 10;
-  left: 0;
-  top: 0;
-}
-#content-container {
-  position: relative;
-  padding-top: 80px;
-  padding-bottom: 80px;
-  background-color: #ecf0f5;
+  .dropdown-toggle {
+    border-radius: .15rem;
+    -webkit-appearance: none;
 
-  @media (width >= 992px) {
-    & {
-      padding-left: 220px;
+    &:after {
+      border: none;
+    }
+
+    .open-indicator {
+      line-height: 1;
+      bottom: 11px;
     }
   }
-}
-#sidebar-container {
-  position: absolute;
-  left: 220px;
-  top: 0;
-  z-index: 4;
-  bottom: 0;
-  width: 220px;
-  padding-top: 40px;
-  min-height: 100%;
-  background-color: $base-color;
+  .form-control {
+    height: 34px;
+  }
+  .dropdown-menu {
+    overflow-x: hidden;
 
-  @media (width >= 992px) {
-    & {
-      left: 0;
+    & > li > a {
+      display: block;
+      padding: 3px 20px;
+      clear: both;
+      font-weight: 400;
+      line-height: 1.42857143;
+      color: #333;
+      white-space: nowrap;
+
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
-}
-
-.v-select .dropdown-toggle:after {
-  border: none;
+  .selected-tag {
+    border-radius: .15rem;
+  }
 }
 .input-group-addon {
   width: auto;
 }
+
 .filter-inner {
-  .label {
+  .category-item {
     margin-right: 4px;
+    margin-bottom: 4px;
+    padding: 4px 8px;
   }
 }
 
 .filter-box + .filter-box {
   margin-top: 10px;
+}
+.input-daterange .input-group-addon {
+  width: auto;
+  min-width: 16px;
+  padding: 4px 5px;
+  line-height: 1.42857143;
+  text-shadow: 0 1px 0 #fff;
+  border-width: 1px 0;
+}
+.bootstrap-datetimepicker-widget table td.day {
+  height: 30px;
+  line-height: 30px;
+  width: 30px;
 }

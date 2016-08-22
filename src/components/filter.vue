@@ -13,3 +13,12 @@
     },
   };
 </script>
+<style>
+  .filter-inner {
+    .label {
+      padding: .5em .8em;
+      margin-bottom: 4px;
+      cursor: pointer;
+    }
+  }
+</style>

@@ -1,7 +1,7 @@
 <template>
-  <button class="btn" :class="[typeClass]" :disabled="disabled">
+  <component :is="component" class="btn" :class="[typeClass]" :disabled="disabled" :href="href">
     <slot></slot>
-  </button>
+  </component>
 </template>
 
 <script>
@@ -36,10 +36,29 @@ export default {
       default: false,
       required: false,
     },
+    /*
+     * 链接
+     */
+    href: String,
   },
   computed: {
     typeClass() {
-      return `btn-${this.type}${this.outline ? '-outline' : ''}`;
+      return `btn${this.outline ? '-outline' : ''}-${this.type}`;
+    },
+    component() {
+      if (this.href) {
+        return 'LinkButton';
+      } else {
+        return 'PrimaryButton';
+      }
+    },
+  },
+  components: {
+    LinkButton: {
+      template: '<a><slot></slot></a>',
+    },
+    PrimaryButton: {
+      template: '<button><slot></slot></button>',
     },
   },
 };

@@ -167,6 +167,17 @@
         <button class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="会在下边显示">下</button>
         <button class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="会在左边显示">左</button>
       </div>
+      <h3 style="margin-top: 30px;">弹窗 Alerts</h3>
+      <div class="row">
+        <div class="col-xs-3">
+          <h3>myModal1</h3>
+          <button class="btn btn-primary" @click="dialog('myModal1', myModal1)" data-toggle="modal" data-target="#myModal1">alert</button>
+        </div>
+        <div class="col-xs-3">
+          <h3>myModal2</h3>
+          <button class="btn btn-primary" @click="dialog('myModal2', myModal2)" data-toggle="modal" data-target="#myModal2">alert</button>
+        </div>
+      </div>
     </section>
     <section>
       <h1 class="page-header">面包屑导航 Breadcrumb</h1>
@@ -177,50 +188,25 @@
       <h3>Tips</h3>
       <div class="row">
         <div class="col-xs-12">
-          <tips :type="'warning'" :title="'警告'">
+          <tips type="warning" title="警告">
             <i class="material-icons md-48" slot="icon">face</i>
             <p>警告是一种警戒性的纪律制裁方式，也是最轻微的一种制裁方式，是指公务员的行为已经构成了违纪，应当予以及时纠正和警示。</p>
           </tips>
         </div>
         <div class="col-xs-4">
-          <tips :type="'danger'">
+          <tips type="danger">
             <strong>出错了!</strong><a href="#" class="alert-link">请修改</a>并重试。
           </tips>
         </div>
         <div class="col-xs-4">
-          <tips :type="'success'">
+          <tips type="success">
             <strong>恭喜!</strong> 你已经阅读了 <a href="#" class="alert-link">本条重要的消息。</a>
           </tips>
         </div>
         <div class="col-xs-4">
-          <tips :type="'info'">
+          <tips type="info">
             <strong>注意!</strong> 此消息 <a href="#" class="alert-link">需要您留意</a>, 但不是那么重要。
           </tips>
-        </div>
-      </div>
-    </section>
-    <section>
-      <h1 class="page-header">弹窗 Alerts</h1>
-      <div class="row">
-        <div class="col-xs-3">
-          <h3>Alert</h3>
-          <button class="btn btn-primary" @click="alert('myModal1', 'Good job!', 'you clicked the button!')" data-toggle="modal" data-target="#myModal1">alert</button>
-        </div>
-        <div class="col-xs-3">
-          <h3>Alert</h3>
-          <button class="btn btn-primary" @click="alert('myModal2', 'Good job!', 'you clicked the button!')" data-toggle="modal" data-target="#myModal2">alert</button>
-        </div>
-        <div class="col-xs-3">
-          <h3>Alert</h3>
-          <button class="btn btn-primary" @click="alert('myModal3', 'Good job!')" data-toggle="modal" data-target="#myModal3">alert</button>
-        </div>
-        <div class="col-xs-3">
-          <h3>Alert</h3>
-          <button class="btn btn-primary" @click="alert('myModal4', 'Oops!', 'sorry!', false)" data-toggle="modal" data-target="#myModal4">alert</button>
-        </div>
-        <div class="col-xs-12">
-          <h3>Confirm</h3>
-          <button class="btn btn-primary" @click="confirm('Are you sure?', 'You will not be able to recover this imaginary file!', 'warning', 'Deleted', 'Your imaginary file has been deleted.')">Confirm</button>
         </div>
       </div>
     </section>
@@ -250,7 +236,7 @@
           </datetimepicker>
         </div>
         <div class="col-xs-4">
-          <h3>日期時間選擇器</h3>
+          <h3>日期时间选择器</h3>
           <datetimepicker name="start_datetime"></datetimepicker>
         </div>
       </div>
@@ -430,6 +416,6 @@
       </form>
     </section>
   </div>
-  <dialog :title="dialog.title" :desc="dialog.desc" :id="dialog.id" :foot="dialog.foot"></dialog>
+  <dialog :id="modal.id" :title="modal.title" :desc="modal.desc" :foot="modal.foot" :type="modal.type" @confirm-event="modal.event"></dialog>
 </body>
 </html>

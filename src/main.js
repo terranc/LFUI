@@ -32,11 +32,13 @@ new Vue({
   el: 'body',
   data: {
     loading: true,
-    dialog: {
+    modal: {
       id: '',
       title: '',
       desc: '',
+      type: '',
       foot: true,
+      event: Function,
     },
     btns: [
       {
@@ -158,6 +160,22 @@ new Vue({
         order: 1,
       },
     ],
+    myModal1: {
+      title: 'myModal1',
+      desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis mollitia molestias m',
+      type: 'alert',
+      event() {
+        console.log('you click the confirm button');
+      },
+    },
+    myModal2: {
+      title: 'myModal2',
+      desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis mollitia molestias m',
+      type: 'confirm',
+      event() {
+        console.log('you click the confirm button');
+      },
+    },
   },
   components: {
     vSelect,
@@ -174,27 +192,15 @@ new Vue({
     Ueditor,
   },
   methods: {
-    alert(id, title, desc, foot) {
-      this.dialog.id = id;
-      if (typeof desc === 'undefined') {
-        desc = title;
-        this.dialog.desc = desc;
-        return;
-      } else if (typeof foot === 'undefined') {
-        this.dialog.title = title;
-        this.dialog.desc = desc;
-        this.dialog.foot = true;
-        return;
-      }
-      this.dialog = {
+    dialog(id, options) {
+      this.modal = {
         id,
-        title,
-        desc,
-        foot,
+        title: options.title,
+        desc: options.desc,
+        foot: options.foot || true,
+        type: options.type || 'confirm',
+        event: options.event,
       };
-    },
-    confirm(title, desc, type, nextTitle, nextDesc) {
-
     },
   },
   ready() {

@@ -1,83 +1,3 @@
-body {
-  color: #333;
-}
-.page-header {
-  padding-bottom: 10px;
-  margin: 44px 0 22px;
-  border-bottom: 1px solid #eee;
-}
-.icons-block {
-  display: flex;
-  flex-wrap: wrap;
-  & .icon-box {
-    flex: 0 0 100px;
-    text-align: center;
-    margin-right: 20px;
-    margin-bottom: 20px;
-  }
-}
-#flexbox .row div {
-  margin-top: 10px;
-
-  div {
-    height: 1rem;
-    background-color: #44b549;
-  }
-}
-.example-modal .modal {
-  position: relative;
-  top: auto;
-  right: auto;
-  bottom: auto;
-  left: auto;
-  z-index: 1;
-  display: block;
-}
-
-#container {
-  min-height: 100vh;
-  height: auto;
-  position: relative;
-  min-width: 290px;
-  overflow: hidden;
-}
-#navbar {
-  position: absolute;
-  width: 100%;
-  z-index: 10;
-  left: 0;
-  top: 0;
-}
-#content-container {
-  position: relative;
-  padding-top: 80px;
-  padding-bottom: 80px;
-  background-color: #ecf0f5;
-
-  @media (width >= 992px) {
-    & {
-      padding-left: 220px;
-    }
-  }
-}
-#sidebar-container {
-  position: absolute;
-  left: 220px;
-  top: 0;
-  z-index: 4;
-  bottom: 0;
-  width: 220px;
-  padding-top: 40px;
-  min-height: 100%;
-  background-color: $base-color;
-
-  @media (width >= 992px) {
-    & {
-      left: 0;
-    }
-  }
-}
-
 .v-select {
   &.open {
     .open-indicator {
@@ -129,6 +49,7 @@ body {
 .input-group-addon {
   width: auto;
 }
+
 .filter-inner {
   .category-item {
     margin-right: 4px;
@@ -152,11 +73,4 @@ body {
   height: 30px;
   line-height: 30px;
   width: 30px;
-}
-
-.fade-transition {
-  transition: opacity .3s ease;
-}
-.fade-enter, .fade-leave {
-  opacity: 0;
 }

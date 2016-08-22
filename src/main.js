@@ -12,6 +12,7 @@ import vSelect from 'vue-select';
 // 样式文件
 import './scss/lfui.scss';
 import './css/main.css';
+import './css/example.css';
 
 // 自定义组件
 import Button from './components/button';

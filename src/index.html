@@ -260,7 +260,7 @@
       <div class="row">
         <div class="col-xs-12">
           <filter title="种类">
-            <btn v-for="item in icons" :href="'item' + $index" outline>{{ item }}</btn>
+            <a v-for="item in icons" :href="'item' + $index" class="btn btn-outline-primary category-item">{{ item }}</a>
           </filter>
           <filter title="种类">
             <select class="form-control">
@@ -281,7 +281,7 @@
             <div class="input-group">
               <input type='text' class="form-control" />
               <span class="input-group-btn">
-                <btn type="secondary" type="button"><i class="material-icons">search</i></btn>
+                <button class="btn btn-secondary" type="button"><i class="material-icons">search</i></button>
               </span>
             </div>
           </filter>

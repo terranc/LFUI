@@ -79,13 +79,14 @@
   .col-form-label {
     display: table-cell;
     width: 6em;
+    min-width: 6em;
     padding-right: 2em;
     text-align: right;
     box-sizing: content-box;
     vertical-align: middle;
   }
   .col-form-control {
-    display: table-cell;
+    /* display: table-cell; */
     padding: 5px 0;
 
     input, select {

@@ -284,90 +284,52 @@
     </section>
     <section>
       <h1 class="page-header">表单 Form</h1>
-      <form action=".">
-        <div class="form-group">
-          <label>账号<input type="text" class="form-control"></label>
-        </div>
-        <div class="form-group">
-          <label>
-            权限组
-            <select name="" id="" class="form-control">
-              <option selected>Open this select menu</option>
-              <option v-for="item in 5" value="$index">item{{$index}}</option>
-            </select>
-          </label>
-        </div>
-        <div class="form-group">
-          <label>
-            封面
-            <input type="file" id="file" class="form-control">
-          </label>
-        </div>
-        <div class="form-group">
-          <label>联系电话<input type="tel" class="form-control"></label>
-        </div>
-        <div class="form-group">
-          <span>性别</span>
-          <div>
-            <label class="form-check-inline"><input class="form-check-input" type="radio" name="gender" value="male"> 男</label>
-            <label class="form-check-inline"><input class="form-check-input" type="radio" name="gender" value="female"> 女</label>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>置顶<input class="form-control" type="checkbox" value=""></label>
-        </div>
-        <div class="form-group">
-          <label>简介<textarea class="form-control" name="content" id="" cols="30"></textarea></label>
-        </div>
-        <div class="form-group">
-          <label>内容</label>
-          <ueditor id="ueditor1"></ueditor>
-        </div>
-        <btn type="submit">提交</btn>
-      </form>
       <h3 style="margin-top: 30px;">Inline Form</h3>
       <form class="form-table" action=".">
         <label class="form-group-inline">
-          <div class="col-form-label">姓名</div>
+          <div class="col-form-label">账号</div>
           <div class="col-form-control">
             <input class="form-control" type="text">
           </div>
         </label>
         <label class="form-group-inline">
-          <div class="col-form-label">Search</div>
+          <div class="col-form-label">权限组</div>
           <div class="col-form-control">
-            <input class="form-control" type="search">
+            <select name="" id="" class="form-control">
+              <option selected>Open this select menu</option>
+              <option v-for="item in 5" value="$index">item{{$index}}</option>
+            </select>
           </div>
         </label>
         <label class="form-group-inline">
-          <div class="col-form-label">Email</div>
+          <div class="col-form-label">封面</div>
           <div class="col-form-control">
-            <input class="form-control" type="email" placeholder="bootstrap@example.com">
+            <input type="file" id="file" class="form-control">
           </div>
         </label>
         <label class="form-group-inline">
-          <div class="col-form-label">URL</div>
+          <div class="col-form-label">联系电话</div>
           <div class="col-form-control">
-            <input class="form-control" type="url" value="http://getbootstrap.com">
+            <input type="tel" class="form-control">
+          </div>
+        </label>
+        <div class="form-group-inline">
+          <div class="col-form-label">性别</div>
+          <div class="col-form-control">
+            <label class="form-check-inline"><input class="form-check-input" type="radio" name="gender" value="male"> 男</label>
+            <label class="form-check-inline"><input class="form-check-input" type="radio" name="gender" value="female"> 女</label>
+          </div>
+        </div>
+        <label class="form-group-inline">
+          <div class="col-form-label">简介</div>
+          <div class="col-form-control">
+            <textarea class="form-control" name="content"></textarea>
           </div>
         </label>
         <label class="form-group-inline">
-          <div class="col-form-label">Telephone</div>
+          <div class="col-form-label">内容</div>
           <div class="col-form-control">
-            <input class="form-control" type="tel" value="1-(555)-555-5555">
-          </div>
-        </label>
-        <label class="form-group-inline">
-          <div class="col-form-label">Password</div>
-          <div class="col-form-control">
-            <input class="form-control" type="password" value="hunter2">
-            <p class="form-text text-muted">（请输入6-20位字符，不能包含空格）</p>
-          </div>
-        </label>
-        <label class="form-group-inline">
-          <div class="col-form-label">Number</div>
-          <div class="col-form-control">
-            <input class="form-control" type="number" value="42">
+            <ueditor id="ueditor1"></ueditor>
           </div>
         </label>
         <div class="form-group-inline">

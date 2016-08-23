@@ -76,29 +76,23 @@
 .form-group-inline {
   display: table-row;
 
-  + .form-group-inline {
-    .col-form-control {
-      padding-top: 10px;
-    }
-  }
-
   .col-form-label {
     display: table-cell;
     width: 6em;
     padding-right: 2em;
-    padding-top: 6px;
     text-align: right;
     box-sizing: content-box;
+    vertical-align: middle;
   }
   .col-form-control {
     display: table-cell;
-
-    input + .msg-box {
-      margin-top: 10px;
-    }
+    padding: 5px 0;
 
     input, select {
       max-width: 25rem;
+      + .msg-box {
+        margin-top: 10px;
+      }
     }
     .form-control {
       padding: .75rem;

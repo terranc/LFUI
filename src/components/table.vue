@@ -22,7 +22,12 @@
         </tr>
       </tbody>
     </table>
-    <pagination :current-page="page" :total-page="totalPage" @current-change="getData" show-go></pagination>
+    <div class="clearfix">
+      <div class="pull-left" v-if="totalItem" style="line-height: 46px;">共有 {{totalItem}} 条记录</div>
+      <div class="pull-right">
+        <pagination :current-page="page" :total-page="totalPage" @current-change="getData" show-go></pagination>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -44,6 +49,7 @@
         required: true,
       },
       totalPage: Number,
+      totalItem: Number,
     },
     components: {
       Pagination,

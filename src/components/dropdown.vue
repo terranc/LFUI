@@ -6,8 +6,8 @@
     <div class="dropdown-menu">
       <a v-for="item in lists"
         class="dropdown-item"
-        :href="item.link">
-        {{ item.title }}
+        :href="item.link"
+        v-text="item.title">
       </a>
     </div>
   </div>

@@ -1,6 +1,6 @@
 <template>
   <div :class="{ 'tab-pane': true, 'fade': animate, 'active in': active }" :id="id" :aria-expanded="active">
-    <p>{{ content }}</p>
+    <p v-text="content"></p>
   </div>
 </template>
 

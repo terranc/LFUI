@@ -6,7 +6,7 @@
         <slot name="icon"></slot>
       </div>
       <div class="flex-item-auto">
-        <h4 v-if="title">{{ title }}</h4>
+        <h4 v-if="title" v-text="title"></h4>
         <slot></slot>
       </div>
     </div>

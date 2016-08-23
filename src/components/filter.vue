@@ -1,6 +1,6 @@
 <template>
   <div class="filter-box">
-    <div class="filter-label" :style="{'width': width}">{{ title }}</div>
+    <div class="filter-label" :style="{'width': width}" v-text="title"></div>
     <div class="filter-inner">
       <slot></slot>
     </div>

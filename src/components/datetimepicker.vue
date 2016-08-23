@@ -3,7 +3,7 @@
     <input type="text" :name="name" class="form-control">
     <span class="input-group-addon">
       <slot name="icon">
-        <i slot="icon" class="material-icons">{{ icon }}</i>
+        <i slot="icon" class="material-icons" v-text="icon"></i>
       </slot>
     </span>
   </div>

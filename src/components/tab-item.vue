@@ -3,8 +3,8 @@
     <a data-toggle="tab" :href="links[0]"
       :class="{ 'nav-link': true, 'active': active}"
       :aria-expanded="active"
-      @click="$parent.selected = id">
-      {{ title }}
+      @click="$parent.selected = id"
+      v-text="title">
     </a>
   </div>
   <dropdown class="nav-item"

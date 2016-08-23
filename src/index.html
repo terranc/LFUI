@@ -7,6 +7,7 @@
   <title>Examples</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
+  <link rel="stylesheet" type="text/css" href="./assets/libs/validator/jquery.validator.css">
   <script src="./assets/libs/jquery/jquery.js"></script>
   <script src="./assets/libs/tether/tether.js"></script>
   <script src="./assets/libs/moment/moment-with-locales.js"></script>
@@ -14,6 +15,7 @@
   <script src="./assets/libs/ueditor/ueditor.all.js"></script>
   <script src="./assets/libs/bootstrap/bootstrap.min.js"></script>
   <script src="./assets/libs/bootstrap/bootstrap-datetimepicker.js"></script>
+  <script src="./assets/libs/validator/jquery.validator.js?local=zh-CN"></script>
 </head>
 <body>
   <loading type="grid" v-show="loading"></loading>
@@ -329,19 +331,19 @@
         <label class="form-group-inline">
           <div class="col-form-label">姓名</div>
           <div class="col-form-control">
-            <input class="form-control" type="text" value="Artisanal kale">
+            <input class="form-control" type="text">
           </div>
         </label>
         <label class="form-group-inline">
           <div class="col-form-label">Search</div>
           <div class="col-form-control">
-            <input class="form-control" type="search" value="How do I shoot web">
+            <input class="form-control" type="search">
           </div>
         </label>
         <label class="form-group-inline">
           <div class="col-form-label">Email</div>
           <div class="col-form-control">
-            <input class="form-control" type="email" value="bootstrap@example.com">
+            <input class="form-control" type="email" placeholder="bootstrap@example.com">
           </div>
         </label>
         <label class="form-group-inline">
@@ -376,8 +378,75 @@
           </div>
         </div>
       </form>
+      <h3 style="margin-top: 30px;">Validator Form</h3>
+      <div class="col-md-5">
+        <form id="form1" data-validator-option="{theme:'bootstrap', timely:2, stopOnError:true}">
+          <div class="form-group">
+            <label class="control-label">Username</label>
+            <input type="text" class="form-control" name="username"
+            data-rule="required;username;"
+            data-rule-username="[/[\w\d]{4,30}/, 'Please enter 3-12 digits, letters, underscores']"
+            data-tip="You can use letters, numbers and periods"
+            >
+          </div>
+          <div class="form-group">
+            <label class="control-label">Password</label>
+            <input type="password" class="form-control" name="pwd"
+            data-rule="Password: required; length(8~16)"
+            data-tip="Please fill in at least eight characters"
+            >
+          </div>
+          <div class="form-group">
+            <label class="control-label">Verify Password</label>
+            <input type="password" class="form-control" name="pwdAgain" data-rule="Verify Password: required; match(pwd)">
+          </div>
+          <div class="form-group">
+            <label class="control-label">Gender</label>
+            <select class="form-control" name="gender" data-rule="required">
+              <option value="">select ...</option>
+              <option value="1">Male</option>
+              <option value="2">Female</option>
+              <option value="3">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Email</label>
+            <input type="text" class="form-control" name="email" data-rule="required;email">
+          </div>
+          <div class="form-group">
+            <label class="control-label">Interest</label>
+            <div class="">
+              <label class="checkbox-inline"><input type="checkbox" name="interest" data-rule="checked">sports</label>
+              <label class="checkbox-inline"><input type="checkbox" name="interest">movie</label>
+              <label class="checkbox-inline"><input type="checkbox" name="interest">game</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Note</label>
+            <textarea class="form-control" data-rule="required;"></textarea>
+          </div>
+          <div class="form-group">
+            <label class="checkbox-inline"><input type="checkbox" id="agree_arguments" data-rule="checked">I agree to the service agreement.</label>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-default">reset</button>
+          </div>
+        </form>
+      </div>
     </section>
   </div>
   <dialog :id="modal.id" :title="modal.title" :desc="modal.desc" :foot="modal.foot" :type="modal.type" @confirm-event="modal.event"></dialog>
+  <script type="text/javascript">
+    $(function(){
+      $.validator.setTheme('bootstrap', {
+        validClass: 'has-success',
+        invalidClass: 'has-danger',
+        bindClassTo: '.form-group',
+        formClass: 'n-default n-bootstrap',
+        msgClass: 'n-right'
+      });
+    });
+  </script>
 </body>
 </html>

@@ -93,6 +93,10 @@
   .col-form-control {
     display: table-cell;
 
+    input + .msg-box {
+      margin-top: 10px;
+    }
+
     input, select {
       max-width: 25rem;
     }

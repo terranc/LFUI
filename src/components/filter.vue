@@ -16,7 +16,7 @@
 </script>
 <style>
   .filter-box {
-    display: table;
+    display: table-row;
 
     .filter-label {
       display: table-cell;
@@ -29,10 +29,35 @@
     .filter-inner {
       display: table-cell;
       .label {
-        padding: .5em .8em;
         margin-bottom: 4px;
+        padding: .5em .8em;
         cursor: pointer;
       }
+      input, select {
+        max-width: 25rem;
+      }
+      .form-control {
+        padding: .75rem;
+      }
+      .input-group-addon {
+        line-height: 1.8;
+      }
+      .input-group-btn {
+        .btn {
+          height: 100%;
+        }
+      }
     }
+  }
+  .filter-inner {
+    .category-item {
+      margin-right: 4px;
+      margin-bottom: 4px;
+      padding: 4px 8px;
+    }
+  }
+
+  .filter-box + .filter-box .filter-inner {
+    padding-top: 10px;
   }
 </style>

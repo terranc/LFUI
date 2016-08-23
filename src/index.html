@@ -256,7 +256,7 @@
           <filter title="操作员">
              <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
           </filter>
-          <filter title="截止日期">
+          <filter title="截止日期" width="8em">
             <div class="input-daterange input-group">
               <input type='text' name="start-date" class="form-control" data-format="YYYY-MM-DD" data-picker="datetimepicker" />
               <div class="input-group-addon">至</div>
@@ -325,91 +325,53 @@
         <btn type="submit">提交</btn>
       </form>
       <h3 style="margin-top: 30px;">Inline Form</h3>
-      <form action=".">
-        <div class="form-group row">
-          <label for="example-text-input" class="col-xs-2 col-form-label">Text</label>
-          <div class="col-xs-10">
-            <input class="form-control" type="text" value="Artisanal kale" id="example-text-input">
+      <form class="form-table" action=".">
+        <label class="form-group-inline">
+          <div class="col-form-label">姓名</div>
+          <div class="col-form-control">
+            <input class="form-control" type="text" value="Artisanal kale">
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="example-search-input" class="col-xs-2 col-form-label">Search</label>
-          <div class="col-xs-10">
-            <input class="form-control" type="search" value="How do I shoot web" id="example-search-input">
+        </label>
+        <label class="form-group-inline">
+          <div class="col-form-label">Search</div>
+          <div class="col-form-control">
+            <input class="form-control" type="search" value="How do I shoot web">
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="example-email-input" class="col-xs-2 col-form-label">Email</label>
-          <div class="col-xs-10">
-            <input class="form-control" type="email" value="bootstrap@example.com" id="example-email-input">
+        </label>
+        <label class="form-group-inline">
+          <div class="col-form-label">Email</div>
+          <div class="col-form-control">
+            <input class="form-control" type="email" value="bootstrap@example.com">
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="example-url-input" class="col-xs-2 col-form-label">URL</label>
-          <div class="col-xs-10">
-            <input class="form-control" type="url" value="http://getbootstrap.com" id="example-url-input">
+        </label>
+        <label class="form-group-inline">
+          <div class="col-form-label">URL</div>
+          <div class="col-form-control">
+            <input class="form-control" type="url" value="http://getbootstrap.com">
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="example-tel-input" class="col-xs-2 col-form-label">Telephone</label>
-          <div class="col-xs-10">
-            <input class="form-control" type="tel" value="1-(555)-555-5555" id="example-tel-input">
+        </label>
+        <label class="form-group-inline">
+          <div class="col-form-label">Telephone</div>
+          <div class="col-form-control">
+            <input class="form-control" type="tel" value="1-(555)-555-5555">
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="example-password-input" class="col-xs-2 col-form-label">Password</label>
-          <div class="col-xs-10">
-            <input class="form-control" type="password" value="hunter2" id="example-password-input">
-            <p id="passwordHelpBlock" class="form-text text-muted">
-              Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
-            </p>
+        </label>
+        <label class="form-group-inline">
+          <div class="col-form-label">Password</div>
+          <div class="col-form-control">
+            <input class="form-control" type="password" value="hunter2">
+            <p class="form-text text-muted">（请输入6-20位字符，不能包含空格）</p>
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="example-number-input" class="col-xs-2 col-form-label">Number</label>
-          <div class="col-xs-10">
-            <input class="form-control" type="number" value="42" id="example-number-input">
+        </label>
+        <label class="form-group-inline">
+          <div class="col-form-label">Number</div>
+          <div class="col-form-control">
+            <input class="form-control" type="number" value="42">
           </div>
-        </div>
-        <div class="form-group row">
-          <label for="example-datetime-local-input" class="col-xs-2 col-form-label">Date and time</label>
-          <div class="col-xs-10">
-            <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="example-date-input" class="col-xs-2 col-form-label">Date</label>
-          <div class="col-xs-10">
-            <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="example-month-input" class="col-xs-2 col-form-label">Month</label>
-          <div class="col-xs-10">
-            <input class="form-control" type="month" value="2011-08" id="example-month-input">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="example-week-input" class="col-xs-2 col-form-label">Week</label>
-          <div class="col-xs-10">
-            <input class="form-control" type="week" value="2011-W33" id="example-week-input">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="example-time-input" class="col-xs-2 col-form-label">Time</label>
-          <div class="col-xs-10">
-            <input class="form-control" type="time" value="13:45:00" id="example-time-input">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="example-color-input" class="col-xs-2 col-form-label">Color</label>
-          <div class="col-xs-10">
-            <input class="form-control" type="color" value="#563d7c" id="example-color-input">
-          </div>
-        </div>
-        <div class="form-group row">
-          <div class="col-xs-2"></div>
-          <div class="col-xs-10">
+        </label>
+        <div class="form-group-inline">
+          <div class="col-form-label"></div>
+          <div class="col-form-control">
             <button class="btn btn-primary" type="submit">提交</button>
           </div>
         </div>

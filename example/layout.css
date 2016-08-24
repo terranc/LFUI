@@ -18,6 +18,9 @@ body {
       margin-bottom: 0;
     }
   }
+  .brand-block {
+    padding: 0;
+  }
   .user-block {
     align-self: center;
   }

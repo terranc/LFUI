@@ -17,6 +17,9 @@ body {
 #navbar .navbar-inner h4 {
   margin-bottom: 0;
 }
+#navbar .brand-block {
+  padding: 0;
+}
 #navbar .user-block {
   -ms-flex-item-align: center;
       align-self: center;

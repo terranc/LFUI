@@ -244,35 +244,33 @@
     </section>
     <section>
       <h1 class="page-header">筛选器 Filter</h1>
-      <div class="row">
-        <div class="col-xs-12">
-          <filter title="种类">
-            <a v-for="item in icons" :href="'item' + $index" class="btn btn-outline-primary category-item">{{ item }}</a>
-          </filter>
-          <filter title="种类">
-            <select class="form-control">
-              <option v-for="item in icons">{{ item }}</option>
-            </select>
-          </filter>
-          <filter title="操作员">
-             <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
-          </filter>
-          <filter title="截止日期" width="8em">
-            <div class="input-daterange input-group">
-              <input type='text' name="start-date" class="form-control" data-format="YYYY-MM-DD" data-picker="datetimepicker" />
-              <div class="input-group-addon">至</div>
-              <input type='text' name="end-date" class="form-control" data-format="YYYY-MM-DD" data-picker="datetimepicker" />
-            </div>
-          </filter>
-          <filter title="检索">
-            <div class="input-group">
-              <input type='text' class="form-control" />
-              <span class="input-group-btn">
-                <button class="btn btn-secondary" type="button"><i class="material-icons md-18">search</i></button>
-              </span>
-            </div>
-          </filter>
-        </div>
+      <div class="filter-wrapper">
+        <filter title="种类">
+          <a v-for="item in icons" :href="'item' + $index" class="btn btn-outline-primary category-item">{{ item }}</a>
+        </filter>
+        <filter title="种类">
+          <select class="form-control">
+            <option v-for="item in icons">{{ item }}</option>
+          </select>
+        </filter>
+        <filter title="操作员">
+           <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+        </filter>
+        <filter title="截止日期" width="8em">
+          <div class="input-daterange input-group">
+            <input type='text' name="start-date" class="form-control" data-format="YYYY-MM-DD" data-picker="datetimepicker" />
+            <div class="input-group-addon">至</div>
+            <input type='text' name="end-date" class="form-control" data-format="YYYY-MM-DD" data-picker="datetimepicker" />
+          </div>
+        </filter>
+        <filter title="检索">
+          <div class="input-group">
+            <input type='text' class="form-control" />
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="button"><i class="material-icons md-18">search</i></button>
+            </span>
+          </div>
+        </filter>
       </div>
     </section>
     <section>

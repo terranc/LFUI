@@ -23,8 +23,6 @@ import Filter from './components/filter';
 import Datetimepicker from './components/datetimepicker';
 import Ueditor from './components/ueditor';
 
-Vue.config.delimiters = ['[[', ']]'];
-
 /* eslint no-new: off */
 window.vm = new Vue({
   el: 'body',

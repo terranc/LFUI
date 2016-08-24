@@ -1,11 +1,11 @@
-.v-select {
+.dropdown.v-select {
   &.open {
     .open-indicator {
       bottom: 9px;
     }
 
     .dropdown-toggle {
-      border-bottom: 1px solid #fff;
+      border-bottom: 1px solid transparent;
     }
   }
 

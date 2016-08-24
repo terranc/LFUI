@@ -90,7 +90,8 @@ body {
       zoom: 1;
 
       &:hover,
-      &:focus {
+      &:focus,
+      &.active {
         background-color: #f8f8f8;
         text-decoration: none;
       }
@@ -104,6 +105,6 @@ body {
 .content {
   display: block;
   overflow: hidden;
-  padding: 0 30px 30px;
+  padding: 30px;
   vertical-align: top;
 }

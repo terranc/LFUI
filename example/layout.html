@@ -39,230 +39,10 @@
     <div class="row" id="main-container">
       <div class="col-xs-12 col-md-10 push-md-2 content">
         <section>
-          <h1 class="page-header">图标 Icons</h1>
-          <div class="icons-block">
-            <span class="icon-box" v-for="item in icons"><i class="material-icons">{{ item }}</i><br/>{{ item }}</span>
-          </div>
-          <p>更多图标请查看 <a href="https://design.google.com/icons/">Material icons</a></p>
-        </section>
-        <section id="button-block">
-          <h1 class="page-header">按钮 Buttons</h1>
-          <h3>中文</h3>
-          <btn v-for="item in btns" :type="item.type">{{ item.title }}</btn>
-          <h3>English</h3>
-          <btn v-for="item in btns" :type="item.type">{{ item.type }}</btn>
-          <h3>禁用</h3>
-          <btn v-for="item in btns" :type="item.type" disabled>{{ item.type }}</btn>
-        </section>
-        <section>
-          <h1 class="page-header">按钮组 Buttons Group</h1>
-          <div class="row">
-            <div class="col-md-7">
-              <h3>Basic</h3>
-              <btn-group type="group">
-                <btn type="secondary">left</btn>
-                <btn type="secondary">middle</btn>
-                <btn type="secondary">right</btn>
-              </btn-group>
-              <h3>Button Toolbar</h3>
-              <btn-group type="toolbar">
-                <btn-group type="group">
-                  <btn type="secondary">1</btn>
-                  <btn type="secondary">2</btn>
-                  <btn type="secondary">3</btn>
-                  <btn type="secondary">4</btn>
-                </btn-group>
-                <btn-group type="group">
-                  <btn type="secondary">4</btn>
-                  <btn type="secondary">5</btn>
-                </btn-group>
-              </btn-group>
-              <h3>Group vertical</h3>
-              <btn-group type="group-vertical">
-                <btn type="secondary">button</btn>
-                <btn type="secondary">button</btn>
-                <btn type="secondary">button</btn>
-                <btn type="secondary">button</btn>
-              </btn-group>
-            </div>
-            <div class="col-md-5">
-              <h3>Dropdown</h3>
-              <dropdown :lists="links" :type="'secondary'">Hello World</dropdown>
-            </div>
-          </div>
-        </section>
-        <section id="flexbox">
-          <h1 class="page-header">Flexbox</h1>
-          <h3>Responsive</h3>
-          <p>Responsive modifiers能在XS，SM，MD＆LG视宽度指定不同的列宽，偏移，对齐和分布</p>
-          <div class="row">
-            <div class="col-xs-12 col-sm-3 col-md-2 col-lg-1">
-              <div class="box-row"></div>
-            </div>
-            <div class="col-xs-6 col-sm-6 col-md-8 col-lg-10">
-              <div class="box-row"></div>
-            </div>
-            <div class="col-xs-6 col-sm-3 col-md-2 col-lg-1">
-              <div class="box-row"></div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-12 col-sm-3 col-md-2 col-lg-1">
-              <div class="box-row"></div>
-            </div>
-            <div class="col-xs-12 col-sm-9 col-md-10 col-lg-11">
-              <div class="box-row"></div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-10 col-sm-6 col-md-8 col-lg-10">
-              <div class="box-row"></div>
-            </div>
-            <div class="col-xs-2 col-sm-6 col-md-4 col-lg-2">
-              <div class="box-row"></div>
-            </div>
-          </div>
-          <h3>Fluid</h3>
-          <p>基于百分比宽度调整列和行的大小</p>
-          <div class="row">
-            <div class="col-xs-12">
-              <div class="box-row"></div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-1">
-              <div class="box-row"></div>
-            </div>
-            <div class="col-xs-11">
-              <div class="box-row"></div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-2">
-              <div class="box-row"></div>
-            </div>
-            <div class="col-xs-10">
-              <div class="box-row"></div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-3">
-              <div class="box-row"></div>
-            </div>
-            <div class="col-xs-9">
-              <div class="box-row"></div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-4">
-              <div class="box-row"></div>
-            </div>
-            <div class="col-xs-8">
-              <div class="box-row"></div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-5">
-              <div class="box-row"></div>
-            </div>
-            <div class="col-xs-7">
-              <div class="box-row"></div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-6">
-              <div class="box-row"></div>
-            </div>
-            <div class="col-xs-6">
-              <div class="box-row"></div>
-            </div>
-          </div>
-        </section>
-        <section>
-          <h1 class="page-header">模式对话框 Dialogs</h1>
-          <h3>提示 Tooltips</h3>
-          <div>
-            <button class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="会在上边显示">上</button>
-            <button class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="会在右边显示">右</button>
-            <button class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="会在下边显示">下</button>
-            <button class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="会在左边显示">左</button>
-          </div>
-          <h3 style="margin-top: 30px;">弹窗 Alerts</h3>
-          <div class="row">
-            <div class="col-xs-3">
-              <h3>myModal1</h3>
-              <button class="btn btn-primary" @click="dialog('myModal1', myModal1)" data-toggle="modal" data-target="#myModal1">alert</button>
-            </div>
-            <div class="col-xs-3">
-              <h3>myModal2</h3>
-              <button class="btn btn-primary" @click="dialog('myModal2', myModal2)" data-toggle="modal" data-target="#myModal2">alert</button>
-            </div>
-          </div>
-        </section>
-        <section>
-          <h1 class="page-header">面包屑导航 Breadcrumb</h1>
           <breadcrumb :lists="breadcrumb"></breadcrumb>
         </section>
         <section>
-          <h1 class="page-header">提示与警告 Indicators</h1>
-          <h3>Tips</h3>
-          <div class="row">
-            <div class="col-xs-12">
-              <tips type="warning" title="警告">
-                <i class="material-icons md-48" slot="icon">face</i>
-                <p>警告是一种警戒性的纪律制裁方式，也是最轻微的一种制裁方式，是指公务员的行为已经构成了违纪，应当予以及时纠正和警示。</p>
-              </tips>
-            </div>
-            <div class="col-xs-4">
-              <tips type="danger">
-                <strong>出错了!</strong><a href="#" class="alert-link">请修改</a>并重试。
-              </tips>
-            </div>
-            <div class="col-xs-4">
-              <tips type="success">
-                <strong>恭喜!</strong> 你已经阅读了 <a href="#" class="alert-link">本条重要的消息。</a>
-              </tips>
-            </div>
-            <div class="col-xs-4">
-              <tips type="info">
-                <strong>注意!</strong> 此消息 <a href="#" class="alert-link">需要您留意</a>, 但不是那么重要。
-              </tips>
-            </div>
-          </div>
-        </section>
-        <section>
-          <h1 class="page-header">选择器 Selector</h1>
-          <div class="row">
-            <div class="col-xs-4"></div>
-            <div class="col-xs-4">
-              <v-select multiple :value.sync="interests.selected" :options="interests.options"></v-select>
-            </div>
-            <div class="col-xs-4"></div>
-          </div>
-        </section>
-        <section>
-          <h1 class="page-header">日期时间选择器 DatetimePicker</h1>
-          <div class="row">
-            <div class='col-xs-4'>
-              <h3>日期选择器</h3>
-              <datetimepicker name="start_date" format="YYYY-MM-DD">
-                <i slot="icon" class="material-icons">date_range</i>
-              </datetimepicker>
-            </div>
-            <div class="col-xs-4">
-              <h3>时间选择器</h3>
-              <datetimepicker name="start_time" format="HH:mm:ss">
-                <i slot="icon" class="material-icons">schedule</i>
-              </datetimepicker>
-            </div>
-            <div class="col-xs-4">
-              <h3>日期时间选择器</h3>
-              <datetimepicker name="start_datetime"></datetimepicker>
-            </div>
-          </div>
-        </section>
-        <section>
-          <h1 class="page-header">筛选器 Filter</h1>
+          <h1 class="page-header"></h1>
           <div class="filter-wrapper">
             <filter title="种类">
               <a v-for="item in icons" :href="'item' + $index" class="btn btn-outline-primary category-item">{{ item }}</a>
@@ -293,70 +73,11 @@
           </div>
         </section>
         <section>
-          <h1 class="page-header">表格 Table</h1>
-          <h3>普通表格</h3>
-          <lf-table :page="1" :data="users" :titles="titles"></lf-table>
-          <h3>响应式表格</h3>
+          <h1 class="page-header"></h1>
           <lf-table :page="7" :total-page="15" :data="users" :titles="titles" :total-item="100" params-name="p" responsive></lf-table>
         </section>
         <section>
-          <h1 class="page-header">表单 Form</h1>
-          <h3 style="margin-top: 30px;">Inline Form</h3>
-          <form class="form-table" action=".">
-            <label class="form-group-inline">
-              <div class="col-form-label">账号</div>
-              <div class="col-form-control">
-                <input class="form-control" type="text">
-              </div>
-            </label>
-            <label class="form-group-inline">
-              <div class="col-form-label">权限组</div>
-              <div class="col-form-control">
-                <select name="" id="" class="form-control">
-                  <option selected>Open this select menu</option>
-                  <option v-for="item in 5" value="$index">item{{$index}}</option>
-                </select>
-              </div>
-            </label>
-            <label class="form-group-inline">
-              <div class="col-form-label">封面</div>
-              <div class="col-form-control">
-                <input type="file" id="file" class="form-control">
-              </div>
-            </label>
-            <label class="form-group-inline">
-              <div class="col-form-label">联系电话</div>
-              <div class="col-form-control">
-                <input type="tel" class="form-control">
-              </div>
-            </label>
-            <div class="form-group-inline">
-              <div class="col-form-label">性别</div>
-              <div class="col-form-control">
-                <label class="form-check-inline"><input class="form-check-input" type="radio" name="gender" value="male"> 男</label>
-                <label class="form-check-inline"><input class="form-check-input" type="radio" name="gender" value="female"> 女</label>
-              </div>
-            </div>
-            <label class="form-group-inline">
-              <div class="col-form-label text-middle">简介</div>
-              <div class="col-form-control">
-                <textarea class="form-control" name="content"></textarea>
-              </div>
-            </label>
-            <label class="form-group-inline">
-              <div class="col-form-label text-middle">内容</div>
-              <div class="col-form-control">
-                <ueditor id="ueditor1"></ueditor>
-              </div>
-            </label>
-            <div class="form-group-inline">
-              <div class="col-form-label"></div>
-              <div class="col-form-control">
-                <button class="btn btn-primary" type="submit">提交</button>
-              </div>
-            </div>
-          </form>
-          <h3 style="margin-top: 30px;">Validator Form</h3>
+          <h1 class="page-header"></h1>
           <div>
             <form id="form1" class="form-table" data-validator-option="{theme:'bootstrap', timely:2, stopOnError:true}">
               <label class="form-group-inline">
@@ -449,7 +170,7 @@
                 </h6>
               </div>
               <ul id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                <li><a href="#"><i class="material-icons md-18">face</i> 工会官网</a></li>
+                <li><a class="active" href="#"><i class="material-icons md-18">face</i> 工会官网</a></li>
                 <li><a href="#"><i class="material-icons md-18">face</i> 政策法规</a></li>
                 <li><a href="#"><i class="material-icons md-18">face</i> 工会动态</a></li>
                 <li><a href="#"><i class="material-icons md-18">face</i> 工会矩阵</a></li>
@@ -600,129 +321,12 @@
             title: 'Home',
             link: '#',
           }, {
-            title: 'Library',
+            title: '微工会',
             link: '#',
           }, {
-            title: 'Data',
+            title: '工会官网',
           },
         ],
-        interests: {
-          selected: null,
-          options: [
-            {
-              "value": "AF",
-              "label": "Afghanistan"
-            },
-            {
-              "value": "AX",
-              "label": "Åland Islands"
-            },
-            {
-              "value": "AL",
-              "label": "Albania"
-            },
-            {
-              "value": "DZ",
-              "label": "Algeria"
-            },
-            {
-              "value": "AS",
-              "label": "American Samoa"
-            },
-            {
-              "value": "AD",
-              "label": "Andorra"
-            },
-            {
-              "value": "AO",
-              "label": "Angola"
-            },
-            {
-              "value": "AI",
-              "label": "Anguilla"
-            },
-            {
-              "value": "AQ",
-              "label": "Antarctica"
-            },
-            {
-              "value": "AG",
-              "label": "Antigua and Barbuda"
-            },
-            {
-              "value": "AR",
-              "label": "Argentina"
-            },
-            {
-              "value": "AM",
-              "label": "Armenia"
-            },
-            {
-              "value": "AW",
-              "label": "Aruba"
-            },
-            {
-              "value": "AU",
-              "label": "Australia"
-            },
-            {
-              "value": "AT",
-              "label": "Austria"
-            },
-            {
-              "value": "AZ",
-              "label": "Azerbaijan"
-            },
-            {
-              "value": "BS",
-              "label": "Bahamas"
-            },
-            {
-              "value": "BH",
-              "label": "Bahrain"
-            },
-            {
-              "value": "BD",
-              "label": "Bangladesh"
-            },
-            {
-              "value": "BB",
-              "label": "Barbados"
-            },
-            {
-              "value": "BY",
-              "label": "Belarus"
-            },
-            {
-              "value": "BE",
-              "label": "Belgium"
-            },
-            {
-              "value": "BZ",
-              "label": "Belize"
-            },
-            {
-              "value": "BJ",
-              "label": "Benin"
-            },
-            {
-              "value": "BM",
-              "label": "Bermuda"
-            },
-            {
-              "value": "BT",
-              "label": "Bhutan"
-            },
-            {
-              "value": "BO",
-              "label": "Bolivia"
-            },
-            {
-              "value": "BA",
-              "label": "Bosnia and Herzegovina"
-            },
-          ],
-        },
         users: [
           {
             id: 1,
@@ -782,22 +386,6 @@
             order: 1,
           },
         ],
-        myModal1: {
-          title: 'myModal1',
-          desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis mollitia molestias m',
-          type: 'alert',
-          event() {
-            console.log('you click the confirm button');
-          },
-        },
-        myModal2: {
-          title: 'myModal2',
-          desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis mollitia molestias m',
-          type: 'confirm',
-          event() {
-            console.log('you click the confirm button');
-          },
-        },
       };
       vm.$set('$data', data);
       vm.$nextTick(setTimeout(function() {

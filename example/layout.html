@@ -21,6 +21,7 @@
 </head>
 </head>
 <body>
+  <loading type="grid" v-show="loading"></loading>
   <div id="container">
     <header id="navbar">
       <div class="row navbar-inner">
@@ -527,6 +528,7 @@
       </div>
     </div>
   </div>
+  <dialog :id="modal.id" :title="modal.title" :desc="modal.desc" :foot="modal.foot" :type="modal.type" @confirm-event="modal.event"></dialog>
   <script type="text/javascript" src="../dist/lfui.js"></script>
   <script type="text/javascript">
     $(function(){

@@ -71,7 +71,7 @@
 }
 .form-table {
   display: table;
-  width: 100%;
+  width: 812px;
 }
 .form-group-inline {
   display: table-row;
@@ -115,4 +115,8 @@
 
 .filter-wrapper {
   display: table;
+}
+.form-group-inline .text-middle {
+  vertical-align: top;
+  padding-top: 10px;
 }

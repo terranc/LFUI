@@ -1,0 +1,47 @@
+.page-header {
+  padding-bottom: 10px;
+  margin: 44px 0 22px;
+  border-bottom: 1px solid #eee;
+}
+.icons-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap
+}
+.icons-block .icon-box {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100px;
+          flex: 0 0 100px;
+  text-align: center;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+#flexbox .row div {
+  margin-top: 10px;
+}
+#flexbox .row div div {
+  height: 16px;
+  height: 1rem;
+  background-color: #44b549;
+}
+.example-modal .modal {
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  z-index: 1;
+  display: block;
+}
+#button-block .btn + .btn {
+  margin-left: 10px;
+}
+.fade-transition {
+  -webkit-transition: opacity .3s ease;
+  transition: opacity .3s ease;
+}
+.fade-enter, .fade-leave {
+  opacity: 0;
+}

@@ -12,6 +12,8 @@
 }
 
 .material-icons {
+  display: inline-block;
+  width: 1em;
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;

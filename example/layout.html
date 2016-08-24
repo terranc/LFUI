@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Dashboard</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <link rel="stylesheet" type="text/css" href="../dist/lfui.css">
+  <link rel="stylesheet" type="text/css" href="../src/css/example-build.css">
+  <link rel="stylesheet" type="text/css" href="./layout-build.css">
+  <script src="../dist/assets/libs/jquery/jquery.js"></script>
+  <script src="../dist/assets/libs/tether/tether.js"></script>
+  <script src="../dist/assets/libs/moment/moment-with-locales.js"></script>
+  <script src="../dist/assets/libs/ueditor/ueditor.config.js"></script>
+  <script src="../dist/assets/libs/ueditor/ueditor.all.js"></script>
+  <script src="../dist/assets/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="../dist/assets/libs/bootstrap/bootstrap-datetimepicker.js"></script>
+  <script src="../dist/assets/libs/validator/jquery.validator.js?local=zh-CN"></script>
+</head>
+</head>
+<body>
+  <div id="container">
+    <header id="navbar">
+      <div class="row navbar-inner">
+        <div class="col-xs-6">
+          <h4><a href="#"><img src="http://gonghui.tukeji.com/static/admin/images/logo.png"></a> · 管理后台</h4>
+          <a href="javascript:;" class="cd_nav_trigger"><span></span></a>
+        </div>
+        <div class="col-xs-6 text-right user-block">
+          你好，admin！
+          <a href="/lfcms/profile/edit.html" class="item">修改资料</a>
+          <a href="/lfcms/index/logout.html" class="confirm item" title="确认要退出吗？">退出</a>
+        </div>
+      </div>
+    </header>
+    <div class="row" id="main-container">
+      <div class="col-xs-12 col-md-10 push-md-2 content">
+        <section>
+          <h1 class="page-header">图标 Icons</h1>
+          <div class="icons-block">
+            <span class="icon-box" v-for="item in icons"><i class="material-icons">{{ item }}</i><br/>{{ item }}</span>
+          </div>
+          <p>更多图标请查看 <a href="https://design.google.com/icons/">Material icons</a></p>
+        </section>
+        <section id="button-block">
+          <h1 class="page-header">按钮 Buttons</h1>
+          <h3>中文</h3>
+          <btn v-for="item in btns" :type="item.type">{{ item.title }}</btn>
+          <h3>English</h3>
+          <btn v-for="item in btns" :type="item.type">{{ item.type }}</btn>
+          <h3>禁用</h3>
+          <btn v-for="item in btns" :type="item.type" disabled>{{ item.type }}</btn>
+        </section>
+        <section>
+          <h1 class="page-header">按钮组 Buttons Group</h1>
+          <div class="row">
+            <div class="col-md-7">
+              <h3>Basic</h3>
+              <btn-group type="group">
+                <btn type="secondary">left</btn>
+                <btn type="secondary">middle</btn>
+                <btn type="secondary">right</btn>
+              </btn-group>
+              <h3>Button Toolbar</h3>
+              <btn-group type="toolbar">
+                <btn-group type="group">
+                  <btn type="secondary">1</btn>
+                  <btn type="secondary">2</btn>
+                  <btn type="secondary">3</btn>
+                  <btn type="secondary">4</btn>
+                </btn-group>
+                <btn-group type="group">
+                  <btn type="secondary">4</btn>
+                  <btn type="secondary">5</btn>
+                </btn-group>
+              </btn-group>
+              <h3>Group vertical</h3>
+              <btn-group type="group-vertical">
+                <btn type="secondary">button</btn>
+                <btn type="secondary">button</btn>
+                <btn type="secondary">button</btn>
+                <btn type="secondary">button</btn>
+              </btn-group>
+            </div>
+            <div class="col-md-5">
+              <h3>Dropdown</h3>
+              <dropdown :lists="links" :type="'secondary'">Hello World</dropdown>
+            </div>
+          </div>
+        </section>
+        <section id="flexbox">
+          <h1 class="page-header">Flexbox</h1>
+          <h3>Responsive</h3>
+          <p>Responsive modifiers能在XS，SM，MD＆LG视宽度指定不同的列宽，偏移，对齐和分布</p>
+          <div class="row">
+            <div class="col-xs-12 col-sm-3 col-md-2 col-lg-1">
+              <div class="box-row"></div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-8 col-lg-10">
+              <div class="box-row"></div>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-2 col-lg-1">
+              <div class="box-row"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-3 col-md-2 col-lg-1">
+              <div class="box-row"></div>
+            </div>
+            <div class="col-xs-12 col-sm-9 col-md-10 col-lg-11">
+              <div class="box-row"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-10 col-sm-6 col-md-8 col-lg-10">
+              <div class="box-row"></div>
+            </div>
+            <div class="col-xs-2 col-sm-6 col-md-4 col-lg-2">
+              <div class="box-row"></div>
+            </div>
+          </div>
+          <h3>Fluid</h3>
+          <p>基于百分比宽度调整列和行的大小</p>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="box-row"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-1">
+              <div class="box-row"></div>
+            </div>
+            <div class="col-xs-11">
+              <div class="box-row"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-2">
+              <div class="box-row"></div>
+            </div>
+            <div class="col-xs-10">
+              <div class="box-row"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-3">
+              <div class="box-row"></div>
+            </div>
+            <div class="col-xs-9">
+              <div class="box-row"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-4">
+              <div class="box-row"></div>
+            </div>
+            <div class="col-xs-8">
+              <div class="box-row"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-5">
+              <div class="box-row"></div>
+            </div>
+            <div class="col-xs-7">
+              <div class="box-row"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="box-row"></div>
+            </div>
+            <div class="col-xs-6">
+              <div class="box-row"></div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h1 class="page-header">模式对话框 Dialogs</h1>
+          <h3>提示 Tooltips</h3>
+          <div>
+            <button class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="会在上边显示">上</button>
+            <button class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="会在右边显示">右</button>
+            <button class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="会在下边显示">下</button>
+            <button class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="会在左边显示">左</button>
+          </div>
+          <h3 style="margin-top: 30px;">弹窗 Alerts</h3>
+          <div class="row">
+            <div class="col-xs-3">
+              <h3>myModal1</h3>
+              <button class="btn btn-primary" @click="dialog('myModal1', myModal1)" data-toggle="modal" data-target="#myModal1">alert</button>
+            </div>
+            <div class="col-xs-3">
+              <h3>myModal2</h3>
+              <button class="btn btn-primary" @click="dialog('myModal2', myModal2)" data-toggle="modal" data-target="#myModal2">alert</button>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h1 class="page-header">面包屑导航 Breadcrumb</h1>
+          <breadcrumb :lists="breadcrumb"></breadcrumb>
+        </section>
+        <section>
+          <h1 class="page-header">提示与警告 Indicators</h1>
+          <h3>Tips</h3>
+          <div class="row">
+            <div class="col-xs-12">
+              <tips type="warning" title="警告">
+                <i class="material-icons md-48" slot="icon">face</i>
+                <p>警告是一种警戒性的纪律制裁方式，也是最轻微的一种制裁方式，是指公务员的行为已经构成了违纪，应当予以及时纠正和警示。</p>
+              </tips>
+            </div>
+            <div class="col-xs-4">
+              <tips type="danger">
+                <strong>出错了!</strong><a href="#" class="alert-link">请修改</a>并重试。
+              </tips>
+            </div>
+            <div class="col-xs-4">
+              <tips type="success">
+                <strong>恭喜!</strong> 你已经阅读了 <a href="#" class="alert-link">本条重要的消息。</a>
+              </tips>
+            </div>
+            <div class="col-xs-4">
+              <tips type="info">
+                <strong>注意!</strong> 此消息 <a href="#" class="alert-link">需要您留意</a>, 但不是那么重要。
+              </tips>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h1 class="page-header">选择器 Selector</h1>
+          <div class="row">
+            <div class="col-xs-4"></div>
+            <div class="col-xs-4">
+              <v-select multiple :value.sync="interests.selected" :options="interests.options"></v-select>
+            </div>
+            <div class="col-xs-4"></div>
+          </div>
+        </section>
+        <section>
+          <h1 class="page-header">日期时间选择器 DatetimePicker</h1>
+          <div class="row">
+            <div class='col-xs-4'>
+              <h3>日期选择器</h3>
+              <datetimepicker name="start_date" format="YYYY-MM-DD">
+                <i slot="icon" class="material-icons">date_range</i>
+              </datetimepicker>
+            </div>
+            <div class="col-xs-4">
+              <h3>时间选择器</h3>
+              <datetimepicker name="start_time" format="HH:mm:ss">
+                <i slot="icon" class="material-icons">schedule</i>
+              </datetimepicker>
+            </div>
+            <div class="col-xs-4">
+              <h3>日期时间选择器</h3>
+              <datetimepicker name="start_datetime"></datetimepicker>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h1 class="page-header">筛选器 Filter</h1>
+          <div class="filter-wrapper">
+            <filter title="种类">
+              <a v-for="item in icons" :href="'item' + $index" class="btn btn-outline-primary category-item">{{ item }}</a>
+            </filter>
+            <filter title="种类">
+              <select class="form-control">
+                <option v-for="item in icons">{{ item }}</option>
+              </select>
+            </filter>
+            <filter title="操作员">
+              <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+            </filter>
+            <filter title="截止日期" width="8em">
+              <div class="input-daterange input-group">
+                <input type='text' name="start-date" class="form-control" data-format="YYYY-MM-DD" data-picker="datetimepicker" />
+                <div class="input-group-addon">至</div>
+                <input type='text' name="end-date" class="form-control" data-format="YYYY-MM-DD" data-picker="datetimepicker" />
+              </div>
+            </filter>
+            <filter title="检索">
+              <div class="input-group">
+                <input type='text' class="form-control" />
+                <span class="input-group-btn">
+                  <button class="btn btn-secondary" type="button"><i class="material-icons md-18">search</i></button>
+                </span>
+              </div>
+            </filter>
+          </div>
+        </section>
+        <section>
+          <h1 class="page-header">表格 Table</h1>
+          <h3>普通表格</h3>
+          <lf-table :page="1" :data="users" :titles="titles"></lf-table>
+          <h3>响应式表格</h3>
+          <lf-table :page="7" :total-page="15" :data="users" :titles="titles" :total-item="100" params-name="p" responsive></lf-table>
+        </section>
+        <section>
+          <h1 class="page-header">表单 Form</h1>
+          <h3 style="margin-top: 30px;">Inline Form</h3>
+          <form class="form-table" action=".">
+            <label class="form-group-inline">
+              <div class="col-form-label">账号</div>
+              <div class="col-form-control">
+                <input class="form-control" type="text">
+              </div>
+            </label>
+            <label class="form-group-inline">
+              <div class="col-form-label">权限组</div>
+              <div class="col-form-control">
+                <select name="" id="" class="form-control">
+                  <option selected>Open this select menu</option>
+                  <option v-for="item in 5" value="$index">item{{$index}}</option>
+                </select>
+              </div>
+            </label>
+            <label class="form-group-inline">
+              <div class="col-form-label">封面</div>
+              <div class="col-form-control">
+                <input type="file" id="file" class="form-control">
+              </div>
+            </label>
+            <label class="form-group-inline">
+              <div class="col-form-label">联系电话</div>
+              <div class="col-form-control">
+                <input type="tel" class="form-control">
+              </div>
+            </label>
+            <div class="form-group-inline">
+              <div class="col-form-label">性别</div>
+              <div class="col-form-control">
+                <label class="form-check-inline"><input class="form-check-input" type="radio" name="gender" value="male"> 男</label>
+                <label class="form-check-inline"><input class="form-check-input" type="radio" name="gender" value="female"> 女</label>
+              </div>
+            </div>
+            <label class="form-group-inline">
+              <div class="col-form-label text-middle">简介</div>
+              <div class="col-form-control">
+                <textarea class="form-control" name="content"></textarea>
+              </div>
+            </label>
+            <label class="form-group-inline">
+              <div class="col-form-label text-middle">内容</div>
+              <div class="col-form-control">
+                <ueditor id="ueditor1"></ueditor>
+              </div>
+            </label>
+            <div class="form-group-inline">
+              <div class="col-form-label"></div>
+              <div class="col-form-control">
+                <button class="btn btn-primary" type="submit">提交</button>
+              </div>
+            </div>
+          </form>
+          <h3 style="margin-top: 30px;">Validator Form</h3>
+          <div>
+            <form id="form1" class="form-table" data-validator-option="{theme:'bootstrap', timely:2, stopOnError:true}">
+              <label class="form-group-inline">
+                <div class="col-form-label">用户名</div>
+                <div class="col-form-control">
+                  <input type="text" class="form-control" name="username"
+                  data-rule="required;username;"
+                  data-rule-username="[/[\w\d]{4,30}/, 'Please enter 3-12 digits, letters, underscores']"
+                  data-tip="请使用字母、数字或下划线"
+                  >
+                </div>
+              </label>
+              <label class="form-group-inline">
+                <div class="col-form-label">密码</div>
+                <div class="col-form-control">
+                  <input type="password" class="form-control" name="pwd"
+                  data-rule="Password: required; length(8~16)"
+                  data-tip="请输入至少8位密码"
+                  >
+                </div>
+              </label>
+              <label class="form-group-inline">
+                <div class="col-form-label">确认密码</div>
+                <div class="col-form-control">
+                  <input type="password" class="form-control" name="pwdAgain" data-rule="Verify Password: required; match(pwd)">
+                </div>
+              </label>
+              <label class="form-group-inline">
+                <div class="col-form-label">性别</div>
+                <div class="col-form-control">
+                  <select class="form-control" name="gender" data-rule="required">
+                    <option value="">请选择 ...</option>
+                    <option value="1">男</option>
+                    <option value="2">女</option>
+                    <option value="3">其他</option>
+                  </select>
+                </div>
+              </label>
+              <label class="form-group-inline">
+                <div class="col-form-label">邮箱</div>
+                <div class="col-form-control">
+                  <input type="text" class="form-control" name="email" data-rule="required;email">
+                </div>
+              </label>
+              <div class="form-group-inline">
+                <div class="col-form-label">爱好</div>
+                <div class="col-form-control">
+                  <label class="form-check-inline"><input class="form-check-input" type="checkbox" name="interest" data-rule="checked"> 运动</label>
+                  <label class="form-check-inline"><input class="form-check-input" type="checkbox" name="interest"> 电影</label>
+                  <label class="form-check-inline"><input class="form-check-input" type="checkbox" name="interest"> 游戏</label>
+                </div>
+              </div>
+              <label class="form-group-inline">
+                <div class="col-form-label text-middle">备注</div>
+                <div class="col-form-control">
+                  <textarea class="form-control" rows="5" data-rule="required;"></textarea>
+                </div>
+              </label>
+              <div class="form-group-inline">
+                <div class="col-form-label"></div>
+                <div class="col-form-control">
+                  <label class="checkbox-inline"><input type="checkbox" id="agree_arguments" data-rule="checked"> 我同意用户服务协议.</label>
+                </div>
+              </div>
+              <div class="form-group-inline">
+                <div class="col-form-label"></div>
+                <div class="col-form-control">
+                  <button type="submit" class="btn btn-primary">提交</button>
+                  <button type="reset" class="btn btn-default">重置</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+      <div class="col-xs-12 col-md-2 pull-md-10 sidebar">
+        <div class="menu">
+          <div role="tablist">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab">
+                <h6>
+                  <a href="#">待审核</a>
+                </h6>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingOne">
+                <h6 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">微工会</a>
+                </h6>
+              </div>
+              <ul id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                <li><a href="#"><i class="material-icons md-18">face</i> 工会官网</a></li>
+                <li><a href="#"><i class="material-icons md-18">face</i> 政策法规</a></li>
+                <li><a href="#"><i class="material-icons md-18">face</i> 工会动态</a></li>
+                <li><a href="#"><i class="material-icons md-18">face</i> 工会矩阵</a></li>
+              </ul>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingTwo">
+                <h6 class="panel-title">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">职工权益</a>
+                </h6>
+              </div>
+              <ul id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <li><a href="#"><i class="material-icons md-18">face</i> 春资讯</a></li>
+                <li><a href="#"><i class="material-icons md-18">face</i> 夏资讯</a></li>
+                <li><a href="#"><i class="material-icons md-18">face</i> 秋资讯</a></li>
+                <li><a href="#"><i class="material-icons md-18">face</i> 冬资讯</a></li>
+                <li><a href="#"><i class="material-icons md-18">face</i> 工会主席信箱</a></li>
+              </ul>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab">
+                <h6>
+                  <a href="#">微活动</a>
+                </h6>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingThree">
+                <h6 class="panel-title">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">积分系统</a>
+                </h6>
+              </div>
+              <ul id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <li><a href="#"><i class="material-icons md-18">face</i> 商品列表</a></li>
+                <li><a href="#"><i class="material-icons md-18">face</i> 兑换订单</a></li>
+                <li><a href="#"><i class="material-icons md-18">face</i> 积分规则</a></li>
+                <li><a href="#"><i class="material-icons md-18">face</i> 签到记录</a></li>
+              </ul>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab">
+                <h6>
+                  <a href="#">用户列表</a>
+                </h6>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingFour">
+                <h6 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">微工会</a>
+                </h6>
+              </div>
+              <ul id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour">
+                <li><a href="#"><i class="material-icons md-18">face</i> 账号管理</a></li>
+                <li><a href="#"><i class="material-icons md-18">face</i> 角色管理</a></li>
+                <li><a href="#"><i class="material-icons md-18">face</i> 后台操作日志</a></li>
+              </ul>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingFive">
+                <h6 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">系统设置</a>
+                </h6>
+              </div>
+              <ul id="collapseFive" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFive">
+                <li><a href="#"><i class="material-icons md-18">face</i> 系统参数配置</a></li>
+                <li><a href="#"><i class="material-icons md-18">face</i> 节点管理</a></li>
+                <li><a href="#"><i class="material-icons md-18">face</i> 分类管理</a></li>
+                <li><a href="#"><i class="material-icons md-18">face</i> 模型管理</a></li>
+                <li><a href="#"><i class="material-icons md-18">face</i> 重新编译</a></li>
+                <li><a href="#"><i class="material-icons md-18">face</i> 清除缓存</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="../dist/lfui.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      $.validator.setTheme('bootstrap', {
+        validClass: 'has-success',
+        invalidClass: 'has-danger',
+        bindClassTo: '.form-group-inline',
+        formClass: 'n-default n-bootstrap',
+        msgClass: 'n-right'
+      });
+      var data = {
+        loading: true,
+        modal: {
+          id: '',
+          title: '',
+          desc: '',
+          type: '',
+          foot: true,
+          event: Function,
+        },
+        btns: [
+          {
+            type: 'primary',
+            title: '主色',
+          }, {
+            type: 'secondary',
+            title: '普通',
+          }, {
+            type: 'success',
+            title: '成功',
+          }, {
+            type: 'info',
+            title: '信息',
+          }, {
+            type: 'warning',
+            title: '警告',
+          }, {
+            type: 'danger',
+            title: '危险',
+          }, {
+            type: 'mint',
+            title: '薄荷',
+          }, {
+            type: 'purple',
+            title: '紫色',
+          }, {
+            type: 'pink',
+            title: '粉色',
+          }, {
+            type: 'dark',
+            title: '黑色',
+          }, {
+            type: 'link',
+            title: '连接',
+          },
+        ],
+        icons: ['account_circle', 'alarm', 'android', 'announcement', 'assessment', 'assignment', 'autorenew', 'bookmark', 'build', 'credit_card', 'date_range', 'done', 'explore', 'favorite', 'face', 'grade', 'group_work', 'home', 'info', 'invert_colors', 'label', 'language', 'lock', 'opacity', 'payment', 'schedule', 'search'],
+        links: [
+          {
+            title: 'Baidu',
+            link: 'https://baidu.com',
+          }, {
+            title: 'Google',
+            link: 'https://google.com',
+          },
+        ],
+        breadcrumb: [
+          {
+            title: 'Home',
+            link: '#',
+          }, {
+            title: 'Library',
+            link: '#',
+          }, {
+            title: 'Data',
+          },
+        ],
+        interests: {
+          selected: null,
+          options: [
+            {
+              "value": "AF",
+              "label": "Afghanistan"
+            },
+            {
+              "value": "AX",
+              "label": "Åland Islands"
+            },
+            {
+              "value": "AL",
+              "label": "Albania"
+            },
+            {
+              "value": "DZ",
+              "label": "Algeria"
+            },
+            {
+              "value": "AS",
+              "label": "American Samoa"
+            },
+            {
+              "value": "AD",
+              "label": "Andorra"
+            },
+            {
+              "value": "AO",
+              "label": "Angola"
+            },
+            {
+              "value": "AI",
+              "label": "Anguilla"
+            },
+            {
+              "value": "AQ",
+              "label": "Antarctica"
+            },
+            {
+              "value": "AG",
+              "label": "Antigua and Barbuda"
+            },
+            {
+              "value": "AR",
+              "label": "Argentina"
+            },
+            {
+              "value": "AM",
+              "label": "Armenia"
+            },
+            {
+              "value": "AW",
+              "label": "Aruba"
+            },
+            {
+              "value": "AU",
+              "label": "Australia"
+            },
+            {
+              "value": "AT",
+              "label": "Austria"
+            },
+            {
+              "value": "AZ",
+              "label": "Azerbaijan"
+            },
+            {
+              "value": "BS",
+              "label": "Bahamas"
+            },
+            {
+              "value": "BH",
+              "label": "Bahrain"
+            },
+            {
+              "value": "BD",
+              "label": "Bangladesh"
+            },
+            {
+              "value": "BB",
+              "label": "Barbados"
+            },
+            {
+              "value": "BY",
+              "label": "Belarus"
+            },
+            {
+              "value": "BE",
+              "label": "Belgium"
+            },
+            {
+              "value": "BZ",
+              "label": "Belize"
+            },
+            {
+              "value": "BJ",
+              "label": "Benin"
+            },
+            {
+              "value": "BM",
+              "label": "Bermuda"
+            },
+            {
+              "value": "BT",
+              "label": "Bhutan"
+            },
+            {
+              "value": "BO",
+              "label": "Bolivia"
+            },
+            {
+              "value": "BA",
+              "label": "Bosnia and Herzegovina"
+            },
+          ],
+        },
+        users: [
+          {
+            id: 1,
+            username: 'tomo',
+            nickname: '@tomoyuen',
+            register_date: '2016-06-06',
+            like: 1949,
+            collect: 4560,
+          },
+          {
+            id: 2,
+            username: 'tomo',
+            nickname: '@tomoyuen',
+            register_date: '2016-06-06',
+            like: 1949,
+            collect: 4560,
+          },
+          {
+            id: 3,
+            username: 'tomo',
+            nickname: '@tomoyuen',
+            register_date: '2016-06-06',
+            like: 1949,
+            collect: 4560,
+          },
+          {
+            id: 4,
+            username: 'tomo',
+            nickname: '@tomoyuen',
+            register_date: '2016-06-06',
+            like: 1949,
+            collect: 4560,
+          },
+        ],
+        titles: [
+          {
+            name: 'id',
+            key: 'id',
+            order: 1,
+          }, {
+            name: '昵称',
+            key: 'nickname',
+          }, {
+            name: '用户名',
+            key: 'username',
+          }, {
+            name: '注册日期',
+            key: 'register_date',
+            order: 1,
+          }, {
+            name: '点赞',
+            key: 'like',
+            order: -1,
+          }, {
+            name: '收藏',
+            key: 'collect',
+            order: 1,
+          },
+        ],
+        myModal1: {
+          title: 'myModal1',
+          desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis mollitia molestias m',
+          type: 'alert',
+          event() {
+            console.log('you click the confirm button');
+          },
+        },
+        myModal2: {
+          title: 'myModal2',
+          desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis mollitia molestias m',
+          type: 'confirm',
+          event() {
+            console.log('you click the confirm button');
+          },
+        },
+      };
+      vm.$set('$data', data);
+      vm.$nextTick(setTimeout(function() {
+        vm.loading = false;
+      }, 1000));
+    });
+  </script>
+</body>
+</html>

@@ -4,7 +4,7 @@
 
 <style>
   .textarea {
-    width: 998px;
+    width: 700px;
   }
 </style>
 

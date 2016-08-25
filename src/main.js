@@ -215,6 +215,9 @@ $(() => {
   $('body').tooltip({
     selector: '[data-toggle="tooltip"]',
     container: 'body',
+  }).popover({
+    selector: '[data-toggle="popover"]',
+    container: 'body',
   });
 
   for (let item of $('[data-picker=datetimepicker]')) {

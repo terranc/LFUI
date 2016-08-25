@@ -8,7 +8,7 @@
         </a>
       </li>
       <li class="page-item"
-        v-if="currentPage - parseInt(visiblePage/2) > 1 && totalPage">
+        v-if="currentPage - parseInt(visiblePage/2) > 2 && totalPage">
         <a v-if="currentPage - parseInt(visiblePage/2) > 2" class="page-link" :href="pageUrl(1)" v-text="'1...'"
           @click="currentPage =  1">
         </a>

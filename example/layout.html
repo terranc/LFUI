@@ -45,7 +45,7 @@
           <h1 class="page-header"></h1>
           <div class="filter-wrapper">
             <filter title="种类">
-              <a v-for="item in icons" :href="'item' + $index" class="btn btn-outline-primary category-item">{{ item }}</a>
+              <a v-for="item in icons" :href="'item' + $index" class="btn btn-outline-primary category-item" :class="{'active': $index == 5}">{{ item }}</a>
             </filter>
             <filter title="种类">
               <select class="form-control">

@@ -30,7 +30,7 @@
   z-index: 1;
   display: block;
 }
-#button-block {
+#buttons {
   .btn + .btn {
     margin-left: 10px;
   }
@@ -41,4 +41,8 @@
 }
 .fade-enter, .fade-leave {
   opacity: 0;
+}
+.sidebar-right {
+  position: fixed;
+  margin-top: 40px;
 }

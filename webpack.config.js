@@ -7,17 +7,17 @@ var SRC_PATH = Path.resolve(__dirname, 'src');
 
 module.exports = {
   entry: {
-    app: Path.resolve(SRC_PATH, 'main.js'),
+    app: Path.resolve(SRC_PATH, 'js/main.js'),
   },
   output: {
     path: Path.resolve(__dirname, 'build'),
-    filename: '[name].js',
+    filename: 'js/[name].js',
   },
   resolve: {
     extensions: ['', '.js', '.vue'],
     alias: {
       'src': SRC_PATH,
-      'assets': Path.resolve(SRC_PATH, 'assets'),
+      // 'assets': Path.resolve(SRC_PATH, 'assets'),
       'components': Path.resolve(SRC_PATH, 'components'),
     },
   },
@@ -57,7 +57,7 @@ module.exports = {
         loader: 'url',
         query: {
           limit: 10000,
-          name: 'assets/img/[name].[hash:7].[ext]',
+          name: '../images/[name].[ext]',
         },
       },
       {
@@ -65,7 +65,7 @@ module.exports = {
         loader: 'url',
         query: {
           limit: 10000,
-          name: 'assets/fonts/[name].[hash:7].[ext]',
+          name: '../fonts/[name].[ext]',
         },
       },
       {
@@ -109,8 +109,8 @@ module.exports = {
     }),
     new Webpack.HotModuleReplacementPlugin(),
     new CopyWebpackPlugin([{
-      from: 'src/assets/libs',
-      to: 'assets/libs',
+      from: 'src/js/libs',
+      to: 'js/libs',
     }]),
   ],
   devServer: {

@@ -7,14 +7,21 @@
   <title>Examples</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
-  <script src="./assets/libs/jquery/jquery.js"></script>
-  <script src="./assets/libs/tether/tether.js"></script>
-  <script src="./assets/libs/moment/moment-with-locales.js"></script>
-  <script src="./assets/libs/ueditor/ueditor.config.js"></script>
-  <script src="./assets/libs/ueditor/ueditor.all.js"></script>
-  <script src="./assets/libs/bootstrap/bootstrap.min.js"></script>
-  <script src="./assets/libs/bootstrap/bootstrap-datetimepicker.js"></script>
-  <script src="./assets/libs/validator/jquery.validator.js?local=zh-CN"></script>
+  <script src="./js/libs/jquery/jquery.js"></script>
+  <script src="./js/libs/tether/tether.js"></script>
+  <script src="./js/libs/moment/moment-with-locales.js"></script>
+  <script src="./js/libs/ueditor/ueditor.config.js"></script>
+  <script src="./js/libs/ueditor/ueditor.all.js"></script>
+  <script src="./js/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="./js/libs/bootstrap/bootstrap-datetimepicker.js"></script>
+  <script src="./js/libs/validator/jquery.validator.js?local=zh-CN"></script>
+  <style type="text/css">
+    .list-group-item:hover{
+      text-decoration: none;
+      background-color: #44b549;
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
   <loading type="grid" v-show="loading"></loading>
@@ -22,13 +29,12 @@
     <div class="row">
       <div class="col-xs-12 col-md-3 push-md-9">
         <div class="list-group sidebar-right">
-          <a href="#icons" class="list-group-item">图标 Icon</a>
+          <a href="#breadcrumb" class="list-group-item">面包屑 Breadcrumb</a>
           <a href="#buttons" class="list-group-item">按钮 Button</a>
           <a href="#button-group" class="list-group-item">按钮组 Button Group</a>
           <a href="#typography" class="list-group-item">排版 Typography</a>
           <a href="#tags" class="list-group-item">标签 Tag</a>
           <a href="#lists" class="list-group-item">列表 List</a>
-          <a href="#breadcrumb" class="list-group-item">面包屑 Breadcrumb</a>
           <a href="#navs" class="list-group-item">导航 Nav</a>
           <a href="#divider" class="list-group-item">分隔线 Divider</a>
           <a href="#flexbox" class="list-group-item">弹性盒模型 Flex</a>
@@ -40,15 +46,13 @@
           <a href="#tables" class="list-group-item">表格 Table</a>
           <a href="#forms" class="list-group-item">表单 Form</a>
           <a href="#progress" class="list-group-item">进度条 Progress</a>
+          <a href="#icons" class="list-group-item">图标 Icon</a>
         </div>
       </div>
       <div class="col-xs-12 col-md-9 pull-md-3">
-        <section id="icons">
-          <h1 class="page-header">图标 Icons</h1>
-          <div class="icons-block">
-            <span class="icon-box" v-for="item in icons"><i class="material-icons">{{ item }}</i><br/>{{ item }}</span>
-          </div>
-          <p>更多图标请查看 <a href="https://design.google.com/icons/">Material icons</a></p>
+        <section id="breadcrumb">
+          <h1 class="page-header">面包屑导航 Breadcrumb</h1>
+          <breadcrumb :lists="breadcrumb"></breadcrumb>
         </section>
         <section id="buttons">
           <h1 class="page-header">按钮 Buttons</h1>
@@ -318,23 +322,19 @@
             </div>
           </div>
         </section>
-        <section id="breadcrumb">
-          <h1 class="page-header">面包屑导航 Breadcrumb</h1>
-          <breadcrumb :lists="breadcrumb"></breadcrumb>
-        </section>
         <section id="navs">
           <h1 class="page-header">导航 Navs</h1>
           <h3>Tabs</h3>
           <div>
             <ul class="nav nav-tabs">
               <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#" aria-expanded="false">Active</a>
+                <a class="nav-link active" data-toggle="tab" href="#">Active</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#home" aria-expanded="false">首页</a>
+                <a class="nav-link" data-toggle="tab" href="#home">首页</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#profile" aria-expanded="true">账户</a>
+                <a class="nav-link" data-toggle="tab" href="#profile">账户</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">下拉菜单</a>
@@ -345,10 +345,10 @@
               </li>
             </ul>
             <div class="tab-content">
-              <div class="tab-pane fade" id="home" aria-expanded="false">
+              <div class="tab-pane fade active in" id="home">
                 <p>土地是以它的肥沃和收获而被估价的；才能也是土地，不过它生产的不是粮食，而是真理。如果只能滋生瞑想和幻想的话，即使再大的才能也只是砂地或盐池，那上面连小草也长不出来的。 —— 别林斯基</p>
               </div>
-              <div class="tab-pane fade active in" id="profile" aria-expanded="true">
+              <div class="tab-pane fade" id="profile">
                 <p>我需要三件东西：爱情友谊和图书。然而这三者之间何其相通！炽热的爱情可以充实图书的内容，图书又是人们最忠实的朋友。 —— 蒙田</p>
               </div>
               <div class="tab-pane fade" id="dropdown1">
@@ -614,6 +614,7 @@
           <h3>普通表格</h3>
           <lf-table :page="1" :data="users" :titles="titles"></lf-table>
           <h3>响应式表格</h3>
+          <form>
           <lf-table :page="7" :total-page="15" :data="users" :titles="titles" :total-item="100" params-name="p" responsive>
             <select class="form-control" style="display: inline; margin: 0 10px 10px 0;">
               <option value="">请选择 ...</option>
@@ -621,7 +622,9 @@
               <option value="2">批量删除</option>
             </select>
             <btn>全部结算</btn>
-            <div class="form-control clearfix text-right">汇总金额：￥1000.00 总人数：300</div>
+            <span class="text-muted">注：请注意</span>
+            </form>
+            <div class="data_stat"><span>汇总金额：<var>￥1000.00</var></span><span>总人数：<var>300</var></span></div>
           </lf-table>
         </section>
         <section id="forms">
@@ -663,15 +666,15 @@
               </div>
             </div>
             <label class="form-group-inline">
-              <div class="col-form-label">简介</div>
+              <div class="col-form-label top">简介</div>
               <div class="col-form-control">
-                <textarea class="form-control" name="content"></textarea>
+                <textarea class="form-control" name="summary"></textarea>
               </div>
             </label>
             <label class="form-group-inline">
-              <div class="col-form-label">内容</div>
+              <div class="col-form-label top">内容</div>
               <div class="col-form-control">
-                <ueditor id="ueditor1"></ueditor>
+                <ueditor id="ueditor1" name="content"></ueditor>
               </div>
             </label>
             <div class="form-group-inline">
@@ -683,7 +686,7 @@
           </form>
           <h3 style="margin-top: 30px;">Validator Form</h3>
           <div>
-            <form id="form1" class="form-table" data-validator-option="{theme:'bootstrap', timely:2, stopOnError:true}">
+            <form id="form1" class="form-table" data-validator-option="{theme:'bootstrap', timely:2, stopOnError:true}" enctype="multipart/form-data">
               <label class="form-group-inline">
                 <div class="col-form-label">用户名</div>
                 <div class="col-form-control">
@@ -726,6 +729,12 @@
                   <input type="text" class="form-control" name="email" data-rule="required;email">
                 </div>
               </label>
+              <label class="form-group-inline">
+                <div class="col-form-label">封面</div>
+                <div class="col-form-control">
+                  <input type="file" id="file" class="form-control"  data-rule="required;">
+                </div>
+              </label>
               <div class="form-group-inline">
                 <div class="col-form-label">爱好</div>
                 <div class="col-form-control">
@@ -735,9 +744,9 @@
                 </div>
               </div>
               <label class="form-group-inline">
-                <div class="col-form-label">备注</div>
+                <div class="col-form-label top">备注</div>
                 <div class="col-form-control">
-                  <textarea class="form-control" rows="5" data-rule="required;"></textarea>
+                  <textarea class="form-control" rows="5" name="memo" data-rule="required;"></textarea>
                 </div>
               </label>
               <div class="form-group-inline">
@@ -750,7 +759,7 @@
                 <div class="col-form-label"></div>
                 <div class="col-form-control">
                   <button type="submit" class="btn btn-primary">提交</button>
-                  <button type="reset" class="btn btn-default">重置</button>
+                  <button type="reset" class="btn btn-secondary">重置</button>
                 </div>
               </div>
             </form>
@@ -785,6 +794,13 @@
           <div>
             <progress class="progress progress-striped progress-animated active" role="progressbar" value="25" max="100">25%</progress>
           </div>
+        </section>
+        <section id="icons">
+          <h1 class="page-header">图标 Icons</h1>
+          <div class="icons-block">
+            <span class="icon-box" v-for="item in icons"><i class="material-icons">{{ item }}</i><br/>{{ item }}</span>
+          </div>
+          <p>更多图标请查看 <a href="https://design.google.com/icons/">Material icons</a></p>
         </section>
       </div>
     </div>

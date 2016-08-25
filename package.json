@@ -2,7 +2,7 @@
   "name": "lfui",
   "version": "0.0.3",
   "description": "a dashboard ui kit based bootstrap",
-  "main": "dist/lfui.js",
+  "main": "dist/js/lfui.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --progress --colors && webpack-dev-server",

@@ -3,8 +3,9 @@
     <ul class="pagination">
       <li class="page-item" :class="{'disabled': !preClickable}" @click="currentPage > 1 ? currentPage-- : 1">
         <a class="page-link" :href="pageUrl(currentPage > 1 ? currentPage-1 : 1)" aria-label="Previous">
-          <span aria-hidden="true" :class="{'sr-only': !totalPage}">&laquo;</span>
-          <span :class="{'sr-only': totalPage}">上一页</span>
+          <!-- <span aria-hidden="true" :class="{'sr-only': !totalPage}">&laquo;</span>
+          <span :class="{'sr-only': totalPage}">上一页</span> -->
+          上一页
         </a>
       </li>
       <li class="page-item"
@@ -62,11 +63,12 @@
       </li>
       <li class="page-item" :class="{'disabled': !nextClickable}" @click="currentPage = nextClick()">
         <a class="page-link" :href="pageUrl(nextClick())" aria-label="Next">
-          <span aria-hidden="true" :class="{'sr-only': !totalPage}">&raquo;</span>
-          <span :class="{'sr-only': totalPage}">下一页</span>
+          <!-- <span aria-hidden="true" :class="{'sr-only': !totalPage}">&raquo;</span> -->
+          <!-- <span :class="{'sr-only': totalPage}">下一页</span> -->
+          下一页
         </a>
       </li>
-      <li class="page-item disabled" v-if="totalPage && showGo"><input class="page-control" min="1" :max="totalPage" type="number" @keyup.enter="pageGo" :value="currentPage"> / {{ totalPage }} 页</li>
+      <li class="page-item page-control disabled" v-if="totalPage && showGo"><input class="form-control" min="1" :max="totalPage" type="number" @keyup.enter="pageGo" :value="currentPage"> / {{ totalPage }} 页</li>
     </ul>
   </nav>
 </template>
@@ -136,23 +138,27 @@
   };
 </script>
 
-<style>
+<style scoped>
   .pagination {
     padding: 0;
   }
-  .page-item.disabled .page-link, .page-item.disabled .page-link:focus, .page-item.disabled .page-link:hover {
+  .page-control{
+    margin-left: 10px;
+  }
+  .pagination .page-item.disabled .page-link, 
+  .pagination .page-item.disabled .page-link:focus, 
+  .pagination .page-item.disabled .page-link:hover {
     color: #818a91;
     cursor: not-allowed;
     background-color: #fff;
     border-color: #ddd;
   }
-  .page-control {
-    width: 2em;
-    border-radius: 3px;
-    border: 1px solid #c1c1c1;
+  .form-control {
+    width: 3em;
     appearance: none;
     transition: width .3s ease-in-out;
     text-align: center;
+    display: inline-block;
 
     &::-webkit-outer-spin-button,
     &::-webkit-inner-spin-button{

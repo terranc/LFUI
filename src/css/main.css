@@ -1,3 +1,6 @@
+body{
+  font: 14px/1.4 "Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Hiragino Kaku Gothic Pro",Meiryo,"Malgun Gothic",sans-serif;
+}
 .dropdown.v-select {
   &.open {
     .open-indicator {
@@ -6,6 +9,14 @@
 
     .dropdown-toggle {
       border-bottom: 1px solid transparent;
+      border-top-color: #44b549;
+      border-left-color: #44b549;
+      border-right-color: #44b549;
+    }
+    .dropdown-menu {
+      border-bottom-color: #44b549;
+      border-left-color: #44b549;
+      border-right-color: #44b549;
     }
   }
 
@@ -71,28 +82,49 @@
 }
 .form-table {
   display: table;
-  width: 812px;
+  width: 100%;
 
 }
 .form-control {
   width: auto;
+  background-color: #fafafa;
+}
+.form-control[type=text],
+.form-control[type=password],
+.form-control[type=email],
+.form-control[type=tel]{
+  min-width: 14em;
 }
 .form-group-inline {
   display: table-row;
 
   .col-form-label {
     display: table-cell;
-    width: 6em;
-    min-width: 6em;
-    padding-right: 2em;
+    width: 7em;
+    min-width: 7em;
+    padding-right: 1em;
     text-align: right;
     box-sizing: content-box;
     vertical-align: middle;
+    &.top{
+      padding-top: 0.8em;
+      vertical-align: top;
+    }
   }
   .col-form-control {
     /* display: table-cell; */
     padding: 5px 0;
 
+    .msg-box{
+      margin-top: 2px;
+    }
+    textarea + .msg-box{
+      display: block;
+      .msg-wrap{
+        margin-left: 0;
+        position: relative;
+      }
+    }
     input, select {
       + .msg-box {
         margin-top: 10px;
@@ -115,10 +147,13 @@
     }
     textarea {
       width: 100%;
+      min-height: 70px;
     }
   }
 }
-
+.tab-content{
+  padding:15px 0;
+}
 .filter-wrapper {
   display: table;
 }
@@ -134,4 +169,27 @@
   width: 0;
   margin: 0 .8rem;
   border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+.tag{
+  font-weight: 300;
+}
+.data_stat {
+  margin: 10px 0;
+  padding: 8px 10px;
+  text-align: right;
+  font-size: 14px;
+  border: 1px solid #e2e2e2;
+  span {
+    color: #888;
+    margin-left: 10px;
+    var {
+      color: #000;
+      font-weight: bold;
+      font-style: normal;
+      font-size: 14px;
+    }
+  }
+}
+.form-check-input{
+  margin-top: 0;
 }

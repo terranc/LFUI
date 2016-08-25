@@ -1,6 +1,6 @@
 <template>
   <div :class="{'table-responsive': responsive}" class="table-container">
-    <table class="table table-striped table-bordered table-hover">
+    <table class="table table-striped table-bordered table-hover" :width="width">
       <thead class="thead-default">
         <tr>
           <th>
@@ -44,6 +44,10 @@
         type: null,
         default: false,
         twoWay: true,
+      },
+      width: {
+        type: String,
+        default: '100%',
       },
       url: String,
       paramsName: String,

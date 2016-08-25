@@ -7,21 +7,21 @@ import './js/bootstrap-datetimepicker';
 import vSelect from 'vue-select';
 
 // 自定义组件
-import Button from './components/button';
-import BtnGroup from './components/button-group';
-import Dropdown from './components/dropdown';
-import Tips from './components/tips';
-import Breadcrumb from './components/breadcrumb';
-import Dialog from './components/dialog';
-import Table from './components/table';
-import Filter from './components/filter';
-import Datetimepicker from './components/datetimepicker';
-import Loading from './components/loading';
-import Ueditor from './components/ueditor';
+import Button from '../components/button';
+import BtnGroup from '../components/button-group';
+import Dropdown from '../components/dropdown';
+import Tips from '../components/tips';
+import Breadcrumb from '../components/breadcrumb';
+import Dialog from '../components/dialog';
+import Table from '../components/table';
+import Filter from '../components/filter';
+import Datetimepicker from '../components/datetimepicker';
+import Loading from '../components/loading';
+import Ueditor from '../components/ueditor';
 
 // 样式文件
-import './scss/lfui.scss';
-import './css/main.css';
+import '../scss/lfui.scss';
+import '../css/main.css';
 
 const install = function (Vue) {
   Vue.component('Loading', Loading);

@@ -9,11 +9,11 @@ var BUILD_PATH = Path.resolve(__dirname, 'dist');
 
 module.exports = {
   entry: {
-    app: Path.resolve(SRC_PATH, 'entry.js'),
+    app: Path.resolve(SRC_PATH, 'js/entry.js'),
   },
   output: {
     path: BUILD_PATH,
-    filename: 'lfui.js',
+    filename: 'js/lfui.js',
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
@@ -22,10 +22,10 @@ module.exports = {
         warnings: false,
       },
     }),
-    new ExtractTextPlugin('lfui.css'),
+    new ExtractTextPlugin('css/lfui.css'),
     new CopyWebpackPlugin([{
-      from: 'src/assets/libs',
-      to: 'assets/libs',
+      from: 'src/js/libs',
+      to: 'js/libs',
     }]),
   ],
   resolve: {
@@ -69,7 +69,7 @@ module.exports = {
         loader: 'url',
         query: {
           limit: 10000,
-          name: Path.join('/assets', 'img/[name].[hash:7].[ext]'),
+          name: 'images/[name].[ext]',
         },
       },
       {
@@ -77,7 +77,7 @@ module.exports = {
         loader: 'url',
         query: {
           limit: 10000,
-          name: Path.join('/assets', 'fonts/[name].[hash:7].[ext]'),
+          name: 'fonts/[name].[ext]',
         },
       },
       {

@@ -72,6 +72,10 @@
 .form-table {
   display: table;
   width: 812px;
+
+}
+.form-control {
+  width: auto;
 }
 .form-group-inline {
   display: table-row;
@@ -90,7 +94,6 @@
     padding: 5px 0;
 
     input, select {
-      max-width: 25rem;
       + .msg-box {
         margin-top: 10px;
       }
@@ -109,6 +112,9 @@
     }
     .form-text.text-muted {
       display: inline-block;
+    }
+    textarea {
+      width: 100%;
     }
   }
 }

@@ -33,9 +33,6 @@
         padding: .5em .8em;
         cursor: pointer;
       }
-      input, select {
-        max-width: 25rem;
-      }
       .form-control {
         padding: .75rem;
       }

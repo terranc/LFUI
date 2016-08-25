@@ -1,6 +1,9 @@
 body {
   background: #e7e8eb;
 }
+a {
+  color: currentColor;
+}
 #container {
   min-width: 1221px;
 }
@@ -51,13 +54,15 @@ body {
       &:hover,
       &:focus {
         text-decoration: none;
+        color: currentColor;
+        background-color: #f8f8f8;
       }
     }
   }
 
   .panel-title {
     a {
-      opacity: .6;
+      opacity: .8;
 
       &:after {
         content: '';

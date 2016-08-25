@@ -1,6 +1,9 @@
 body {
   background: #e7e8eb;
 }
+a {
+  color: currentColor;
+}
 #container {
   min-width: 1221px;
 }
@@ -24,6 +27,7 @@ body {
   -ms-flex-item-align: center;
       align-self: center;
 }
+
 #main-container {
   width: 1221px;
   margin: 0 auto;
@@ -49,9 +53,11 @@ body {
 }
 .sidebar h6 a:hover, .sidebar h6 a:focus {
   text-decoration: none;
+  color: currentColor;
+  background-color: #f8f8f8;
 }
 .sidebar .panel-title a {
-  opacity: .6
+  opacity: .8
 }
 .sidebar .panel-title a:after {
   content: '';

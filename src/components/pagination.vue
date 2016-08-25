@@ -8,13 +8,14 @@
         </a>
       </li>
       <li class="page-item"
+        v-if="currentPage - parseInt(visiblePage/2) > 1 && totalPage">
+        <a class="page-link" :href="pageUrl(1)" v-text="1"
+          @click="currentPage =  1">
+        </a>
+      </li>
+      <li class="page-item"
         v-if="currentPage - parseInt(visiblePage/2) > 2 && totalPage">
-        <a v-if="currentPage - parseInt(visiblePage/2) > 2" class="page-link" :href="pageUrl(1)" v-text="'1...'"
-          @click="currentPage =  1">
-        </a>
-        <a v-else class="page-link" :href="pageUrl(1)" v-text="1"
-          @click="currentPage =  1">
-        </a>
+        ···
       </li>
       <li
         class="page-item"
@@ -52,12 +53,10 @@
           @click="currentPage = totalPage - visiblePage + 1 + index">
         </a>
       </li>
+      <li class="page-item" v-if="totalPage-currentPage-parseInt(visiblePage/2) > 1">···</li>
       <li class="page-item"
         v-if="totalPage-currentPage-parseInt(visiblePage/2) > 0 && totalPage">
-        <a v-if="totalPage-currentPage-parseInt(visiblePage/2) > 1" class="page-link" :href="pageUrl(totalPage)" v-text="'...'+totalPage"
-          @click="currentPage =  totalPage">
-        </a>
-        <a v-else class="page-link" :href="pageUrl(totalPage)" v-text="totalPage"
+        <a class="page-link" :href="pageUrl(totalPage)" v-text="totalPage"
           @click="currentPage =  totalPage">
         </a>
       </li>

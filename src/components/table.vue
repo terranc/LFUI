@@ -22,6 +22,7 @@
         </tr>
       </tbody>
     </table>
+    <slot></slot>
     <div class="clearfix">
       <div class="pull-left" v-if="totalItem" style="line-height: 46px;">共有 {{ totalItem }} 条记录</div>
       <div class="pull-right">

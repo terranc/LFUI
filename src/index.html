@@ -614,7 +614,15 @@
           <h3>普通表格</h3>
           <lf-table :page="1" :data="users" :titles="titles"></lf-table>
           <h3>响应式表格</h3>
-          <lf-table :page="7" :total-page="15" :data="users" :titles="titles" :total-item="100" params-name="p" responsive></lf-table>
+          <lf-table :page="7" :total-page="15" :data="users" :titles="titles" :total-item="100" params-name="p" responsive>
+            <select class="form-control" style="display: inline; margin: 0 10px 10px 0;">
+              <option value="">请选择 ...</option>
+              <option value="1">批量审核</option>
+              <option value="2">批量删除</option>
+            </select>
+            <btn>全部结算</btn>
+            <div class="form-control clearfix text-right">汇总金额：￥1000.00 总人数：300</div>
+          </lf-table>
         </section>
         <section id="forms">
           <h1 class="page-header">表单 Form</h1>

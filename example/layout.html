@@ -74,83 +74,7 @@
         </section>
         <section>
           <h1 class="page-header"></h1>
-          <lf-table :page="7" :total-page="15" :data="users" :titles="titles" :total-item="100" params-name="p" responsive></lf-table>
-        </section>
-        <section>
-          <h1 class="page-header"></h1>
-          <div>
-            <form id="form1" class="form-table" data-validator-option="{theme:'bootstrap', timely:2, stopOnError:true}">
-              <label class="form-group-inline">
-                <div class="col-form-label">用户名</div>
-                <div class="col-form-control">
-                  <input type="text" class="form-control" name="username"
-                  data-rule="required;username;"
-                  data-rule-username="[/[\w\d]{4,30}/, 'Please enter 3-12 digits, letters, underscores']"
-                  data-tip="请使用字母、数字或下划线"
-                  >
-                </div>
-              </label>
-              <label class="form-group-inline">
-                <div class="col-form-label">密码</div>
-                <div class="col-form-control">
-                  <input type="password" class="form-control" name="pwd"
-                  data-rule="Password: required; length(8~16)"
-                  data-tip="请输入至少8位密码"
-                  >
-                </div>
-              </label>
-              <label class="form-group-inline">
-                <div class="col-form-label">确认密码</div>
-                <div class="col-form-control">
-                  <input type="password" class="form-control" name="pwdAgain" data-rule="Verify Password: required; match(pwd)">
-                </div>
-              </label>
-              <label class="form-group-inline">
-                <div class="col-form-label">性别</div>
-                <div class="col-form-control">
-                  <select class="form-control" name="gender" data-rule="required">
-                    <option value="">请选择 ...</option>
-                    <option value="1">男</option>
-                    <option value="2">女</option>
-                    <option value="3">其他</option>
-                  </select>
-                </div>
-              </label>
-              <label class="form-group-inline">
-                <div class="col-form-label">邮箱</div>
-                <div class="col-form-control">
-                  <input type="text" class="form-control" name="email" data-rule="required;email">
-                </div>
-              </label>
-              <div class="form-group-inline">
-                <div class="col-form-label">爱好</div>
-                <div class="col-form-control">
-                  <label class="form-check-inline"><input class="form-check-input" type="checkbox" name="interest" data-rule="checked"> 运动</label>
-                  <label class="form-check-inline"><input class="form-check-input" type="checkbox" name="interest"> 电影</label>
-                  <label class="form-check-inline"><input class="form-check-input" type="checkbox" name="interest"> 游戏</label>
-                </div>
-              </div>
-              <label class="form-group-inline">
-                <div class="col-form-label text-middle">备注</div>
-                <div class="col-form-control">
-                  <textarea class="form-control" rows="5" data-rule="required;"></textarea>
-                </div>
-              </label>
-              <div class="form-group-inline">
-                <div class="col-form-label"></div>
-                <div class="col-form-control">
-                  <label class="checkbox-inline"><input type="checkbox" id="agree_arguments" data-rule="checked"> 我同意用户服务协议.</label>
-                </div>
-              </div>
-              <div class="form-group-inline">
-                <div class="col-form-label"></div>
-                <div class="col-form-control">
-                  <button type="submit" class="btn btn-primary">提交</button>
-                  <button type="reset" class="btn btn-default">重置</button>
-                </div>
-              </div>
-            </form>
-          </div>
+          <lf-table :page="page" :data="contents" :titles="titles" @current-change="getData" responsive></lf-table>
         </section>
       </div>
       <div class="col-xs-12 col-md-2 pull-md-10 sidebar">
@@ -158,16 +82,16 @@
           <div role="tablist">
             <div class="panel panel-default">
               <div class="panel-heading" role="tab">
-                <h6>
+                <div>
                   <a href="#"><i class="material-icons md-18">face</i> 待审核</a>
-                </h6>
+                </div>
               </div>
             </div>
             <div class="panel panel-default">
               <div class="panel-heading" role="tab" id="headingOne">
-                <h6 class="panel-title">
+                <div class="panel-title">
                   <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne"><i class="material-icons md-18">face</i> 微工会</a>
-                </h6>
+                </div>
               </div>
               <ul id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                 <li><a class="active" href="#">工会官网</a></li>
@@ -178,9 +102,9 @@
             </div>
             <div class="panel panel-default">
               <div class="panel-heading" role="tab" id="headingTwo">
-                <h6 class="panel-title">
+                <div class="panel-title">
                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"><i class="material-icons md-18">face</i> 职工权益</a>
-                </h6>
+                </div>
               </div>
               <ul id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                 <li><a href="#">春资讯</a></li>
@@ -192,16 +116,16 @@
             </div>
             <div class="panel panel-default">
               <div class="panel-heading" role="tab">
-                <h6>
+                <div>
                   <a href="#"><i class="material-icons md-18">face</i> 微活动</a>
-                </h6>
+                </div>
               </div>
             </div>
             <div class="panel panel-default">
               <div class="panel-heading" role="tab" id="headingThree">
-                <h6 class="panel-title">
+                <div class="panel-title">
                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree"><i class="material-icons md-18">face</i> 积分系统</a>
-                </h6>
+                </div>
               </div>
               <ul id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                 <li><a href="#">商品列表</a></li>
@@ -212,16 +136,16 @@
             </div>
             <div class="panel panel-default">
               <div class="panel-heading" role="tab">
-                <h6>
+                <div>
                   <a href="#"><i class="material-icons md-18">face</i> 用户列表</a>
-                </h6>
+                </div>
               </div>
             </div>
             <div class="panel panel-default">
               <div class="panel-heading" role="tab" id="headingFour">
-                <h6 class="panel-title">
+                <div class="panel-title">
                   <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour"><i class="material-icons md-18">face</i> 管理员</a>
-                </h6>
+                </div>
               </div>
               <ul id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour">
                 <li><a href="#">账号管理</a></li>
@@ -231,9 +155,9 @@
             </div>
             <div class="panel panel-default">
               <div class="panel-heading" role="tab" id="headingFive">
-                <h6 class="panel-title">
+                <div class="panel-title">
                   <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive"><i class="material-icons md-18">face</i> 系统设置</a>
-                </h6>
+                </div>
               </div>
               <ul id="collapseFive" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFive">
                 <li><a href="#">系统参数配置</a></li>
@@ -252,146 +176,81 @@
   <dialog :id="modal.id" :title="modal.title" :desc="modal.desc" :foot="modal.foot" :type="modal.type" @confirm-event="modal.event"></dialog>
   <script type="text/javascript" src="../dist/js/lfui.js"></script>
   <script type="text/javascript">
-    $(function(){
-      $.validator.setTheme('bootstrap', {
-        validClass: 'has-success',
-        invalidClass: 'has-danger',
-        bindClassTo: '.form-group-inline',
-        formClass: 'n-default n-bootstrap',
-        msgClass: 'n-right'
-      });
-      var data = {
-        loading: true,
-        modal: {
-          id: '',
-          title: '',
-          desc: '',
-          type: '',
-          foot: true,
-          event: Function,
+  /* global vm */
+    var data = {
+      loading: true,
+      modal: {
+        id: '',
+        title: '',
+        desc: '',
+        type: '',
+        foot: true,
+        event: Function,
+      },
+      icons: ['account_circle', 'alarm', 'android', 'announcement', 'assessment', 'assignment', 'autorenew', 'bookmark', 'build', 'credit_card', 'date_range', 'done', 'explore', 'favorite', 'face', 'grade', 'group_work', 'home', 'info', 'invert_colors', 'label', 'language', 'lock', 'opacity', 'payment', 'schedule', 'search'],
+      breadcrumb: [
+        {
+          title: 'Home',
+          link: '#',
+        }, {
+          title: '微工会',
+          link: '#',
+        }, {
+          title: '工会官网',
         },
-        btns: [
-          {
-            type: 'primary',
-            title: '主色',
-          }, {
-            type: 'secondary',
-            title: '普通',
-          }, {
-            type: 'success',
-            title: '成功',
-          }, {
-            type: 'info',
-            title: '信息',
-          }, {
-            type: 'warning',
-            title: '警告',
-          }, {
-            type: 'danger',
-            title: '危险',
-          }, {
-            type: 'mint',
-            title: '薄荷',
-          }, {
-            type: 'purple',
-            title: '紫色',
-          }, {
-            type: 'pink',
-            title: '粉色',
-          }, {
-            type: 'dark',
-            title: '黑色',
-          }, {
-            type: 'link',
-            title: '连接',
-          },
-        ],
-        icons: ['account_circle', 'alarm', 'android', 'announcement', 'assessment', 'assignment', 'autorenew', 'bookmark', 'build', 'credit_card', 'date_range', 'done', 'explore', 'favorite', 'face', 'grade', 'group_work', 'home', 'info', 'invert_colors', 'label', 'language', 'lock', 'opacity', 'payment', 'schedule', 'search'],
-        links: [
-          {
-            title: 'Baidu',
-            link: 'https://baidu.com',
-          }, {
-            title: 'Google',
-            link: 'https://google.com',
-          },
-        ],
-        breadcrumb: [
-          {
-            title: 'Home',
-            link: '#',
-          }, {
-            title: '微工会',
-            link: '#',
-          }, {
-            title: '工会官网',
-          },
-        ],
-        users: [
-          {
-            id: 1,
-            username: 'tomo',
-            nickname: '@tomoyuen',
-            register_date: '2016-06-06',
-            like: 1949,
-            collect: 4560,
-          },
-          {
-            id: 2,
-            username: 'tomo',
-            nickname: '@tomoyuen',
-            register_date: '2016-06-06',
-            like: 1949,
-            collect: 4560,
-          },
-          {
-            id: 3,
-            username: 'tomo',
-            nickname: '@tomoyuen',
-            register_date: '2016-06-06',
-            like: 1949,
-            collect: 4560,
-          },
-          {
-            id: 4,
-            username: 'tomo',
-            nickname: '@tomoyuen',
-            register_date: '2016-06-06',
-            like: 1949,
-            collect: 4560,
-          },
-        ],
-        titles: [
-          {
-            name: 'id',
-            key: 'id',
-            order: 1,
-          }, {
-            name: '昵称',
-            key: 'nickname',
-          }, {
-            name: '用户名',
-            key: 'username',
-          }, {
-            name: '注册日期',
-            key: 'register_date',
-            order: 1,
-          }, {
-            name: '点赞',
-            key: 'like',
-            order: -1,
-          }, {
-            name: '收藏',
-            key: 'collect',
-            order: 1,
-          },
-        ],
-      };
-      vm.$set('$data', data);
-      vm.$nextTick(setTimeout(function() {
-        vm.loading = false;
-      }, 1000));
+      ],
+      contents: [],
+      titles: [
+        {
+          key: 'id',
+          name: 'id',
+        }, {
+          key: 'tab',
+          name: '分类',
+        }, {
+          key: 'title',
+          name: '标题',
+        }, {
+          key: 'reply_count',
+          name: '回复数',
+        }, {
+          key: 'visit_count',
+          name: '访问数',
+        }
+      ],
+      page: 1,
+    };
+    vm.$set('$data', data);
+    vm.$http.get('https://cnodejs.org/api/v1/topics?limit=10&page=' + vm.page).then((response) => {
+      for (var i = 0; i < response.data.data.length; i++) {
+        var temp1 = {};
+        temp1.id = response.data.data[i].id;
+        temp1.tab = response.data.data[i].tab;
+        temp1.title = response.data.data[i].title;
+        temp1.reply_count = response.data.data[i].reply_count;
+        temp1.visit_count = response.data.data[i].visit_count;
+        vm.contents.push(temp1);
+      }
+      vm.loading = false;
     });
+    vm.getData = function (index) {
+      vm.loading = true;
+      vm.$http.get('https://cnodejs.org/api/v1/topics?limit=10&page=' + index).then((response) => {
+        console.log(index);
+        var temp2 = [];
+        for (var i = 0; i < response.data.data.length; i++) {
+          var temp1 = {};
+          temp1.id = response.data.data[i].id;
+          temp1.tab = response.data.data[i].tab;
+          temp1.title = response.data.data[i].title;
+          temp1.reply_count = response.data.data[i].reply_count;
+          temp1.visit_count = response.data.data[i].visit_count;
+          temp2.push(temp1);
+        }
+        vm.contents = temp2;
+        vm.loading = false;
+      });
+    };
   </script>
 </body>
 </html>

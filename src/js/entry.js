@@ -2,6 +2,14 @@
 
 // 框架
 import Vue from 'vue';
+import VueResource from 'vue-resource';
+
+Vue.use(VueResource);
+
+// Http相关
+Vue.http.options.crossOrigin = true;
+Vue.http.options.xhr = { withCredentials: true };
+
 
 // 第三方组件
 import vSelect from 'vue-select';
@@ -60,6 +68,9 @@ window.vm = new Vue({
 $(() => {
   $('body').tooltip({
     selector: '[data-toggle="tooltip"]',
+    container: 'body',
+  }).popover({
+    selector: '[data-toggle="popover"]',
     container: 'body',
   });
 

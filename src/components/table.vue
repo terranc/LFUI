@@ -23,12 +23,7 @@
       </tbody>
     </table>
     <slot></slot>
-    <div class="clearfix">
-      <div class="pull-left" v-if="totalItem" style="line-height: 46px;">共有 {{ totalItem }} 条记录</div>
-      <div class="pull-right">
-        <pagination :href="url" :params-name="paramsName" :current-page="page" :total-page="totalPage" @current-change="getData" show-go></pagination>
-      </div>
-    </div>
+    <pagination :url="url" :query-name="paramsName" :current-page="page" :total-item="totalItem" show-go></pagination>
   </div>
 </template>
 
@@ -50,12 +45,11 @@
         default: '100%',
       },
       url: String,
-      paramsName: String,
+      queryName: String,
       page: {
         type: Number,
         required: true,
       },
-      totalPage: Number,
       totalItem: Number,
     },
     components: {
@@ -64,9 +58,6 @@
     methods: {
       onCheck(event) {
         event.target.parentNode.parentNode.classList.toggle('table-active');
-      },
-      getData(index) {
-        console.log(index);
       },
       changeOrder(item) {
         console.log('wow');

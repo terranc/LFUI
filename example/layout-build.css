@@ -41,17 +41,17 @@ a {
   font-size: 14px;
   border-right: 1px solid #e7e7eb;
 }
-.sidebar h6 {
+.sidebar .panel-heading {
   position: relative;
   margin: 0;
 }
-.sidebar h6 a {
+.sidebar .panel-heading a {
   display: block;
   padding-left: 26px;
-  height: 48px;
-  line-height: 48px
+  height: 45px;
+  line-height: 45px
 }
-.sidebar h6 a:hover, .sidebar h6 a:focus {
+.sidebar .panel-heading a:hover, .sidebar .panel-heading a:focus {
   text-decoration: none;
   color: currentColor;
   background-color: #f8f8f8;
@@ -82,12 +82,12 @@ a {
 .sidebar .panel-collapse a {
   display: block;
   height: 40px;
-  padding-left: 40px;
+  padding-left: 46px;
   line-height: 40px;
   zoom: 1
 }
 .sidebar .panel-collapse a:hover, .sidebar .panel-collapse a:focus, .sidebar .panel-collapse a.active {
-  background-color: #f8f8f8;
+  background-color: #f1f1f1;
   text-decoration: none;
 }
 .sidebar .panel {

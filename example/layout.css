@@ -42,14 +42,14 @@ a {
   font-size: 14px;
   border-right: 1px solid #e7e7eb;
 
-  h6 {
+  .panel-heading {
     position: relative;
     margin: 0;
     a {
       display: block;
       padding-left: 26px;
-      height: 48px;
-      line-height: 48px;
+      height: 45px;
+      line-height: 45px;
 
       &:hover,
       &:focus {
@@ -90,14 +90,14 @@ a {
     a {
       display: block;
       height: 40px;
-      padding-left: 40px;
+      padding-left: 46px;
       line-height: 40px;
       zoom: 1;
 
       &:hover,
       &:focus,
       &.active {
-        background-color: #f8f8f8;
+        background-color: #f1f1f1;
         text-decoration: none;
       }
     }

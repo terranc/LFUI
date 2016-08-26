@@ -4,15 +4,16 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
-var SRC_PATH = Path.resolve(__dirname, 'src');
-var BUILD_PATH = Path.resolve(__dirname, 'dist');
+var SRC_PATH = Path.join(__dirname, 'src');
+var BUILD_PATH = Path.join(__dirname, 'dist');
 
 module.exports = {
   entry: {
-    app: Path.resolve(SRC_PATH, 'js/entry.js'),
+    app: Path.join(SRC_PATH, 'js/entry.js'),
   },
   output: {
     path: BUILD_PATH,
+    publicPath: '../',
     filename: 'js/lfui.js',
   },
   plugins: [
@@ -77,6 +78,7 @@ module.exports = {
         loader: 'url',
         query: {
           limit: 10000,
+          path: Path.join(BUILD_PATH, 'css'),
           name: 'fonts/[name].[ext]',
         },
       },
@@ -87,7 +89,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style', 'css!sass'),
+        loader: ExtractTextPlugin.extract('style', 'css?sourceMap!sass'),
         exclude: /node_modules/,
       },
     ],

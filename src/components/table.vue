@@ -23,7 +23,7 @@
       </tbody>
     </table>
     <slot></slot>
-    <pagination :url="url" :query-name="paramsName" :current-page="page" :total-item="totalItem" @current-change="getData" show-go></pagination>
+    <pagination :url="url" :query-name="paramsName" :current-page="page" :total-item="totalItem" show-go></pagination>
   </div>
 </template>
 
@@ -58,9 +58,6 @@
     methods: {
       onCheck(event) {
         event.target.parentNode.parentNode.classList.toggle('table-active');
-      },
-      getData(index) {
-        console.log(index);
       },
       changeOrder(item) {
         console.log('wow');

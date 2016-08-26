@@ -221,7 +221,7 @@
       page: 1,
     };
     vm.$set('$data', data);
-    vm.$http.get('https://cnodejs.org/api/v1/topics', { page: vm.page }).then((response) => {
+    vm.$http.get('https://cnodejs.org/api/v1/topics?limit=10&page=' + vm.page).then((response) => {
       for (var i = 0; i < response.data.data.length; i++) {
         var temp1 = {};
         temp1.id = response.data.data[i].id;
@@ -235,7 +235,7 @@
     });
     vm.getData = function (index) {
       vm.loading = true;
-      vm.$http.get('https://cnodejs.org/api/v1/topics?page=' + index).then((response) => {
+      vm.$http.get('https://cnodejs.org/api/v1/topics?limit=10&page=' + index).then((response) => {
         console.log(index);
         var temp2 = [];
         for (var i = 0; i < response.data.data.length; i++) {

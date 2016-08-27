@@ -33,7 +33,6 @@ import Ueditor from '../components/ueditor';
 
 /* eslint no-new: off */
 window.vm = new Vue({
-  el: 'body',
   data: {
     data: {},
   },

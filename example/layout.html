@@ -216,23 +216,11 @@
         }, {
           key: 'visit_count',
           name: '访问数',
-        }
+        },
       ],
       page: 1,
     };
     vm.$set('$data', data);
-    vm.$http.get('https://cnodejs.org/api/v1/topics?limit=10&page=' + vm.page).then((response) => {
-      for (var i = 0; i < response.data.data.length; i++) {
-        var temp1 = {};
-        temp1.id = response.data.data[i].id;
-        temp1.tab = response.data.data[i].tab;
-        temp1.title = response.data.data[i].title;
-        temp1.reply_count = response.data.data[i].reply_count;
-        temp1.visit_count = response.data.data[i].visit_count;
-        vm.contents.push(temp1);
-      }
-      vm.loading = false;
-    });
     vm.getData = function (index) {
       vm.loading = true;
       vm.$http.get('https://cnodejs.org/api/v1/topics?limit=10&page=' + index).then((response) => {
@@ -251,6 +239,19 @@
         vm.loading = false;
       });
     };
+    vm.$mount('body');
+    vm.$http.get('https://cnodejs.org/api/v1/topics?limit=10&page=' + vm.page).then((response) => {
+      for (var i = 0; i < response.data.data.length; i++) {
+        var temp1 = {};
+        temp1.id = response.data.data[i].id;
+        temp1.tab = response.data.data[i].tab;
+        temp1.title = response.data.data[i].title;
+        temp1.reply_count = response.data.data[i].reply_count;
+        temp1.visit_count = response.data.data[i].visit_count;
+        vm.contents.push(temp1);
+      }
+      vm.loading = false;
+    });
   </script>
 </body>
 </html>

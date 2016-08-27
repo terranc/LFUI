@@ -23,7 +23,7 @@
       </tbody>
     </table>
     <slot></slot>
-    <pagination :url="url" :query-name="paramsName" :current-page="page" :total-item="totalItem" show-go></pagination>
+    <pagination :url="url" :query-name="paramsName" :current-page="page" :total-item="totalItem"></pagination>
   </div>
 </template>
 

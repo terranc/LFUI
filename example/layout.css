@@ -54,15 +54,22 @@ a {
       &:hover,
       &:focus {
         text-decoration: none;
-        color: currentColor;
-        background-color: #f8f8f8;
+        color: #333;
+        background: #f8f8f8;
+      }
+    }
+
+    .panel-title {
+      a:hover, a:focus {
+        color: #b2b2b2;
+        background: none;
       }
     }
   }
 
   .panel-title {
     a {
-      opacity: .8;
+      color: #b2b2b2;
 
       &:after {
         content: '';
@@ -98,6 +105,7 @@ a {
       &:focus,
       &.active {
         background-color: #f1f1f1;
+        color: #333;
         text-decoration: none;
       }
     }

@@ -53,11 +53,15 @@ a {
 }
 .sidebar .panel-heading a:hover, .sidebar .panel-heading a:focus {
   text-decoration: none;
-  color: currentColor;
-  background-color: #f8f8f8;
+  color: #333;
+  background: #f8f8f8;
+}
+.sidebar .panel-heading .panel-title a:hover, .sidebar .panel-heading .panel-title a:focus {
+  color: #b2b2b2;
+  background: none;
 }
 .sidebar .panel-title a {
-  opacity: .8
+  color: #b2b2b2
 }
 .sidebar .panel-title a:after {
   content: '';
@@ -88,6 +92,7 @@ a {
 }
 .sidebar .panel-collapse a:hover, .sidebar .panel-collapse a:focus, .sidebar .panel-collapse a.active {
   background-color: #f1f1f1;
+  color: #333;
   text-decoration: none;
 }
 .sidebar .panel {

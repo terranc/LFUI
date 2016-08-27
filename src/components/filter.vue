@@ -52,6 +52,10 @@
       margin-bottom: 4px;
       padding: 4px 8px;
     }
+    .input-daterange,
+    .search-form {
+      max-width: 30em;
+    }
   }
 
   .filter-box + .filter-box .filter-inner {

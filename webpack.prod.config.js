@@ -17,13 +17,15 @@ module.exports = {
     filename: 'js/lfui.js',
   },
   plugins: [
+    new Webpack.BannerPlugin('Lookfeel © hello@lookfeel.co'),
     new CleanWebpackPlugin(['dist']),
     new Webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false,
       },
     }),
-    new ExtractTextPlugin('css/lfui.css'),
+    new Webpack.optimize.OccurrenceOrderPlugin(), //排序输出
+    new ExtractTextPlugin('./css/lfui.css'),
     new CopyWebpackPlugin([{
       from: 'src/js/libs',
       to: 'js/libs',
@@ -78,18 +80,18 @@ module.exports = {
         loader: 'url',
         query: {
           limit: 10000,
-          path: Path.join(BUILD_PATH, 'css'),
+          importLoaders: 1,
           name: 'fonts/[name].[ext]',
         },
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style', 'css?importLoaders=1!postcss'),
+        loader: ExtractTextPlugin.extract('style', 'css?importLoaders=1!postcss', { publicPath: '../' }),
         exclude: /node_modules/,
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style', 'css?sourceMap!sass'),
+        loader: ExtractTextPlugin.extract('style', 'css?sourceMap!sass', { publicPath: '../' }),
         exclude: /node_modules/,
       },
     ],

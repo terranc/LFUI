@@ -17,14 +17,15 @@
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  font-size: 24px;  /* Preferred icon size */
+  font-size: 1.1em;  /* Preferred icon size */
   line-height: 1;
   text-transform: none;
   letter-spacing: normal;
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
-  vertical-align: text-bottom;
+  margin-top: -0.125em;
+  vertical-align: middle;
 
   /* Support for all WebKit browsers. */
   -webkit-font-smoothing: antialiased;

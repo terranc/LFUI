@@ -30,7 +30,7 @@ module.exports = {
         test: /\.js$/,
         loader: 'eslint',
         include: SRC_PATH,
-        exclude: /node_modules/,
+        exclude: /(node_modules)/,
       },
     ],
     loaders: [
@@ -42,7 +42,7 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel',
         include: Path.resolve(__dirname),
-        exclude: /node_modules/,
+        exclude: /(node_modules)/,
       },
       {
         test: /\.json$/,
@@ -117,6 +117,7 @@ module.exports = {
     contentBase: './build',
     historyApiFallback: false,
     hot: false,
+    host: '0.0.0.0',
     inline: true,
     progress: true,
     port: 3000,

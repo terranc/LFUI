@@ -1,5 +1,6 @@
 body{
-  font: 14px/1.4 "Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Hiragino Kaku Gothic Pro",Meiryo,"Malgun Gothic",sans-serif;
+  font: 14px/1.4 "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9ED1\4F53",Arial,sans-serif;
+  color: #333;
 }
 .dropdown.v-select {
   &.open {
@@ -87,6 +88,7 @@ body{
 }
 .form-control {
   width: auto;
+  display: inline-block;
   background-color: #fafafa;
 }
 .form-control[type=text],
@@ -173,6 +175,17 @@ body{
 .tag{
   font-weight: 300;
 }
+.table-control{
+  * {
+    vertical-align: middle;
+  }
+  select.form-control{
+    margin-right: 5px;
+  }
+  .btn{
+    margin-right: 5px;
+  }
+}
 .data-stat {
   margin: 10px 0;
   padding: 8px 10px;
@@ -192,4 +205,18 @@ body{
 }
 .form-check-input{
   margin-top: 0;
+}
+.input-group .form-control{
+  flex:none;
+}
+.table-toolbar-left, 
+.table-toolbar-right{
+  text-align: center;
+  padding-bottom: 10px;
+}
+@media (min-width: 760px){
+  .table-toolbar-left{
+      float: left;
+      text-align: left;
+  }
 }

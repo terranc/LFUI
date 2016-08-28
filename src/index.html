@@ -7,14 +7,6 @@
   <title>Examples</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
-  <script src="./js/libs/jquery/jquery.js"></script>
-  <script src="./js/libs/tether/tether.js"></script>
-  <script src="./js/libs/moment/moment-with-locales.js"></script>
-  <script src="./js/libs/ueditor/ueditor.config.js"></script>
-  <script src="./js/libs/ueditor/ueditor.all.js"></script>
-  <script src="./js/libs/bootstrap/bootstrap.min.js"></script>
-  <script src="./js/libs/bootstrap/bootstrap-datetimepicker.js"></script>
-  <script src="./js/libs/validator/jquery.validator.js?local=zh-CN"></script>
   <style type="text/css">
     .list-group-item:hover{
       text-decoration: none;
@@ -27,7 +19,7 @@
   <loading type="grid" v-show="loading"></loading>
   <div class="container" style="margin-bottom: 40px;">
     <div class="row">
-      <div class="col-xs-12 col-md-3 push-md-9">
+      <div class="col-lg-3 push-lg-9 hidden-lg-down" style="clip: rect(top, right, bottom, left);">
         <div class="list-group sidebar-right">
           <a href="#breadcrumb" class="list-group-item">面包屑 Breadcrumb</a>
           <a href="#buttons" class="list-group-item">按钮 Button</a>
@@ -49,7 +41,7 @@
           <a href="#icons" class="list-group-item">图标 Icon</a>
         </div>
       </div>
-      <div class="col-xs-12 col-md-9 pull-md-3">
+      <div class="col-xl-9 pull-xl-3">
         <section id="breadcrumb">
           <h1 class="page-header">面包屑导航 Breadcrumb</h1>
           <breadcrumb :lists="breadcrumb"></breadcrumb>
@@ -611,21 +603,131 @@
         </section>
         <section id="tables">
           <h1 class="page-header">表格 Table</h1>
-          <h3>普通表格</h3>
-          <lf-table :page="1" :data="users" :titles="titles"></lf-table>
-          <h3>响应式表格</h3>
           <form>
-          <lf-table :page="1" :data="users" :titles="titles" :total-item="100" responsive>
-            <select class="form-control" style="display: inline; margin: 0 10px 10px 0;">
-              <option value="">请选择 ...</option>
-              <option value="1">批量审核</option>
-              <option value="2">批量删除</option>
-            </select>
-            <btn>全部结算</btn>
-            <span class="text-muted">注：请注意</span>
-            </form>
-            <div class="data-stat"><span>汇总金额：<var>￥1000.00</var></span><span>总人数：<var>300</var></span></div>
-          </lf-table>
+            <div class="table-toolbar-left">
+              <button class="btn btn-primary"><i class="material-icons">exposure_plus_1</i> 添加</button>
+            </div>
+            <lf-table width="100%">
+            <table class="table table-striped table-bordered" width="100%">
+                <thead>
+                    <tr>
+                        <th>用户名</th>
+                        <th class="hidden-md-down">位置</th>
+                        <th class="left">地址</th>
+                        <th>Extn.</th>
+                        <th width="120">开始日期</th>
+                        <th class="right">费用</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tiger Nixon</td>
+                        <td class="hidden-md-down">System Architect</td>
+                        <td class="left">Edinburgh</td>
+                        <td>61</td>
+                        <td>2011-04-25</td>
+                        <td class="right">$320,800</td>
+                    </tr>
+                    <tr>
+                        <td>张三李四</td>
+                        <td class="hidden-md-down">长沙市芙蓉区</td>
+                        <td class="left">长沙市芙蓉区湖南宾馆宿舍2栋205</td>
+                        <td>63</td>
+                        <td>2011-07-25</td>
+                        <td class="right">$170,750</td>
+                    </tr>
+                    <tr>
+                        <td>Ashton Cox</td>
+                        <td class="hidden-md-down">Junior Technical Author</td>
+                        <td class="left">San Francisco</td>
+                        <td>66</td>
+                        <td>2009-01-12</td>
+                        <td class="right">$86,000</td>
+                    </tr>
+                    <tr>
+                        <td>Cedric Kelly</td>
+                        <td class="hidden-md-down">Senior Javascript Developer</td>
+                        <td class="left">Edinburgh</td>
+                        <td>22</td>
+                        <td>2012-03-29</td>
+                        <td class="right">$433,060</td>
+                    </tr>
+                    <tr>
+                        <td>Airi Satou</td>
+                        <td class="hidden-md-down">Accountant</td>
+                        <td class="left">Tokyo</td>
+                        <td>33</td>
+                        <td>2008-11-28</td>
+                        <td class="right">$162,700</td>
+                    </tr>
+                    <tr>
+                        <td>Brielle Williamson</td>
+                        <td class="hidden-md-down">Integration Specialist</td>
+                        <td class="left">New York</td>
+                        <td>61</td>
+                        <td>2012-12-02</td>
+                        <td class="right">$372,000</td>
+                    </tr>
+                    <tr>
+                        <td>Herrod Chandler</td>
+                        <td class="hidden-md-down">Sales Assistant</td>
+                        <td class="left">San Francisco</td>
+                        <td>59</td>
+                        <td>2012-08-06</td>
+                        <td class="right">$137,500</td>
+                    </tr>
+                    <tr>
+                        <td>Rhona Davidson</td>
+                        <td class="hidden-md-down">Integration Specialist</td>
+                        <td class="left">Tokyo</td>
+                        <td>55</td>
+                        <td>2010-10-14</td>
+                        <td class="right">$327,900</td>
+                    </tr>
+                    <tr>
+                        <td>Colleen Hurst</td>
+                        <td class="hidden-md-down">Javascript Developer</td>
+                        <td class="left">San Francisco</td>
+                        <td>39</td>
+                        <td>2009-09-15</td>
+                        <td class="right">$205,500</td>
+                    </tr>
+                    <tr>
+                        <td>Sonya Frost</td>
+                        <td class="hidden-md-down">Software Engineer</td>
+                        <td class="left">Edinburgh</td>
+                        <td>23</td>
+                        <td>2008-12-13</td>
+                        <td class="right">$103,600</td>
+                    </tr>
+                    <tr>
+                        <td>Jena Gaines</td>
+                        <td class="hidden-md-down">Office Manager</td>
+                        <td class="left">London</td>
+                        <td>30</td>
+                        <td>2008-12-19</td>
+                        <td class="right">$90,560</td>
+                    </tr>
+                    <tr>
+                        <td>Quinn Flynn</td>
+                        <td class="hidden-md-down">Support Lead</td>
+                        <td class="left">Edinburgh</td>
+                        <td>22</td>
+                        <td>2013-03-03</td>
+                        <td class="right">$342,000</td>
+                    </tr>
+                    <tr>
+                        <td>Charde Marshall</td>
+                        <td class="hidden-md-down">Regional Director</td>
+                        <td class="left">San Francisco</td>
+                        <td>36</td>
+                        <td>2008-10-16</td>
+                        <td class="right">$470,600</td>
+                    </tr>
+                </tbody>
+            </table>
+            </lf-table>
+          </form>
         </section>
         <section id="forms">
           <h1 class="page-header">表单 Form</h1>
@@ -806,6 +908,13 @@
     </div>
   </div>
   <dialog :id="modal.id" :title="modal.title" :desc="modal.desc" :foot="modal.foot" :type="modal.type" @confirm-event="modal.event"></dialog>
+  <script src="./js/libs/jquery/jquery.min.js"></script>
+  <script src="./js/libs/tether/tether.min.js"></script>
+  <script src="./js/libs/bootstrap/bootstrap.min.js"></script>
+  <script src="./js/libs/moment/moment-with-locales.min.js"></script>
+  <script src="./js/libs/validator/jquery.validator.min.js?local=zh-CN"></script>
+  <script src="./js/libs/ueditor/ueditor.config.js"></script>
+  <script src="./js/libs/ueditor/ueditor.all.min.js"></script>
   <script type="text/javascript">
     $(function(){
       $.validator.setTheme('bootstrap', {
@@ -815,6 +924,7 @@
         formClass: 'n-default n-bootstrap',
         msgClass: 'n-right'
       });
+      vm.$mount('body');
     });
   </script>
 </body>

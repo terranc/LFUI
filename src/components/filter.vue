@@ -53,6 +53,10 @@
       line-height: 1;
       border-radius: 0;
     }
+    .input-daterange,
+    .search-form {
+      max-width: 30em;
+    }
   }
 
   .filter-box + .filter-box .filter-inner {

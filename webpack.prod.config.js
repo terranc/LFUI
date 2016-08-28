@@ -86,7 +86,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style', 'css?importLoaders=1!postcss', { publicPath: '../' }),
+        loader: ExtractTextPlugin.extract('style', 'css?importLoaders=1!postcss'),
         exclude: /node_modules/,
       },
       {

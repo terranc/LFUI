@@ -13,7 +13,6 @@ import './css/example.css';
 import 'example/layout.css';
 
 // 自定义组件
-import from './libs/datatables/datatables';
 import Button from './components/button';
 import BtnGroup from './components/button-group';
 import Dropdown from './components/dropdown';

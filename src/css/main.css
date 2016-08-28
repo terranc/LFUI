@@ -119,6 +119,9 @@ body{
 
     .msg-box{
       margin-top: 2px;
+      .msg-wrap{
+        vertical-align: middle;
+      }
     }
     textarea + .msg-box{
       display: block;
@@ -128,7 +131,7 @@ body{
       }
     }
     input, select {
-      + .msg-box {
+      & + .msg-box {
         margin-top: 10px;
       }
     }

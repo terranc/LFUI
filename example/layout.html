@@ -470,6 +470,13 @@
   // });
   // $('#demo-custom-toolbar2').replaceAll(".newtoolbar");
   /* global vm */
+  $.validator.setTheme('bootstrap', {
+    validClass: 'has-success',
+    invalidClass: 'has-danger',
+    bindClassTo: '.form-group-inline',
+    formClass: 'n-default n-bootstrap',
+    msgClass: 'n-right'
+  });
   var data = {
     loading: true,
     modal: {

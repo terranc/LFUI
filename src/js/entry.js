@@ -13,17 +13,12 @@ Vue.http.options.xhr = { withCredentials: true };
 // 样式文件
 import '../scss/lfui.scss';
 import '../css/main.css';
-// import 'datatables.net-bs';
-// import 'datatables.net-responsive-bs';
 
 // 自定义组件
 import modules from './modules';  // 常用组件加载
 modules.forEach((component) => {
   Vue.component(component.name, component.module);
 });
-// import 'datatables.net';
-// import 'datatables.net-buttons';
-// import 'datatables.net-responsive';
 
 
 /* eslint no-new: off */

@@ -4,8 +4,8 @@
     <div class="pull-right">
       <nav aria-label="Page navigation" class="pull-right">
         <ul class="pagination">
-          <li class="page-item" :class="{'disabled': !preClickable}" @click="page > 1 ? page-- : 1">
-            <a class="page-link" :href="pageUrl(page > 1 ? page-1 : 1)" aria-label="Previous">
+          <li class="page-item" :class="{'disabled': !preClickable}">
+            <a class="page-link" :href="pageUrl(page)" aria-label="Previous" @click="page > 1 ? page-- : 1">
               <!-- <span aria-hidden="true" :class="{'sr-only': !totalPage}">&laquo;</span>
               <span :class="{'sr-only': totalPage}">上一页</span> -->
               上一页
@@ -64,8 +64,8 @@
               @click="page =  totalPage">
             </a>
           </li>
-          <li class="page-item" :class="{'disabled': !nextClickable}" @click="page = nextClick()">
-            <a class="page-link" :href="pageUrl(nextClick())" aria-label="Next">
+          <li class="page-item" :class="{'disabled': !nextClickable}">
+            <a class="page-link" :href="pageUrl(page)" aria-label="Next" @click="page = nextClick()">
               <!-- <span aria-hidden="true" :class="{'sr-only': !totalPage}">&raquo;</span> -->
               <!-- <span :class="{'sr-only': totalPage}">下一页</span> -->
               下一页

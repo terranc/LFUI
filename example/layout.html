@@ -29,19 +29,6 @@
   <div class="row" id="main-container">
     <div class="col-xs-12 col-md-10 push-md-2 content">
       <breadcrumb :lists="breadcrumb"></breadcrumb>
-      <tips type="warning" title="警告">
-        <i class="material-icons md-48" slot="icon">face</i>
-        <p>警告是一种警戒性的纪律制裁方式，也是最轻微的一种制裁方式，是指公务员的行为已经构成了违纪，应当予以及时纠正和警示。</p>
-      </tips>
-      <tips type="danger">
-        <strong>出错了!</strong><a href="#" class="alert-link">请修改</a>并重试。
-      </tips>
-      <tips type="success">
-        <strong>恭喜!</strong> 你已经阅读了 <a href="#" class="alert-link">本条重要的消息。</a>
-      </tips>
-      <tips type="info">
-        <strong>注意!</strong> 此消息 <a href="#" class="alert-link">需要您留意</a>, 但不是那么重要。
-      </tips>
       <ul class="nav nav-tabs">
         <li class="nav-item">
           <a class="nav-link active" data-toggle="tab" href="#basic">标签一</a>
@@ -60,6 +47,19 @@
       </ul>
       <div class="tab-content">
         <div class="tab-pane fade active in" id="basic">
+          <tips type="warning" title="警告">
+            <i class="material-icons md-48" slot="icon">face</i>
+            <p>警告是一种警戒性的纪律制裁方式，也是最轻微的一种制裁方式，是指公务员的行为已经构成了违纪，应当予以及时纠正和警示。</p>
+          </tips>
+          <tips type="danger">
+            <strong>出错了!</strong><a href="#" class="alert-link">请修改</a>并重试。
+          </tips>
+          <tips type="success">
+            <strong>恭喜!</strong> 你已经阅读了 <a href="#" class="alert-link">本条重要的消息。</a>
+          </tips>
+          <tips type="info">
+            <strong>注意!</strong> 此消息 <a href="#" class="alert-link">需要您留意</a>, 但不是那么重要。
+          </tips>
           <form class="filter-wrapper">
             <filter title="种类">
               <a href="" class="btn  btn-outline-primary category-item">全部</a>
@@ -76,7 +76,7 @@
             </filter>
             <filter title="截止日期" width="8em">
               <div class="input-daterange input-group">
-                <input type='text' name="start-date" class="form-control datetimepicker" data-format="YYYY-MM-DD" />
+                <input type='text' name="start-date" class="form-control datetimepicker" data-format="YYYY-MM-DD" value="2016-08-29" />
                 <div class="input-group-addon">至</div>
                 <input type='text' name="end-date" class="form-control datetimepicker" data-format="YYYY-MM-DD" />
               </div>

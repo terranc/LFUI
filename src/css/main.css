@@ -212,10 +212,15 @@ body{
 .input-group .form-control{
   flex:none;
 }
-.table-toolbar-left, 
+.table-toolbar-left,
 .table-toolbar-right{
   text-align: center;
   padding-bottom: 10px;
+}
+.table-toolbar {
+  .table-toolbar-right.search-form {
+    width: 240px;
+  }
 }
 @media (min-width: 760px){
   .table-toolbar-left{

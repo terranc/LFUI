@@ -57,7 +57,7 @@
     ready() {
       const table = this.$els.table.querySelector('table');
       const _columns = table.querySelectorAll('thead th');
-      const columns = Array.prototype.slice.call(_columns, 0); 
+      const columns = Array.prototype.slice.call(_columns, 0);
       const _rows = table.querySelectorAll('tbody tr');
       const rows = Array.prototype.slice.call(_rows, 0);
       const style = document.createElement('style');
@@ -73,7 +73,7 @@
       });
       rows.forEach((row, i) => {
         const _cols = row.querySelectorAll('td');
-        const cols = Array.prototype.slice.call(_cols, 0); 
+        const cols = Array.prototype.slice.call(_cols, 0);
         cols.forEach((col, n) => {
           col.classList.add('table-' + this.uuid + '-' + n);
         });
@@ -122,22 +122,22 @@
     @media only screen and (max-width: 800px) {
       table{
         border:none;
-        tr { 
-          border: 1px solid #ccc; 
+        tr {
+          border: 1px solid #ccc;
           margin-bottom: 10px;
         }
-        td { 
+        td {
           /* Behave  like a "row" */
           border: none;
-          border-bottom: 1px solid #eee; 
+          border-bottom: 1px solid #eee;
           position: relative;
           white-space: normal;
           text-align: left !important;
           display: flex;
         }
-       
-        td:before { 
-          padding-right: 10px; 
+
+        td:before {
+          padding-right: 10px;
           min-width: 7em;
           max-width: 50%;
           color: #999;
@@ -148,18 +148,18 @@
           // display: flex;
           // font-weight: bold;
           vertical-align: middle;
-          content: ''; 
+          content: '';
         }
       }
-      thead, 
-      tbody, 
-      th, 
-      tr { 
-        display: block !important; 
+      thead,
+      tbody,
+      th,
+      tr {
+        display: block !important;
       }
-     
+
       /* Hide table headers (but not display: none;, for accessibility) */
-      thead tr { 
+      thead tr {
         position: absolute;
         top: -9999px;
         left: -9999px;

@@ -135,8 +135,3 @@ a {
 .nav-tabs{
  margin-top: 20px;
 }
-.table-toolbar {
-  .table-toolbar-right.search-form {
-    width: 240px;
-  }
-}

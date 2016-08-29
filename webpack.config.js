@@ -57,7 +57,7 @@ module.exports = {
         loader: 'url',
         query: {
           limit: 10000,
-          name: '../images/[name].[ext]',
+          name: 'images/[name].[ext]',
         },
       },
       {
@@ -65,8 +65,8 @@ module.exports = {
         loader: 'url',
         query: {
           limit: 10000,
-          name: '../fonts/[name].[ext]',
-        },
+          name: 'fonts/[name].[ext]',
+        }
       },
       {
         test: /\.css$/,
@@ -83,6 +83,8 @@ module.exports = {
   externals: {
     jquery: 'jQuery',
     tether: 'Tether',
+    UE: 'ueditor',
+    // moment: 'moment',
   },
   vue: {
     loaders: {
@@ -102,6 +104,13 @@ module.exports = {
     formatter: require('eslint-friendly-formatter'),
   },
   plugins: [
+    // new Webpack.ProvidePlugin({
+    //     jQuery: 'jquery',
+    //     $: 'jquery',
+    //     jquery: 'jquery',
+    //     "Tether": 'tether',
+    //     "window.Tether": "tether"
+    // }),
     new HtmlwebpackPlugin({
       title: 'Hello world',
       css: [Path.resolve(SRC_PATH, 'css/index.css')],

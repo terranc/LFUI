@@ -1,5 +1,5 @@
 <template>
-  <div class="input-group date" data-picker="datetimepicker" :data-format="format">
+  <div class="input-group date datetimepicker" :data-format="format">
     <input type="text" :name="name" class="form-control">
     <span class="input-group-addon">
       <slot name="icon">
@@ -10,14 +10,13 @@
 </template>
 
 <script>
-  import '../js/libs/bootstrap/bootstrap-datatimepicker.min.js';
   export default {
     props: {
       name: String,
       format: {
         type: String,
         required: false,
-        default: 'YYYY-MM-DD HH:mm:ss',
+        default: 'YYYY-MM-DD',
       },
     },
     computed: {

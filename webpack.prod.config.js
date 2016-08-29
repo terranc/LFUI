@@ -19,11 +19,22 @@ module.exports = {
   plugins: [
     new Webpack.BannerPlugin('Lookfeel © hello@lookfeel.co'),
     new CleanWebpackPlugin(['dist']),
+    new Webpack.optimize.DedupePlugin(),
     new Webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false,
       },
+      mangle: {
+        except: ['exports', 'module', 'require'],
+      },
     }),
+    // new Webpack.ProvidePlugin({
+    //     jQuery: 'jquery',
+    //     $: 'jquery',
+    //     jquery: 'jquery',
+    //     "Tether": 'tether',
+    //     "window.Tether": "tether"
+    // }),
     new Webpack.optimize.OccurrenceOrderPlugin(), //排序输出
     new ExtractTextPlugin('./css/lfui.css'),
     new CopyWebpackPlugin([{
@@ -100,7 +111,7 @@ module.exports = {
     jquery: 'jQuery',
     tether: 'Tether',
     UE: 'ueditor',
-    moment: 'moment',
+    // moment: 'moment',
   },
   vue: {
     loaders: {

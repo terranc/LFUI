@@ -36,6 +36,10 @@ export default [
     module: require('../components/table'),
   },
   {
+    name: 'Pagination',
+    module: require('../components/pagination'),
+  },
+  {
     name: 'Filter',
     module: require('../components/filter'),
   },

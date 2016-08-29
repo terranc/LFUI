@@ -46,3 +46,6 @@
   position: fixed;
   margin-top: 40px;
 }
+.breadcrumb {
+  font-size: 16px;
+}

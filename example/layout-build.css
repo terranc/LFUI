@@ -49,7 +49,10 @@ a {
   display: block;
   padding-left: 26px;
   height: 45px;
-  line-height: 45px
+  line-height: 45px;
+}
+.sidebar .panel-heading a .material-icons {
+  vertical-align: text-bottom;
 }
 .sidebar .panel-heading a:hover, .sidebar .panel-heading a:focus {
   text-decoration: none;
@@ -91,7 +94,7 @@ a {
   zoom: 1
 }
 .sidebar .panel-collapse a:hover, .sidebar .panel-collapse a:focus, .sidebar .panel-collapse a.active {
-  background-color: #f1f1f1;
+  background-color: #f8f8f8;
   color: #333;
   text-decoration: none;
 }

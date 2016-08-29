@@ -51,6 +51,10 @@ a {
       height: 45px;
       line-height: 45px;
 
+      .material-icons {
+        vertical-align: text-bottom;
+      }
+
       &:hover,
       &:focus {
         text-decoration: none;
@@ -104,7 +108,7 @@ a {
       &:hover,
       &:focus,
       &.active {
-        background-color: #f1f1f1;
+        background-color: #f8f8f8;
         color: #333;
         text-decoration: none;
       }

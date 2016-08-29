@@ -225,6 +225,10 @@
               <span class="text-muted">注：请注意</span>
             </div>
             <div class="data-stat"><span>汇总金额：<var>￥1000.00</var></span><span>总人数：<var>300</var></span></div>
+            <pagination :url="url" :page="page"></pagination>
+            <pagination :url="url" :page="page" :total="100"></pagination>
+            <pagination :url="url" :page="page" :total="101" show-go></pagination>
+            <hr>
           </form>
           <form id="form1" class="form-table"
                 data-validator-option="{theme:'bootstrap', timely:2, stopOnError:true}"
@@ -495,8 +499,26 @@
         title: '工会官网',
       },
     ],
+    page: 1,
+    url: location.origin + location.pathname,
   };
+  var urlParams;
+  (window.onpopstate = function() {
+    var match,
+      pl = /\+/g,
+      search = /([^&=]+)=?([^&]*)/g,
+      decode = function(s) {
+        return decodeURIComponent(s.replace(pl, " "));
+      },
+      query = window.location.search.substring(1);
+
+    urlParams = {};
+    while (match = search.exec(query))
+      urlParams[decode(match[1])] = decode(match[2]);
+  })();
+
   vm.$set('$data', data);
+  vm.$set('page', parseInt(urlParams.page) || 1);
   vm.$mount('body');
 </script>
 </body>

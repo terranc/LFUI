@@ -127,7 +127,7 @@
     },
     methods: {
       pageUrl(val) {
-        return this.url ? (this.url + '?' + this.paramsName + '=' + val) : 'javascript:;';
+        return this.url ? (this.url + '?' + this.queryName + '=' + val) : 'javascript:;';
       },
       changeCurrent(index) {
         this.$dispatch('current-change', index);

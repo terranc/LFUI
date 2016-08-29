@@ -30,7 +30,7 @@ a {
 }
 
 #main-container {
-  width: 1221px;
+  max-width: 1221px;
   margin: 0 auto;
   overflow: hidden;
   background: #fff;
@@ -120,4 +120,14 @@ a {
   overflow: hidden;
   padding: 30px;
   vertical-align: top;
+}
+
+.filter-wrapper{
+  padding: 0 0 15px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e2e2e2;
+}
+.nav-tabs{
+ margin-top: 20px; 
 }

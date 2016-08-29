@@ -10,45 +10,21 @@ Vue.use(VueResource);
 Vue.http.options.crossOrigin = true;
 Vue.http.options.xhr = { withCredentials: true };
 
-
-// 第三方组件
-import vSelect from 'vue-select';
-
 // 样式文件
 import '../scss/lfui.scss';
 import '../css/main.css';
 
 // 自定义组件
-import Loading from '../components/loading';
-import Button from '../components/button';
-import BtnGroup from '../components/button-group';
-import Dropdown from '../components/dropdown';
-import Tips from '../components/tips';
-import Breadcrumb from '../components/breadcrumb';
-import Dialog from '../components/dialog';
-import Table from '../components/table';
-import Filter from '../components/filter';
-import Datetimepicker from '../components/datetimepicker';
-import Ueditor from '../components/ueditor';
+import modules from './modules';  // 常用组件加载
+modules.forEach((component) => {
+  Vue.component(component.name, component.module);
+});
+
 
 /* eslint no-new: off */
 window.vm = new Vue({
   data: {
     data: {},
-  },
-  components: {
-    vSelect,
-    Btn: Button,
-    LfTable: Table,
-    BtnGroup,
-    Dropdown,
-    Tips,
-    Breadcrumb,
-    Dialog,
-    Filter,
-    Datetimepicker,
-    Loading,
-    Ueditor,
   },
   methods: {
     dialog(id, options) {

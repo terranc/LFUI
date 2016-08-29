@@ -48,9 +48,10 @@
   }
   .filter-inner {
     .category-item {
-      margin-right: 4px;
-      margin-bottom: 4px;
-      padding: 4px 8px;
+      margin: 4px 8px 6px 0;
+      padding: 4px 6px;
+      line-height: 1;
+      border-radius: 0;
     }
     .input-daterange,
     .search-form {

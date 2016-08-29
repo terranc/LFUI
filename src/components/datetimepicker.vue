@@ -10,6 +10,7 @@
 </template>
 
 <script>
+  import '../js/libs/bootstrap/bootstrap-datatimepicker.min.js';
   export default {
     props: {
       name: String,

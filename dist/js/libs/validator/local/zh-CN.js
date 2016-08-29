@@ -15,8 +15,8 @@
         //focusCleanup: true,
         //theme: 'yellow_right',
         //timely: 2,
-        defaultMsg: "{0}格式不正确",
-        loadingMsg: "正在验证...",
+        // defaultMsg: "{0}格式不正确",
+        // loadingMsg: "正在验证...",
         
         // Custom rules
         rules: {
@@ -50,6 +50,8 @@
         // Default error messages
         messages: {
             0: "此处",
+            fallback: "{0}格式不正确",
+            loading: "正在验证...",
             error: "网络异常",
             timeout: "请求超时",
             required: "{0}不能为空",
@@ -72,7 +74,10 @@
             range: {
                 rg: "请输入{1}到{2}的数",
                 gte: "请输入不小于{1}的数",
-                lte: "请输入最大{1}的数"
+                lte: "请输入最大{1}的数",
+                gtlt: "请输入{1}到{2}之间的数",
+                gt: "请输入大于{1}的数",
+                lt: "请输入小于{1}的数"
             },
             checked: {
                 eq: "请选择{1}项",
@@ -95,7 +100,7 @@
 
     /* Themes
      */
-    var TPL_ICON = '<span class="n-arrow"><b>◆</b><i>◆</i></span><span class="n-icon"></span>';
+    var TPL_ARROW = '<span class="n-arrow"><b>◆</b><i>◆</i></span>';
     $.validator.setTheme({
         'simple_right': {
             formClass: 'n-simple',
@@ -108,17 +113,17 @@
         'yellow_top': {
             formClass: 'n-yellow',
             msgClass: 'n-top',
-            msgIcon: TPL_ICON
+            msgArrow: TPL_ARROW
         },
         'yellow_right': {
             formClass: 'n-yellow',
             msgClass: 'n-right',
-            msgIcon: TPL_ICON
+            msgArrow: TPL_ARROW
         },
         'yellow_right_effect': {
             formClass: 'n-yellow',
             msgClass: 'n-right',
-            msgIcon: TPL_ICON,
+            msgArrow: TPL_ARROW,
             msgShow: function($msgbox, type){
                 var $el = $msgbox.children();
                 if ($el.is(':animated')) return;

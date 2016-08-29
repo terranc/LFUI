@@ -2,13 +2,6 @@
 
 // 框架
 import Vue from 'vue';
-import VueResource from 'vue-resource';
-
-Vue.use(VueResource);
-
-// Http相关
-Vue.http.options.crossOrigin = true;
-Vue.http.options.xhr = { withCredentials: true };
 
 // 样式文件
 import '../scss/lfui.scss';

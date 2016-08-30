@@ -15,7 +15,7 @@ import '../css/example.css';
 import 'nice-validator';
 import 'nice-validator/dist/local/zh-CN';
 import 'moment';
-import './libs/bootstrap/bootstrap-datetimepicker';
+import 'eonasdan-bootstrap-datetimepicker';
 import modules from './modules';  // 常用组件加载
 modules.forEach((component) => {
   Vue.component(component.name, component.module);

@@ -104,9 +104,15 @@
               <div class="input-group table-toolbar-right search-form">
                 <input type='text' class="form-control" placeholder="请输入关键词..." />
                 <span class="input-group-btn">
+<<<<<<< HEAD
                   <button class="btn btn-secondary" type="submit">
                     <i class="material-icons md-18">search</i>
                   </button>
+=======
+                <button class="btn btn-secondary" type="button">
+                  <i class="material-icons md-18">search</i>
+                </button>
+>>>>>>> 56471f6fcdaa63efadc1b7414a671fb56faaec5c
                 </span>
               </div>
             </div>
@@ -278,12 +284,12 @@
               <button class="btn btn-primary">全部结算</button>
               <span class="text-muted">注：请注意</span>
             </div>
-            <div class="data-stat"><span>汇总金额：<var>￥1000.00</var></span><span>总人数：<var>300</var></span></div>
-            <pagination :url="url" :page="page"></pagination>
-            <pagination :url="url" :page="page" :total="100"></pagination>
-            <pagination :url="url" :page="page" :total="101" show-go></pagination>
-            <hr>
           </form>
+          <div class="data-stat"><span>汇总金额：<var>￥1000.00</var></span><span>总人数：<var>300</var></span></div>
+          <pagination :url="url" :page="page"></pagination>
+          <pagination :url="url" :page="page" :total="100"></pagination>
+          <pagination :url="url" :page="page" :total="101" show-go></pagination>
+          <hr>
           <form id="form1" class="form-table"
                 data-validator-option="{theme:'bootstrap', timely:2, stopOnError:true}"
                 enctype="multipart/form-data">
@@ -554,7 +560,7 @@
       },
     ],
     page: 1,
-    url: location.origin + location.pathname,
+    url: location.origin + location.pathname + '?p={page}', // 自定跳转路径，{page}为变量字段，不可变
   };
   var urlParams;
   (window.onpopstate = function() {
@@ -572,7 +578,7 @@
   })();
 
   vm.$set('$data', data);
-  vm.$set('page', parseInt(urlParams.page) || 1);
+  vm.$set('page', parseInt(urlParams.p) || 1);
   vm.$mount('body');
 </script>
 </body>

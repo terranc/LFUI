@@ -21,7 +21,7 @@
     props: {
       id: {
         type: String,
-        required: true,
+        default: 'dialog-' + new Date(),
       },
       title: String,
       desc: String,

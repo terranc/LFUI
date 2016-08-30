@@ -161,6 +161,7 @@ body{
 }
 .filter-wrapper {
   display: table;
+  width: 100%;
 }
 .form-group-inline .text-middle {
   vertical-align: top;
@@ -215,10 +216,15 @@ body{
   height: 0;
   font-size: 0;
 }
-.table-toolbar-left, 
+.table-toolbar-left,
 .table-toolbar-right{
   text-align: center;
   padding-bottom: 10px;
+}
+.table-toolbar {
+  .table-toolbar-right.search-form {
+    width: 240px;
+  }
 }
 @media (min-width: 760px){
   .table-toolbar-left{

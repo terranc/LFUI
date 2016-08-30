@@ -71,7 +71,7 @@
               下一页
             </a>
           </li>
-          <li class="page-item page-control disabled" v-if="totalPage && showGo"><input class="form-control" min="1" :max="totalPage" type="number" @keyup.enter="pageGo" :value="page"> / {{ totalPage }} 页</li>
+          <li class="page-item page-control" v-if="totalPage && showGo"><input class="form-control" min="1" :max="totalPage" type="number" @keyup.enter.prevent="pageGo" :value="page"> / {{ totalPage }} 页</li>
         </ul>
       </nav>
     </div>
@@ -82,10 +82,6 @@
   export default {
     props: {
       url: String,
-      queryName: {
-        type: String,
-        default: 'page',
-      },
       page: {
         type: Number,
         required: true,
@@ -127,7 +123,7 @@
     },
     methods: {
       pageUrl(val) {
-        return this.url ? (this.url + '?' + this.queryName + '=' + val) : 'javascript:;';
+        return this.url ? this.url.replace(/{page}/, val) : 'javascript:;';
       },
       changeCurrent(index) {
         this.$dispatch('current-change', index);
@@ -140,6 +136,7 @@
         }
       },
       pageGo(event) {
+        event.preventDefault();
         if (typeof this.url === 'undefined') {
           this.page = parseInt(event.target.value);
         } else {

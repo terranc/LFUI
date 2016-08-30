@@ -5,7 +5,7 @@ a {
   color: currentColor;
 }
 #container {
-  min-width: 1221px;
+  // min-width: 1221px;
 }
 #navbar {
   margin-bottom: 35px;
@@ -135,8 +135,13 @@ a {
 .nav-tabs{
  margin-top: 20px;
 }
-.table-toolbar {
-  .table-toolbar-right.search-form {
-    width: 240px;
+@media (min-width: 800px){
+  .table-toolbar {
+    .table-toolbar-right.search-form {
+      width: 240px;
+      .form-control{
+        flex: 1,
+      }
+    }
   }
 }

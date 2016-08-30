@@ -1,6 +1,6 @@
 <template>
   <div class="alert alert-dismissable" :class="'alert-' + type">
-    <button type="button" class="close" data-dismiss="alert">×</button>
+    <button type="button" class="close" data-dismiss="alert" v-if="allowClose">×</button>
     <div class="tips-inner">
       <div v-if="hasIcon" class="flex-item-auto tips-icon">
         <slot name="icon"></slot>
@@ -20,10 +20,15 @@
       type: {
         type: String,
         required: false,
+        default: 'info',
       },
       title: {
         type: String,
         required: false,
+      },
+      allowClose: {
+        type: Boolean,
+        default: true,
       },
     },
     computed: {

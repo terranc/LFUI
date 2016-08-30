@@ -96,16 +96,17 @@
             </filter>
           </form>
           <form>
-            <div class="table-toolbar clearfix">
-              <div class="table-toolbar-left pull-left ">
-                <button class="btn btn-primary">添加文章</button>
-                <button class="btn btn-primary">导入</button>
+            <div class="table-toolbar">
+              <div class="table-toolbar-left">
+                <button class="btn btn-primary"><i class="material-icons">add</i> 添加文章</button>
+                <button class="btn btn-secondary">导入</button>
               </div>
-              <div class="input-group table-toolbar-right search-form pull-right">
-                <input type='text' class="form-control" />
+              <div class="input-group table-toolbar-right search-form">
+                <input type='text' class="form-control" placeholder="请输入关键词..." />
                 <span class="input-group-btn">
-                <button class="btn btn-secondary" type="button"><i
-                  class="material-icons md-18">search</i></button>
+                  <button class="btn btn-secondary" type="submit">
+                    <i class="material-icons md-18">search</i>
+                  </button>
                 </span>
               </div>
             </div>
@@ -114,117 +115,156 @@
                   <thead>
                       <tr>
                           <th>用户名</th>
-                          <th class="hidden-md-down">位置</th>
-                          <th class="left">地址</th>
+                          <th class="left hidden-md-down">地址</th>
                           <th>Extn.</th>
                           <th width="120">开始日期</th>
                           <th class="right">费用</th>
+                          <th>操作</th>
                       </tr>
                   </thead>
                   <tbody>
                       <tr>
                           <td>Tiger Nixon</td>
-                          <td class="hidden-md-down">System Architect</td>
-                          <td class="left">Edinburgh</td>
+                          <td class="left hidden-md-down">Edinburgh</td>
                           <td>61</td>
                           <td>2011-04-25</td>
                           <td class="right">$320,800</td>
+                          <td>
+                            <a href="">编辑</a>
+                            <a href="" class="confirm">删除</a>
+                          </td>
                       </tr>
                       <tr>
                           <td>张三李四</td>
-                          <td class="hidden-md-down">长沙市芙蓉区</td>
-                          <td class="left">长沙市芙蓉区湖南宾馆宿舍2栋205</td>
+                          <td class="left hidden-md-down">长沙市芙蓉区湖南宾馆宿舍2栋205</td>
                           <td>63</td>
                           <td>2011-07-25</td>
                           <td class="right">$170,750</td>
+                          <td>
+                            <a href="">编辑</a>
+                            <a href="" class="confirm">删除</a>
+                          </td>
                       </tr>
                       <tr>
                           <td>Ashton Cox</td>
-                          <td class="hidden-md-down">Junior Technical Author</td>
-                          <td class="left">San Francisco</td>
+                          <td class="left hidden-md-down">San Francisco</td>
                           <td>66</td>
                           <td>2009-01-12</td>
                           <td class="right">$86,000</td>
+                          <td>
+                            <a href="">编辑</a>
+                            <a href="" class="confirm">删除</a>
+                          </td>
                       </tr>
                       <tr>
                           <td>Cedric Kelly</td>
-                          <td class="hidden-md-down">Senior Javascript Developer</td>
-                          <td class="left">Edinburgh</td>
+                          <td class="left hidden-md-down">Edinburgh</td>
                           <td>22</td>
                           <td>2012-03-29</td>
                           <td class="right">$433,060</td>
+                          <td>
+                            <a href="">编辑</a>
+                            <a href="" class="confirm">删除</a>
+                          </td>
                       </tr>
                       <tr>
                           <td>Airi Satou</td>
-                          <td class="hidden-md-down">Accountant</td>
-                          <td class="left">Tokyo</td>
+                          <td class="left hidden-md-down">Tokyo</td>
                           <td>33</td>
                           <td>2008-11-28</td>
                           <td class="right">$162,700</td>
+                          <td>
+                            <a href="">编辑</a>
+                            <a href="" class="confirm">删除</a>
+                          </td>
                       </tr>
                       <tr>
                           <td>Brielle Williamson</td>
-                          <td class="hidden-md-down">Integration Specialist</td>
-                          <td class="left">New York</td>
+                          <td class="left hidden-md-down">New York</td>
                           <td>61</td>
                           <td>2012-12-02</td>
                           <td class="right">$372,000</td>
+                          <td>
+                            <a href="">编辑</a>
+                            <a href="" class="confirm">删除</a>
+                          </td>
                       </tr>
                       <tr>
                           <td>Herrod Chandler</td>
-                          <td class="hidden-md-down">Sales Assistant</td>
-                          <td class="left">San Francisco</td>
+                          <td class="left hidden-md-down">San Francisco</td>
                           <td>59</td>
                           <td>2012-08-06</td>
                           <td class="right">$137,500</td>
+                          <td>
+                            <a href="">编辑</a>
+                            <a href="" class="confirm">删除</a>
+                          </td>
                       </tr>
                       <tr>
                           <td>Rhona Davidson</td>
-                          <td class="hidden-md-down">Integration Specialist</td>
-                          <td class="left">Tokyo</td>
+                          <td class="left hidden-md-down">Tokyo</td>
                           <td>55</td>
                           <td>2010-10-14</td>
                           <td class="right">$327,900</td>
+                          <td>
+                            <a href="">编辑</a>
+                            <a href="" class="confirm">删除</a>
+                          </td>
                       </tr>
                       <tr>
                           <td>Colleen Hurst</td>
-                          <td class="hidden-md-down">Javascript Developer</td>
-                          <td class="left">San Francisco</td>
+                          <td class="left hidden-md-down">San Francisco</td>
                           <td>39</td>
                           <td>2009-09-15</td>
                           <td class="right">$205,500</td>
+                          <td>
+                            <a href="">编辑</a>
+                            <a href="" class="confirm">删除</a>
+                          </td>
                       </tr>
                       <tr>
                           <td>Sonya Frost</td>
-                          <td class="hidden-md-down">Software Engineer</td>
-                          <td class="left">Edinburgh</td>
+                          <td class="left hidden-md-down">Edinburgh</td>
                           <td>23</td>
                           <td>2008-12-13</td>
                           <td class="right">$103,600</td>
+                          <td>
+                            <a href="">编辑</a>
+                            <a href="" class="confirm">删除</a>
+                          </td>
                       </tr>
                       <tr>
                           <td>Jena Gaines</td>
-                          <td class="hidden-md-down">Office Manager</td>
-                          <td class="left">London</td>
+                          <td class="left hidden-md-down">London</td>
                           <td>30</td>
                           <td>2008-12-19</td>
                           <td class="right">$90,560</td>
+                          <td>
+                            <a href="">编辑</a>
+                            <a href="" class="confirm">删除</a>
+                          </td>
                       </tr>
                       <tr>
                           <td>Quinn Flynn</td>
-                          <td class="hidden-md-down">Support Lead</td>
-                          <td class="left">Edinburgh</td>
+                          <td class="left hidden-md-down">Edinburgh</td>
                           <td>22</td>
                           <td>2013-03-03</td>
                           <td class="right">$342,000</td>
+                          <td>
+                            <a href="">编辑</a>
+                            <a href="" class="confirm">删除</a>
+                          </td>
                       </tr>
                       <tr>
                           <td>Charde Marshall</td>
-                          <td class="hidden-md-down">Regional Director</td>
-                          <td class="left">San Francisco</td>
+                          <td class="left hidden-md-down">San Francisco</td>
                           <td>36</td>
                           <td>2008-10-16</td>
                           <td class="right">$470,600</td>
+                          <td>
+                            <a href="">编辑</a>
+                            <a href="" class="confirm">删除</a>
+                          </td>
                       </tr>
                   </tbody>
               </table>

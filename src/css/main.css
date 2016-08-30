@@ -209,8 +209,11 @@ body{
 .form-check-input{
   margin-top: 0;
 }
-.input-group .form-control{
-  flex:none;
+.table-toolbar:after{
+  clear: both;
+  overflow: hidden;
+  height: 0;
+  font-size: 0;
 }
 .table-toolbar-left, 
 .table-toolbar-right{
@@ -221,5 +224,11 @@ body{
   .table-toolbar-left{
       float: left;
       text-align: left;
+  } 
+  .table-toolbar-right{
+    float: right;
+  }
+  .input-group .form-control{
+    flex:none;
   }
 }

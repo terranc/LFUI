@@ -241,7 +241,7 @@ body{
 .filter-box {
   display: table-row;
 
-  .filter-label {
+  &>.label {
     display: table-cell;
     min-width: 6em;
     padding-right: 2em;
@@ -249,9 +249,33 @@ body{
     text-align: right;
     box-sizing: content-box;
   }
-  .filter-inner {
+  .inner {
     display: table-cell;
-    .label {
+    a {
+      margin: 4px 8px 6px 0;
+      padding: 4px 6px;
+      line-height: 1;
+      border-radius: 0;
+      color: #44b549;
+      background-image: none;
+      background-color: transparent;
+      border-color: #44b549;
+      
+      &:hover{
+        color: #fff;
+        background-color: #44b549;
+        border-color: #44b549;
+      }
+      &.active {
+        background-color: #44b549;
+        color: #fff;
+      }
+    }
+    .input-daterange,
+    .search-form {
+      max-width: 30em;
+    }
+    &>.label {
       margin-bottom: 4px;
       padding: .5em .8em;
       cursor: pointer;
@@ -269,20 +293,8 @@ body{
     }
   }
 }
-.filter-inner {
-  .category-item {
-    margin: 4px 8px 6px 0;
-    padding: 4px 6px;
-    line-height: 1;
-    border-radius: 0;
-  }
-  .input-daterange,
-  .search-form {
-    max-width: 30em;
-  }
-}
 
-.filter-box + .filter-box .filter-inner {
+.filter-box + .filter-box .inner {
   padding-top: 10px;
 }
 .modal-loading {

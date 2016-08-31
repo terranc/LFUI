@@ -1,7 +1,7 @@
 <template>
   <div class="filter-box">
-    <div class="filter-label" :style="{'width': width}" v-text="title"></div>
-    <div class="filter-inner">
+    <div class="label" :style="{'width': width}" v-text="title"></div>
+    <div class="inner">
       <slot></slot>
     </div>
   </div>

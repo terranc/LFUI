@@ -38,16 +38,3 @@
     },
   };
 </script>
-
-<style>
-  .row .flex-item-auto {
-    flex: 0 1 auto;
-    flex-wrap: wrap;
-  }
-  .tips-inner {
-    display: flex;
-  }
-  .tips-inner .tips-icon {
-    margin-right: 12px;
-  }
-</style>

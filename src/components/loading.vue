@@ -64,27 +64,3 @@
     },
   };
 </script>
-
-<style>
-  .modal-loading {
-    background-color: rgba(0, 0, 0, .5);
-    display: block;
-    text-align: center;
-
-    .modal-dialog {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 300px;
-      transform: translate(-50%, -50%);
-    }
-
-    .modal-content {
-      padding: 20px 0;
-
-      .v-spinner {
-        margin: 0 auto 10px;
-      }
-    }
-  }
-</style>

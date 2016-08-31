@@ -238,3 +238,82 @@ body{
     flex:none;
   }
 }
+.filter-box {
+  display: table-row;
+
+  .filter-label {
+    display: table-cell;
+    min-width: 6em;
+    padding-right: 2em;
+    padding-top: 6px;
+    text-align: right;
+    box-sizing: content-box;
+  }
+  .filter-inner {
+    display: table-cell;
+    .label {
+      margin-bottom: 4px;
+      padding: .5em .8em;
+      cursor: pointer;
+    }
+    .form-control {
+      padding: .75rem;
+    }
+    .input-group-addon {
+      line-height: 1.8;
+    }
+    .input-group-btn {
+      .btn {
+        height: 100%;
+      }
+    }
+  }
+}
+.filter-inner {
+  .category-item {
+    margin: 4px 8px 6px 0;
+    padding: 4px 6px;
+    line-height: 1;
+    border-radius: 0;
+  }
+  .input-daterange,
+  .search-form {
+    max-width: 30em;
+  }
+}
+
+.filter-box + .filter-box .filter-inner {
+  padding-top: 10px;
+}
+.modal-loading {
+  background-color: rgba(0, 0, 0, .5);
+  display: block;
+  text-align: center;
+
+  .modal-dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    transform: translate(-50%, -50%);
+  }
+
+  .modal-content {
+    padding: 20px 0;
+
+    .v-spinner {
+      margin: 0 auto 10px;
+    }
+  }
+}
+
+  .row .flex-item-auto {
+    flex: 0 1 auto;
+    flex-wrap: wrap;
+  }
+  .tips-inner {
+    display: flex;
+  }
+  .tips-inner .tips-icon {
+    margin-right: 12px;
+  }

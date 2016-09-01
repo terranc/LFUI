@@ -12,18 +12,18 @@
             </a>
           </li>
           <li class="page-item"
-            v-if="page - parseInt(visiblePage/2) > 1 && totalPage">
+            v-if="page - parseInt(visiblePage/2) > 1 && totalPage > visiblePage">
             <a class="page-link" :href="pageUrl(1)" v-text="1"
               @click="page =  1">
             </a>
           </li>
           <li class="page-item"
-            v-if="page - parseInt(visiblePage/2) > 2 && totalPage">
+            v-if="page - parseInt(visiblePage/2) > 2 && totalPage > visiblePage">
             ···
           </li>
           <li
             class="page-item"
-            v-if="totalPage <= visiblePage && totalPage"
+            v-if="totalPage <= visiblePage && totalPage > visiblePage"
             v-for="index in totalPage"
             :class="{'active': index + 1 == page}">
             <a class="page-link" :href="pageUrl(index + 1)" v-text="index + 1"
@@ -32,7 +32,7 @@
           </li>
           <li
             class="page-item"
-            v-if="page <= (visiblePage + 1) /2 && totalPage"
+            v-if="page <= (visiblePage + 1) /2 && totalPage > visiblePage"
             v-for="index in visiblePage"
             :class="{'active': index + 1 == page}">
             <a class="page-link" :href="pageUrl(index + 1)" v-text="index + 1"
@@ -41,7 +41,7 @@
           </li>
           <li
             class="page-item"
-            v-if="page > (visiblePage + 1) /2 && page + parseInt(visiblePage / 2) < totalPage && totalPage"
+            v-if="page > (visiblePage + 1) /2 && page + parseInt(visiblePage / 2) < totalPage && totalPage > visiblePage"
             v-for="index in visiblePage"
             :class="{'active': page - parseInt(visiblePage / 2) + index == page}">
             <a class="page-link" :href="pageUrl(page - parseInt(visiblePage / 2) + index)" v-text="page - parseInt(visiblePage / 2) + index"
@@ -50,7 +50,7 @@
           </li>
           <li
             class="page-item"
-            v-if="page + parseInt(visiblePage / 2) >= totalPage && totalPage"
+            v-if="page + parseInt(visiblePage / 2) >= totalPage && totalPage > visiblePage"
             v-for="index in visiblePage"
             :class="{'active': totalPage - visiblePage + 1 + index == page}">
             <a class="page-link" :href="pageUrl(totalPage - visiblePage + 1 + index)" v-text="totalPage - visiblePage + 1 + index"
@@ -59,9 +59,18 @@
           </li>
           <li class="page-item" v-if="totalPage-page-parseInt(visiblePage/2) > 1">···</li>
           <li class="page-item"
-            v-if="totalPage-page-parseInt(visiblePage/2) > 0 && totalPage">
+            v-if="totalPage-page-parseInt(visiblePage/2) > 0 && totalPage > visiblePage">
             <a class="page-link" :href="pageUrl(totalPage)" v-text="totalPage"
               @click="page =  totalPage">
+            </a>
+          </li>
+          <li class="page-item"
+            v-if="totalPage <= visiblePage" v-for="item in totalPage"
+            :class="{'active': page ===  item + 1}">
+            <a class="page-link"
+              :href="pageUrl(item + 1)"
+              v-text="item + 1"
+              @click="page =  item + 1">
             </a>
           </li>
           <li class="page-item" :class="{'disabled': !nextClickable}">

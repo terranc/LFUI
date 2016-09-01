@@ -1,0 +1,88 @@
+'use strict';
+
+var _getIterator2 = require('babel-runtime/core-js/get-iterator');
+
+var _getIterator3 = _interopRequireDefault(_getIterator2);
+
+var _vue = require('vue');
+
+var _vue2 = _interopRequireDefault(_vue);
+
+require('../scss/lfui.scss');
+
+require('../css/main.css');
+
+require('nice-validator');
+
+require('nice-validator/dist/local/zh-CN');
+
+require('moment');
+
+require('eonasdan-bootstrap-datetimepicker');
+
+var _modules = require('./modules');
+
+var _modules2 = _interopRequireDefault(_modules);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_modules2.default.forEach(function (component) {
+  _vue2.default.component(component.name, component.module);
+});
+
+window.vm = new _vue2.default({
+  data: {
+    data: {}
+  },
+  methods: {
+    dialog: function dialog(id, options) {
+      this.modal = {
+        id: id,
+        title: options.title,
+        desc: options.desc,
+        foot: options.foot || true,
+        type: options.type || 'confirm',
+        event: options.event
+      };
+    }
+  }
+});
+
+$(function () {
+  $('body').tooltip({
+    selector: '[data-toggle="tooltip"]',
+    container: 'body'
+  }).popover({
+    selector: '[data-toggle="popover"]',
+    container: 'body'
+  });
+
+  var _iteratorNormalCompletion = true;
+  var _didIteratorError = false;
+  var _iteratorError = undefined;
+
+  try {
+    for (var _iterator = (0, _getIterator3.default)($('.datetimepicker')), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      var item = _step.value;
+
+      var format = $(item).data('format') || 'YYYY-MM-DD';
+      $(item).datetimepicker({
+        locale: 'zh-cn',
+        format: format
+      });
+    }
+  } catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion && _iterator.return) {
+        _iterator.return();
+      }
+    } finally {
+      if (_didIteratorError) {
+        throw _iteratorError;
+      }
+    }
+  }
+});

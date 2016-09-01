@@ -61,7 +61,7 @@ body{
 .input-group-addon {
   width: auto;
 }
-.input-daterange *:not(input) {
+.input-daterange > :not(input, .dropdown-menu) {
   display: inline-block;
   width: auto;
   padding: 4px 5px;

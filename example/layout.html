@@ -61,39 +61,37 @@
             <strong>注意!</strong> 此消息 <a href="#" class="alert-link">需要您留意</a>, 但不是那么重要。
           </tips>
           <form class="filter-wrapper">
-            <filter title="种类">
-              <a href="" class="btn  btn-outline-primary category-item">全部</a>
-              <a v-for="item in icons" :href="'item' + $index" class="btn"
-                 :class="{'active': $index == 5}">{{ item }}</a>
-            </filter>
-            <filter title="种类">
-              <select class="form-control">
-                <option v-for="item in icons">{{ item }}</option>
-              </select>
-            </filter>
-            <filter title="操作员">
-              <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
-            </filter>
-            <filter title="截止日期" width="8em">
-              <div class="input-daterange input-group">
-                <input type='text' name="start-date" class="form-control datetimepicker" data-format="YYYY-MM-DD" value="2016-08-29" />
-                <ins>至</ins>
-                <input type='text' name="end-date" class="form-control datetimepicker" data-format="YYYY-MM-DD" />
+            <div class="filter-box">
+              <div class="label">种类</div>
+              <div class="inner">
+                <a href="" class="btn  btn-outline-primary category-item">全部</a>
+                <a v-for="item in icons" :href="'item' + $index" class="btn"
+                   :class="{'active': $index == 5}">{{ item }}</a>
               </div>
-            </filter>
-            <filter title="检索">
-              <div class="input-group search-form">
-                <input type='text' class="form-control" />
-                <span class="input-group-btn">
-                <button class="btn btn-secondary" type="button"><i
-                  class="material-icons md-18">search</i></button>
-                </span>
+            </div>
+            <div class="filter-box">
+              <div class="label">操作员</div>
+              <div class="inner">
+                <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
               </div>
-            </filter>
-            <filter>
-              <button type="submit" class="btn btn-primary">提交</button>
-              <button type="reset" class="btn btn-secondary">导出</button>
-            </filter>
+            </div>
+            <div class="filter-box">
+              <div class="label">截止日期</div>
+              <div class="inner">
+                <div class="input-daterange input-group">
+                  <input type='text' name="start-date" class="form-control datetimepicker" data-format="YYYY-MM-DD" value="2016-08-29" />
+                  <ins>至</ins>
+                  <input type='text' name="end-date" class="form-control datetimepicker" data-format="YYYY-MM-DD" />
+                </div>
+              </div>
+            </div>
+            <div class="filter-box">
+              <div class="label"></div>
+              <div class="inner">
+                <button type="submit" class="btn btn-primary">提交</button>
+                <button type="reset" class="btn btn-secondary">导出</button>
+              </div>
+            </div>
           </form>
           <form>
             <div class="table-toolbar">

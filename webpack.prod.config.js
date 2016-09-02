@@ -4,26 +4,11 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 // var UglifyJsParallelPlugin = require('webpack-uglify-parallel');
-var os = require('os');
-var HappyPack = require('happypack');
-var happyThreadPool = HappyPack.ThreadPool({ size: 25 });
+// var os = require('os');
 
 var SRC_PATH = Path.join(__dirname, 'src');
 var BUILD_PATH = Path.join(__dirname, 'dist');
 
-function createHappyPlugin(id, loaders) {
-  return new HappyPack({
-    id: id,
-    loaders: loaders,
-    threadPool: happyThreadPool,
-
-    // disable happy caching with HAPPY_CACHE=0
-    cache: true,
-
-    // make happy more verbose with HAPPY_VERBOSE=1
-    verbose: process.env.HAPPY_VERBOSE === '1',
-  });
-}
 
 module.exports = {
   entry: {
@@ -35,10 +20,6 @@ module.exports = {
     filename: 'js/lfui.js',
   },
   plugins: [
-    // createHappyPlugin('vue', ['vue']),
-    // createHappyPlugin('js', ['babel']),
-    // createHappyPlugin('css', ['css?sourceMap&-restructuring!postcss']),
-    // createHappyPlugin('sass', ['css?sourceMap!sass']),
     new Webpack.BannerPlugin('Lookfeel © hello@lookfeel.co'),
     new CleanWebpackPlugin(['dist']),
     new Webpack.optimize.DedupePlugin(),
@@ -52,14 +33,14 @@ module.exports = {
     //   },
     //   sourceMap: false
     // }),
-    // new Webpack.optimize.UglifyJsPlugin({
-    //   compress: {
-    //     warnings: false,
-    //   },
-    //   mangle: {
-    //     except: ['exports', 'module', 'require'],
-    //   },
-    // }),
+    new Webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false,
+      },
+      mangle: {
+        except: ['exports', 'module', 'require'],
+      },
+    }),
     new Webpack.optimize.OccurrenceOrderPlugin(), //排序输出
     new ExtractTextPlugin('./css/lfui.css'),
     new CopyWebpackPlugin([{

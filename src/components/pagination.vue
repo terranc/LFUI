@@ -1,86 +1,86 @@
 <template>
-  <div class="clearfix">
-    <div class="pull-left" v-if="total" style="line-height: 46px;">共有 {{ total }} 条记录</div>
-    <div class="pull-right">
+  <div class="paging row">
+    <div class="col-md-3 visible-lg-block" v-if="total">共有 {{ total }} 条记录</div>
+    <div :class="total ? 'col-md-9' : 'col-md-12'">
       <nav aria-label="Page navigation" class="pull-right">
         <ul class="pagination">
-          <li class="page-item" :class="{'disabled': !preClickable}">
-            <a class="page-link" :href="pageUrl(page)" aria-label="Previous" @click="page > 1 ? page-- : 1">
+          <li :class="{'disabled': !preClickable}">
+            <a :href="pageUrl(page)" aria-label="Previous" @click="page > 1 ? page-- : 1">
               <!-- <span aria-hidden="true" :class="{'sr-only': !totalPage}">&laquo;</span>
               <span :class="{'sr-only': totalPage}">上一页</span> -->
               上一页
             </a>
           </li>
-          <li class="page-item"
+          <li
             v-if="page - parseInt(visiblePage/2) > 1 && totalPage > visiblePage">
-            <a class="page-link" :href="pageUrl(1)" v-text="1"
+            <a :href="pageUrl(1)" v-text="1"
               @click="page =  1">
             </a>
           </li>
-          <li class="page-item"
+          <li
             v-if="page - parseInt(visiblePage/2) > 2 && totalPage > visiblePage">
-            ···
+            <span>···</span>
           </li>
           <li
-            class="page-item"
+           
             v-if="totalPage <= visiblePage && totalPage > visiblePage"
             v-for="index in totalPage"
             :class="{'active': index + 1 == page}">
-            <a class="page-link" :href="pageUrl(index + 1)" v-text="index + 1"
+            <a :href="pageUrl(index + 1)" v-text="index + 1"
               @click="page = index + 1">
             </a>
           </li>
           <li
-            class="page-item"
+           
             v-if="page <= (visiblePage + 1) /2 && totalPage > visiblePage"
             v-for="index in visiblePage"
             :class="{'active': index + 1 == page}">
-            <a class="page-link" :href="pageUrl(index + 1)" v-text="index + 1"
+            <a :href="pageUrl(index + 1)" v-text="index + 1"
               @click="page = index + 1">
             </a>
           </li>
           <li
-            class="page-item"
+           
             v-if="page > (visiblePage + 1) /2 && page + parseInt(visiblePage / 2) < totalPage && totalPage > visiblePage"
             v-for="index in visiblePage"
             :class="{'active': page - parseInt(visiblePage / 2) + index == page}">
-            <a class="page-link" :href="pageUrl(page - parseInt(visiblePage / 2) + index)" v-text="page - parseInt(visiblePage / 2) + index"
+            <a :href="pageUrl(page - parseInt(visiblePage / 2) + index)" v-text="page - parseInt(visiblePage / 2) + index"
               @click="page = page - parseInt(visiblePage / 2) + index">
             </a>
           </li>
           <li
-            class="page-item"
+           
             v-if="page + parseInt(visiblePage / 2) >= totalPage && totalPage > visiblePage"
             v-for="index in visiblePage"
             :class="{'active': totalPage - visiblePage + 1 + index == page}">
-            <a class="page-link" :href="pageUrl(totalPage - visiblePage + 1 + index)" v-text="totalPage - visiblePage + 1 + index"
+            <a :href="pageUrl(totalPage - visiblePage + 1 + index)" v-text="totalPage - visiblePage + 1 + index"
               @click="page = totalPage - visiblePage + 1 + index">
             </a>
           </li>
-          <li class="page-item" v-if="totalPage-page-parseInt(visiblePage/2) > 1">···</li>
-          <li class="page-item"
+          <li v-if="totalPage-page-parseInt(visiblePage/2) > 1"><span>···</span></li>
+          <li
             v-if="totalPage-page-parseInt(visiblePage/2) > 0 && totalPage > visiblePage">
-            <a class="page-link" :href="pageUrl(totalPage)" v-text="totalPage"
+            <a :href="pageUrl(totalPage)" v-text="totalPage"
               @click="page =  totalPage">
             </a>
           </li>
-          <li class="page-item"
+          <li
             v-if="totalPage <= visiblePage" v-for="item in totalPage"
             :class="{'active': page ===  item + 1}">
-            <a class="page-link"
+            <a
               :href="pageUrl(item + 1)"
               v-text="item + 1"
               @click="page =  item + 1">
             </a>
           </li>
-          <li class="page-item" :class="{'disabled': !nextClickable}">
-            <a class="page-link" :href="pageUrl(page)" aria-label="Next" @click="page = nextClick()">
+          <li :class="{'disabled': !nextClickable}">
+            <a :href="pageUrl(page)" aria-label="Next" @click="page = nextClick()">
               <!-- <span aria-hidden="true" :class="{'sr-only': !totalPage}">&raquo;</span> -->
               <!-- <span :class="{'sr-only': totalPage}">下一页</span> -->
               下一页
             </a>
           </li>
-          <li class="page-item page-control" v-if="totalPage && showGo"><input class="form-control" min="1" :max="totalPage" type="number" @keyup.enter.prevent="pageGo" :value="page"> / {{ totalPage }} 页</li>
+          <li class="page-control" v-if="totalPage && showGo"><input class="form-control" min="1" :max="totalPage" type="number" @keyup.enter.prevent="pageGo" :value="page"> / {{ totalPage }} 页</li>
         </ul>
       </nav>
     </div>

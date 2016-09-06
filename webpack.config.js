@@ -82,9 +82,9 @@ module.exports = {
   },
   externals: {
     jquery: 'jQuery',
-    tether: 'Tether',
+    // tether: 'Tether',
     UE: 'ueditor',
-    // moment: 'moment',
+    // bootbox: 'bootbox',
   },
   vue: {
     loaders: {
@@ -104,13 +104,13 @@ module.exports = {
     formatter: require('eslint-friendly-formatter'),
   },
   plugins: [
-    // new Webpack.ProvidePlugin({
-    //     jQuery: 'jquery',
-    //     $: 'jquery',
-    //     jquery: 'jquery',
-    //     "Tether": 'tether',
-    //     "window.Tether": "tether"
-    // }),
+    new Webpack.ProvidePlugin({
+        jQuery: 'jquery',
+        $: 'jquery',
+        jquery: 'jquery',
+        // "bootbox": 'bootbox',
+        // "window.Tether": "tether"
+    }),
     new HtmlwebpackPlugin({
       title: 'Hello world',
       css: [Path.resolve(SRC_PATH, 'css/index.css')],

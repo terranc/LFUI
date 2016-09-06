@@ -2,37 +2,37 @@
 
 // 框架
 import Vue from 'vue';
+import vSelect from 'vue-select';
 
 // 样式文件
 import '../scss/lfui.scss';
-import '../css/main.css';
 
 // 自定义组件
+import 'bootstrap-sass';
 import 'nice-validator';
 import 'nice-validator/dist/local/zh-CN';
 import 'moment';
 import 'eonasdan-bootstrap-datetimepicker';
+import 'jquery-query-object';
 import modules from './modules';  // 常用组件加载
 modules.forEach((component) => {
   Vue.component(component.name, component.module);
 });
+window.bootbox = require('bootbox');
+window.bootbox.setDefaults({
+  title: '提示',
+  locale: 'zh_CN',
+  backdrop: true,
+  className: 'lf_modal',
+});
 
 /* eslint no-new: off */
 window.vm = new Vue({
+  components: {
+    vSelect,
+  },
   data: {
     data: {},
-  },
-  methods: {
-    dialog(id, options) {
-      this.modal = {
-        id,
-        title: options.title,
-        desc: options.desc,
-        foot: options.foot || true,
-        type: options.type || 'confirm',
-        event: options.event,
-      };
-    },
   },
 });
 

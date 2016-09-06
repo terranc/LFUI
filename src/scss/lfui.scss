@@ -2,95 +2,77 @@
 @import "variables";
 
 // slim variables
-@import "../../node_modules/bootstrap-theme-slim/src/scss/variables";
-
-// Core variables and mixins
-@import "../../node_modules/bootstrap/scss/variables";
-
-// bootstrap mixin
-@import "../../node_modules/bootstrap/scss/mixins";
+// @import "../../node_modules/bootstrap-theme-slim/src/scss/variables";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/mixins";
 
 // Reset and dependencies
-@import "../../node_modules/bootstrap/scss/custom";
-@import "../../node_modules/bootstrap/scss/normalize";
-@import "../../node_modules/bootstrap/scss/print";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/normalize";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/print";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/glyphicons";
 
 // Core CSS
-@import "../../node_modules/bootstrap/scss/reboot";
-@import "../../node_modules/bootstrap/scss/type";
-@import "../../node_modules/bootstrap/scss/images";
-@import "../../node_modules/bootstrap/scss/code";
-@import "../../node_modules/bootstrap/scss/grid";
-@import "../../node_modules/bootstrap/scss/tables";
-@import "../../node_modules/bootstrap/scss/forms";
-@import "../../node_modules/bootstrap/scss/buttons";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/scaffolding";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/type";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/code";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/grid";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/tables";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/forms";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/buttons";
 
 // Components
-@import "../../node_modules/bootstrap/scss/animation";
-@import "../../node_modules/bootstrap/scss/dropdown";
-@import "../../node_modules/bootstrap/scss/button-group";
-@import "../../node_modules/bootstrap/scss/input-group";
-@import "../../node_modules/bootstrap/scss/custom-forms";
-@import "../../node_modules/bootstrap/scss/nav";
-@import "../../node_modules/bootstrap/scss/navbar";
-@import "../../node_modules/bootstrap/scss/card";
-@import "../../node_modules/bootstrap/scss/breadcrumb";
-// @import "../../node_modules/bootstrap/scss/pagination";
-@import "../../node_modules/bootstrap/scss/tags";
-@import "../../node_modules/bootstrap/scss/jumbotron";
-@import "../../node_modules/bootstrap/scss/alert";
-@import "../../node_modules/bootstrap/scss/progress";
-@import "../../node_modules/bootstrap/scss/media";
-@import "../../node_modules/bootstrap/scss/list-group";
-@import "../../node_modules/bootstrap/scss/responsive-embed";
-@import "../../node_modules/bootstrap/scss/close";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/component-animations";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/dropdowns";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/button-groups";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/input-groups";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/navs";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/navbar";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/breadcrumbs";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/pagination";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/pager";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/labels";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/badges";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/jumbotron";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/thumbnails";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/alerts";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/progress-bars";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/media";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/list-group";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/panels";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/responsive-embed";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/wells";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/close";
 
 // Components w/ JavaScript
-@import "../../node_modules/bootstrap/scss/modal";
-@import "../../node_modules/bootstrap/scss/tooltip";
-@import "../../node_modules/bootstrap/scss/popover";
-@import "../../node_modules/bootstrap/scss/carousel";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/modals";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/tooltip";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/popovers";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/carousel";
 
 // Utility classes
-@import "../../node_modules/bootstrap/scss/utilities";
-
-// slim overrides
-@import "../../node_modules/bootstrap-theme-slim/src/scss/buttons";
-@import "../../node_modules/bootstrap-theme-slim/src/scss/breadcrumb";
-@import "../../node_modules/bootstrap-theme-slim/src/scss/card";
-@import "../../node_modules/bootstrap-theme-slim/src/scss/code";
-@import "../../node_modules/bootstrap-theme-slim/src/scss/dropdown";
-@import "../../node_modules/bootstrap-theme-slim/src/scss/modals";
-@import "../../node_modules/bootstrap-theme-slim/src/scss/pagination";
-@import "../../node_modules/bootstrap-theme-slim/src/scss/popover";
-@import "../../node_modules/bootstrap-theme-slim/src/scss/type";
-@import "../../node_modules/bootstrap-theme-slim/src/scss/utilities";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/utilities";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities";
 
 // bootstrap-datetimepicker
-@import "bootstrap-datetimepicker";
+@import "~eonasdan-bootstrap-datetimepicker/src/sass/bootstrap-datetimepicker";
 @import '~nice-validator/dist/jquery.validator.css';
 
 // material icons
+@import "main";
 @import "icons";
 
-body {
-    text-rendering:optimizeLegibility;
-    font-smoothing:antialiased;
-    font-weight: 300;
+.btn-mint {
+  @include button-variant($btn-mint-color, $btn-mint-bg, $btn-mint-border);
 }
 
-.pagination {
-  .page-item {
-    a{
-      &:hover,
-      &:focus{
-        background-color: lighten($brand-primary, 30%);
-      }
-    }
-    &.active {
-      a {
-        background-color: $brand-primary;
-      }
-    }
-  }
+.btn-purple {
+  @include button-variant($btn-purple-color, $btn-purple-bg, $btn-purple-border);
+}
+
+.btn-pink {
+  @include button-variant($btn-pink-color, $btn-pink-bg, $btn-pink-border);
+}
+
+.btn-dark {
+  @include button-variant($btn-dark-color, $btn-dark-bg, $btn-dark-border);
 }

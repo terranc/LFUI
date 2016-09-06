@@ -4,22 +4,27 @@
   border-bottom: 1px solid #eee;
 }
 .icons-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  & .icon-box {
-    flex: 0 0 100px;
-    text-align: center;
-    margin-right: 20px;
-    margin-bottom: 20px;
-  }
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap
+}
+.icons-block .icon-box {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100px;
+          flex: 0 0 100px;
+  text-align: center;
+  margin-right: 20px;
+  margin-bottom: 20px;
 }
 #flexbox .row div {
   margin-top: 10px;
-
-  div {
-    height: 1rem;
-    background-color: #44b549;
-  }
+}
+#flexbox .row div div {
+  height: 16px;
+  height: 1rem;
+  background-color: #44b549;
 }
 .example-modal .modal {
   position: relative;
@@ -30,13 +35,11 @@
   z-index: 1;
   display: block;
 }
-#buttons {
-  .btn + .btn {
-    margin-left: 10px;
-  }
+#buttons .btn + .btn {
+  margin-left: 10px;
 }
-
 .fade-transition {
+  -webkit-transition: opacity .3s ease;
   transition: opacity .3s ease;
 }
 .fade-enter, .fade-leave {

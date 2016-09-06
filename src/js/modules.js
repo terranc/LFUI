@@ -1,21 +1,5 @@
 export default [
   {
-    name: 'vSelect',
-    module: require('vue-select'),
-  },
-  {
-    name: 'Loading',
-    module: require('../components/loading'),
-  },
-  {
-    name: 'Btn',
-    module: require('../components/button'),
-  },
-  {
-    name: 'BtnGroup',
-    module: require('../components/button-group'),
-  },
-  {
     name: 'Dropdown',
     module: require('../components/dropdown'),
   },

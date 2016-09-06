@@ -23,16 +23,6 @@ module.exports = {
     new Webpack.BannerPlugin('Lookfeel © hello@lookfeel.co'),
     new CleanWebpackPlugin(['dist']),
     new Webpack.optimize.DedupePlugin(),
-    // new UglifyJsParallelPlugin({
-    //   workers: os.cpus().length,
-    //   output: {
-    //     ascii_only: true,
-    //   },
-    //   compress: {
-    //     warnings: false,
-    //   },
-    //   sourceMap: false
-    // }),
     new Webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false,

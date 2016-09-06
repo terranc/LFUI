@@ -28,7 +28,7 @@
       },
       allowClose: {
         type: Boolean,
-        default: true,
+        default: false,
       },
     },
     computed: {

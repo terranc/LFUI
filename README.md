@@ -31,6 +31,3 @@
 
 * [dropzonjs](http://www.dropzonejs.com/#installation)
 
-
-
-_* this project is based by bootstrap v4, you can visit [this link](http://v4-alpha.getbootstrap.com/getting-started/introduction/) to see more senior using._

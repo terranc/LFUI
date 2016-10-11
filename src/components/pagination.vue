@@ -1,91 +1,47 @@
 <template>
-  <div class="paging row">
-    <div class="col-md-3 visible-lg-block" v-if="total">共有 {{ total }} 条记录</div>
-    <div :class="total ? 'col-md-9' : 'col-md-12'">
+  <div class="clearfix">
+    <div class="pull-left" v-if="total" style="line-height: 46px;">共有 {{ total }} 条记录</div>
+    <div class="pull-right">
       <nav aria-label="Page navigation" class="pull-right">
         <ul class="pagination">
-          <li :class="{'disabled': !preClickable}">
-            <a :href="pageUrl(page)" aria-label="Previous" @click="page > 1 ? page-- : 1">
-              <!-- <span aria-hidden="true" :class="{'sr-only': !totalPage}">&laquo;</span>
-              <span :class="{'sr-only': totalPage}">上一页</span> -->
-              上一页
+          <li class="page-item" :class="{'disabled': !preClickable}">
+              <span aria-hidden="true">&laquo;</span>
             </a>
           </li>
-          <li
-            v-if="page - parseInt(visiblePage/2) > 1 && totalPage > visiblePage">
-            <a :href="pageUrl(1)" v-text="1"
-              @click="page =  1">
+          <li class="page-item"
+            v-if="printPage"
+            v-for="item in printPage"
+            track-by="$index"
+            :class="{'active': item == page}">
+            <a class="page-link"
+              v-if="typeof item === 'number'"
+              :href="pageUrl(item)"
+              @click="page =  item">
+              {{ item }}
+            </a>
+            <span v-else>{{item}}</span>
+          </li>
+          <li class="page-item" :class="{'disabled': !nextClickable}">
+            <a class="page-link"
+              :href="pageUrl(page)"
+              aria-label="Next"
+              @click="page = nextClick()">
+              <span aria-hidden="true">&raquo;</span>
             </a>
           </li>
-          <li
-            v-if="page - parseInt(visiblePage/2) > 2 && totalPage > visiblePage">
-            <span>···</span>
+          <li class="page-item page-control" v-if="totalPage && showGo">
+            <input class="form-control"
+              min="1" :max="totalPage"
+              type="number"
+              @keyup.enter.prevent="pageGo"
+              :value="page"> / {{ totalPage }} 页
           </li>
-          <li
-           
-            v-if="totalPage <= visiblePage && totalPage > visiblePage"
-            v-for="index in totalPage"
-            :class="{'active': index + 1 == page}">
-            <a :href="pageUrl(index + 1)" v-text="index + 1"
-              @click="page = index + 1">
-            </a>
-          </li>
-          <li
-           
-            v-if="page <= (visiblePage + 1) /2 && totalPage > visiblePage"
-            v-for="index in visiblePage"
-            :class="{'active': index + 1 == page}">
-            <a :href="pageUrl(index + 1)" v-text="index + 1"
-              @click="page = index + 1">
-            </a>
-          </li>
-          <li
-           
-            v-if="page > (visiblePage + 1) /2 && page + parseInt(visiblePage / 2) < totalPage && totalPage > visiblePage"
-            v-for="index in visiblePage"
-            :class="{'active': page - parseInt(visiblePage / 2) + index == page}">
-            <a :href="pageUrl(page - parseInt(visiblePage / 2) + index)" v-text="page - parseInt(visiblePage / 2) + index"
-              @click="page = page - parseInt(visiblePage / 2) + index">
-            </a>
-          </li>
-          <li
-           
-            v-if="page + parseInt(visiblePage / 2) >= totalPage && totalPage > visiblePage"
-            v-for="index in visiblePage"
-            :class="{'active': totalPage - visiblePage + 1 + index == page}">
-            <a :href="pageUrl(totalPage - visiblePage + 1 + index)" v-text="totalPage - visiblePage + 1 + index"
-              @click="page = totalPage - visiblePage + 1 + index">
-            </a>
-          </li>
-          <li v-if="totalPage-page-parseInt(visiblePage/2) > 1"><span>···</span></li>
-          <li
-            v-if="totalPage-page-parseInt(visiblePage/2) > 0 && totalPage > visiblePage">
-            <a :href="pageUrl(totalPage)" v-text="totalPage"
-              @click="page =  totalPage">
-            </a>
-          </li>
-          <li
-            v-if="totalPage <= visiblePage" v-for="item in totalPage"
-            :class="{'active': page ===  item + 1}">
-            <a
-              :href="pageUrl(item + 1)"
-              v-text="item + 1"
-              @click="page =  item + 1">
-            </a>
-          </li>
-          <li :class="{'disabled': !nextClickable}">
-            <a :href="pageUrl(page)" aria-label="Next" @click="page = nextClick()">
-              <!-- <span aria-hidden="true" :class="{'sr-only': !totalPage}">&raquo;</span> -->
-              <!-- <span :class="{'sr-only': totalPage}">下一页</span> -->
-              下一页
-            </a>
-          </li>
-          <li class="page-control" v-if="totalPage && showGo"><input class="form-control" min="1" :max="totalPage" type="number" @keyup.enter.prevent="pageGo" :value="page"> / {{ totalPage }} 页</li>
         </ul>
       </nav>
     </div>
   </div>
 </template>
+
 
 <script>
   export default {
@@ -96,7 +52,7 @@
         required: true,
         default: 1,
       },
-      size: {
+      limit: {
         type: Number,
         default: 10,
       },
@@ -122,7 +78,37 @@
         return true;
       },
       totalPage() {
-        return this.total > 0 ? parseInt((this.total - 1) / this.size) + 1 : undefined;
+        return this.total > 0 ? Math.ceil(this.total / this.limit) : undefined;
+      },
+      printPage() {
+        if (this.total) {
+          const tempArr = [...new Array(this.visiblePage).keys()];
+          if (this.visiblePage >= this.totalPage) {
+            return [...new Array(this.totalPage).keys()].map(item => item + 1);
+          }
+          if (Math.ceil(this.visiblePage / 2) + 1 > this.page) {
+            const tempArr1 = tempArr.map(item => item + 1);
+            tempArr1[this.visiblePage - 1] = this.totalPage;
+            tempArr1.splice(this.visiblePage - 1, 0, '···');
+            return tempArr1;
+          } else if (this.page + parseInt(this.visiblePage / 2) + 1 > this.totalPage) {
+            const tempArr1 = tempArr.map(item => item + this.totalPage - this.visiblePage + 1);
+            tempArr1[0] = 1;
+            tempArr1.splice(1, 0, '···');
+            return tempArr1;
+          } else {
+            const tempArr1 = tempArr.map(item => item + this.page - parseInt(this.visiblePage / 2));
+            if (!tempArr1.includes(1)) {
+              tempArr1[0] = 1;
+            }
+            if (!tempArr1.includes(this.totalPage)) {
+              tempArr1[this.visiblePage - 1] = this.totalPage;
+            }
+            tempArr1.splice(1, 0, '···');
+            tempArr1.splice(tempArr1.length - 1, 0, '···');
+            return tempArr1;
+          }
+        }
       },
     },
     watch: {

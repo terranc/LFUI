@@ -21,6 +21,7 @@ import modules from './modules';  // 常用组件加载
 modules.forEach((component) => {
   Vue.component(component.name, component.module);
 });
+Vue.component('v-select', vSelect);
 window.Vue = Vue;
 window.bootbox = require('bootbox');
 window.bootbox.setDefaults({
@@ -34,9 +35,6 @@ window.waitingDialog = waitingDialog;
 
 /* eslint no-new: off */
 window.vm = new Vue({
-  components: {
-    vSelect,
-  },
   ready() {
     $('body').tooltip({
       selector: '[data-toggle="tooltip"]',
@@ -52,6 +50,9 @@ window.vm = new Vue({
         format: format,
       });
     }
+    $(document).on('click.lf', '.check-all:checkbox', function (e) {
+      $(this).closest($(this).data('wrap') || 'form').find(':checkbox:not(:disabled)').not(this).prop('checked', this.checked);
+    });
   },
 });
 

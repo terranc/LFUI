@@ -123,6 +123,8 @@ label{
   font-weight: 300;
 }
 .table-control{
+  margin-top: 10px;
+
   * {
     vertical-align: middle;
   }
@@ -212,13 +214,13 @@ label{
     box-sizing: content-box;
     vertical-align: middle;
     &.top{
-      padding-top: 0.8em;
+      padding-top: 1.2em;
       vertical-align: top;
     }
   }
   .col-form-control {
     /* display: table-cell; */
-    padding: 5px 0;
+    padding: 10px 0 8px;
 
     .msg-box{
       margin-top: 2px;
@@ -232,6 +234,10 @@ label{
         margin-left: 0;
         position: relative;
       }
+    }
+    & .form-check-inline + .form-check-inline,
+    & .form-radio-inline + .form-radio-inline{
+      margin-left: 10px;
     }
     input, select {
       & + .msg-box {
@@ -270,6 +276,7 @@ label{
     padding-top: 0.4em;
     text-align: right;
     box-sizing: content-box;
+    font-size: 13px
   }
   .filter-inner {
     a {
@@ -280,16 +287,20 @@ label{
       color: #44b549;
       background-image: none;
       background-color: transparent;
-      border-color: #44b549;
+      display: inline-block;
+      font-size: 13px;
+      border: 1px solid #44b549;
 
-      &:hover{
+      &:hover, &:focus {
         color: #fff;
         background-color: #44b549;
         border-color: #44b549;
+        text-decoration: none;
       }
-      &.active {
+      &.active, &:active {
         background-color: #44b549;
         color: #fff;
+        text-decoration: none;
       }
     }
     .input-daterange,
@@ -415,6 +426,10 @@ label{
 .lf-table {
   table {
     clear: both;
+    margin-bottom: 0;
+    & + table {
+      margin-top: 20px
+    }
     th {
       text-align: center;
       .material-icons {
@@ -427,7 +442,7 @@ label{
         text-align: right;
       }
     }
-    td {
+    tbody td {
       text-align: center;
       &.left {
         text-align: left;
@@ -487,4 +502,132 @@ label{
       background-color: transparent;
     }
   }
+}
+
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both
+}
+
+.animated.infinite {
+    animation-iteration-count: infinite
+}
+
+.animated.hinge {
+    animation-duration: 2s
+}
+
+.animated.bounceIn, .animated.bounceOut, .animated.flipOutX, .animated.flipOutY {
+    animation-duration: .75s
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0)
+    }
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+.fadeInDown {
+    animation-name: fadeInDown
+}
+
+@keyframes fadeOutUp {
+    0% {
+        opacity: 1
+    }
+    to {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0)
+    }
+}
+
+
+.breadcrumb a {
+    color: #333
+}
+.fadeOutUp {
+    animation-name: fadeOutUp
+}
+html body .pleft {
+    padding-left: 10px !important;
+}
+
+html body .pright {
+    padding-right: 10px !important;
+}
+
+html body .mleft {
+    margin-left: 10px !important;
+}
+
+html body .mright {
+    margin-right: 10px !important;
+}
+
+html body .mleft5 {
+    margin-left: 5px !important;
+}
+
+html body .mright5 {
+    margin-right: 5px !important;
+}
+
+html body .mbottom5 {
+    margin-bottom: 5px !important;
+}
+
+html body .mtop5 {
+    margin-top: 5px !important;
+}
+
+html body .mbottom {
+    margin-bottom: 10px !important;
+}
+
+html body .mtop {
+    margin-top: 10px !important;
+}
+
+html body .mbottom15 {
+    margin-bottom: 15px !important;
+}
+
+html body .mtop15 {
+    margin-top: 15px !important;
+}
+
+html body .mbottom20 {
+    margin-bottom: 20px !important;
+}
+
+html body .mtop20 {
+    margin-top: 20px !important;
+}
+
+html body .mbottom25 {
+    margin-bottom: 25px !important;
+}
+
+html body .mtop25 {
+    margin-top: 25px !important;
+}
+
+html body .mbottom30 {
+    margin-bottom: 30px !important;
+}
+
+html body .mtop30 {
+    margin-top: 30px !important;
+}
+.form-control, 
+.form-control:focus, 
+.has-error .form-control, 
+.has-success .form-control, 
+.has-warning .form-control {
+    box-shadow: none;
 }

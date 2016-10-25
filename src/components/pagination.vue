@@ -5,6 +5,7 @@
       <nav aria-label="Page navigation" class="pull-right">
         <ul class="pagination">
           <li class="page-item" :class="{'disabled': !preClickable}">
+            <a class="page-link" :href="pageUrl(page)" aria-label="Previous" @click="page > 1 ? page-- : 1" :class="{'disabled': !preClickable}">
               <span aria-hidden="true">&laquo;</span>
             </a>
           </li>

@@ -1,5 +1,5 @@
 <template>
-  <textarea :name="name" :id="id" class="textarea editor" :rows="rows" v-el:editor></textarea>
+  <textarea :name="name" :id="id" class="textarea editor" :rows="rows" v-el:editor>{{ value }}</textarea>
 </template>
 
 <style>
@@ -18,7 +18,9 @@
         type: String,
         default: 12,
       },
+      cacheRemote: Boolean,
       name: String,
+      value: String,
     },
     ready() {
       UE.getEditor(this.id, {
@@ -41,7 +43,7 @@
         imageScaleEnabled: false,
         allHtmlEnabled: false,
         elementPathEnabled: false,
-        catchRemoteImageEnable: true,
+        catchRemoteImageEnable: this.cacheRemote,
         serverUrl: this.serverUrl,
 
         zIndex: 1,

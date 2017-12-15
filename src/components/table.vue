@@ -12,23 +12,6 @@
         this.uuid = + new Date();
       }
     },
-    props: {
-      // responsive: Boolean,
-      // titles: Array,
-      // data: Array,
-      // checkAll: {
-      //   type: null,
-      //   default: false,
-      //   twoWay: true,
-      // },
-      // url: String,
-      // queryName: String,
-      // page: {
-      //   type: Number,
-      //   required: true,
-      // },
-      // total: Number,
-    },
     methods: {
       addRule(selector, styles, sheet) {
         styles = (function (styles) {
@@ -79,94 +62,5 @@
         });
       });
     },
-
-    // methods: {
-      // onCheck(event) {
-      //   event.target.parentNode.parentNode.classList.toggle('table-active');
-      // },
-      // changeOrder(item) {
-      //   console.log('wow');
-      //   item.order = item.order > 0 ? -1 : 1;
-      // },
-    // },
   };
 </script>
-
-<style lang="sass">
-  .lf-table {
-    table {
-      clear: both;
-      th {
-        text-align: center;
-        .material-icons {
-          cursor: pointer;
-        }
-        &.left {
-          text-align: left;
-        }
-        &.right {
-          text-align: right;
-        }
-      }
-      td {
-        text-align: center;
-        &.left {
-          text-align: left;
-        }
-        &.right {
-          text-align: right;
-        }
-      }
-    }
-
-    @media only screen and (max-width: 800px) {
-      table{
-        border:none;
-        tr {
-          border: 1px solid #ccc;
-          margin-bottom: 10px;
-        }
-        td {
-          /* Behave  like a "row" */
-          border: none;
-          border-bottom: 1px solid #eee;
-          position: relative;
-          white-space: normal;
-          text-align: left !important;
-          display: flex;
-        }
-
-        td:before {
-          padding-right: 10px;
-          min-width: 7em;
-          max-width: 50%;
-          color: #999;
-          // white-space: nowrap;
-          text-align: right;
-          // text-align: left;
-          // display: inline-block;
-          // display: flex;
-          // font-weight: bold;
-          vertical-align: middle;
-          content: '';
-        }
-      }
-      thead,
-      tbody,
-      th,
-      tr {
-        display: block !important;
-      }
-
-      /* Hide table headers (but not display: none;, for accessibility) */
-      thead tr {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
-      }
-      tbody tr:nth-of-type(odd){
-        background-color: transparent;
-      }
-    }
-  }
-</style>

@@ -18,7 +18,10 @@
         type: String,
         default: 12,
       },
-      cacheRemote: Boolean,
+      cacheRemote: {
+        type: Boolean,
+        default: true,
+      },
       name: String,
       value: String,
     },
@@ -94,7 +97,7 @@
         },
         toolbars: [
           [
-            'source', 'fullscreen', 'undo', 'redo', '|', 'bold', 'italic', 'underline', 'strikethrough', '|', 'justifyleft', 'justifycenter', 'justifyright', '|', 'insertorderedlist', 'insertunorderedlist', '|', 'link', 'unlink', '|', 'simpleupload', 'insertimage', 'insertvideo', 'map', 'wordimage', '|', 'horizontal', 'spechars', 'removeformat', '|', 'searchreplace', '|', 'preview',
+            'source', 'fullscreen', 'undo', 'redo', '|', 'fontsize', 'forecolor', 'backcolor', '|', 'bold', 'italic', 'underline', 'strikethrough', '|', 'justifyleft', 'justifycenter', 'justifyright', '|', 'insertorderedlist', 'insertunorderedlist', '|', 'link', 'unlink', '|', 'simpleupload', 'insertimage', 'insertvideo', 'map', 'wordimage', '|', 'horizontal', 'spechars', 'removeformat', '|', 'searchreplace',
           ],
         ],
         retainOnlyLabelPasted: false,

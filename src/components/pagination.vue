@@ -16,7 +16,7 @@
             <a class="page-link"
               v-if="typeof item === 'number'"
               :href="pageUrl(item)"
-              @mousedown="page =  item">
+              @mouseup="page =  item">
               {{ item }}
             </a>
             <span v-else>{{item}}</span>
@@ -25,7 +25,7 @@
             <a class="page-link"
               :href="pageUrl(page)"
               aria-label="Next"
-              @mousedown="page = nextClick()">
+              @mouseup="page = nextClick()">
               <span aria-hidden="true">&raquo;</span>
             </a>
           </li>
